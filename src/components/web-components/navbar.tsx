@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { CloudIcon, Bars3Icon, XCircleIcon } from '@heroicons/react/24/solid';
+import { HomeIcon, Bars3Icon, XCircleIcon } from '@heroicons/react/24/solid';
 import Button from './../utilities/button'
 import './navbar.css';
 
@@ -9,12 +9,14 @@ function Navbar() {
     const [button, setButton] = useState(true);
 
     const handleClick = () => setClick(!click);
+
     const showButton = () => {
         if(window.innerWidth <= 960){
             setButton(false);
         }
         else{
             setButton(true);
+            closeMobileMenu();
         }
     }
 
@@ -27,25 +29,54 @@ function Navbar() {
             <nav className="navbar">
                 <div className="navbar-container">
                     <Link to="/" className="navbar-logo">
+                        <HomeIcon height={40} color='white'/>
                         Robert Kilkenny
-                        <CloudIcon height={40} color='blue' />
                     </Link>
                     <div className="menu-icon" onClick={handleClick}>
-                        {click ? <XCircleIcon height={40} color='black' /> : <Bars3Icon height={40} color='blue' />}
+                        {click ? <XCircleIcon height={40} color='black' /> : <Bars3Icon height={40} color='blue'/>}
                     </div>
+
+                    <ul className="navbar-site-list">
+                        {click ? <></> : <li className='nav-spacer'>|</li>}
+                        <li className='nav-item'>
+                            <Link to='/about-me' className='nav-links' onClick={closeMobileMenu}>
+                                Project 1
+                            </Link>
+                        </li>
+
+                        {click ? <></> : <li className='nav-spacer'>|</li>}
+                        
+                        <li className='nav-item'>
+                            <Link to='/projects' className='nav-links' onClick={closeMobileMenu}>
+                                Project 2
+                            </Link>
+                        </li>
+                        {click ? <></> : <li className='nav-spacer'>|</li>}
+                        
+                        <li className='nav-item'>
+                            <Link to='/projects' className='nav-links' onClick={closeMobileMenu}>
+                                Website
+                            </Link>
+                        </li>
+                    </ul>
+
                     <ul className={click ? 'nav-menu-active' : 'nav-menu-inactive'}>
+
+                        <li className='nav-item'>
+                            <Link to='/projects' className='nav-links' onClick={closeMobileMenu}>
+                                Project List
+                            </Link>
+                        </li>
+
+                        {click ? <></> : <li className='nav-spacer'>|</li>}
+                        
                         <li className='nav-item'>
                             <Link to='/about-me' className='nav-links' onClick={closeMobileMenu}>
                                 About Me
                             </Link>
                         </li>
-                        <li className='nav-item'>
-                            <Link to='/temp' className='nav-links' onClick={closeMobileMenu}>
-                                Temp
-                            </Link>
-                        </li>
                     </ul>
-                    {button && <Button _buttonStyle='btn--outline' _buttonSize='' _onClick={closeMobileMenu}> Sign Up</Button>}
+                    {button && <Button _buttonStyle='btn--outline' _buttonSize='' _onClick={closeMobileMenu}>Contact Me</Button>}
                 </div>
             </nav>
         </>
