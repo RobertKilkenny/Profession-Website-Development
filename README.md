@@ -1,46 +1,47 @@
-# Getting Started with Create React App
+# Robert Kilkenny's Professional Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my coding project to develop a personal website for myself. The idea is to have a dynamic website to show my considerations for users while centralizing several project information in one place. This project will be coded by myself using many different resources found on the internet to help me get familiar with React, CSS, Firebase, and other features required to develop a useful website. Any resources from which a significant amount of code is used will be cited below in "Resources Used and Citations."
 
-## Available Scripts
+Website created using create-react-app to display projects I've made pursuing a career in Software Engineering
 
-In the project directory, you can run:
+## Current Features
 
-### `npm start`
+- Basic metadata set up to help describe what the website is and make it look more professional.
+- Navigation Bar that changes the link for different pages
+- A main App Object that changes the page based on the link
+- Able to switch between Page Objects using React Router to use the link.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Planned Features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Change site icon to be customized for me
+- Develop a Home/ Landing page that helps guide users
+- Develop a Project List page
+  - Create a Project Object to display a project's details and link to a page
+  - Display Project Objects on the page to display an overview of all projects
+  - Parse a Projects.json file that will contain project names, descriptions, and images (optional)
+  - Search function using the names of the projects
+- Develop a template Project page
+  - Allow for quick generation of project pages for smaller projects
+  - Have a list passed in so there can be images without needing a specific file creation
+  - Use the details from the parsed JSON file above for information
+- Develop the About Me page
+  - Write and display a simple message about my software development journey.
+  - Link to the contact page.
+- Develop the Contact Me
+  - Have contact information for professional contact
+  - Link to external media (LinkedIn, Github, etc.)
+- Launch site with Firebase
 
-### `npm test`
+## Non-Essential Backlog
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Create functionality for sending me a message from the site
+  - Require a valid email (regex) and message
+  - Optional Subject and name line
+- Use Website to create a custom email and have routing
 
-### `npm run build`
+# Resources Used and Citations
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- This project uses HeroIcons for many of the basic icons.
+- When starting this project, I used Brian Design's YouTube video [React Website Tutorial - Beginner React JS Project Fully Responsive](https://www.youtube.com/watch?v=I2UBjN5ER4s&t=2456s) to help learn the basics for this project.
+- Some projects shown were not developed by myself. See each project for the full credits and details!
