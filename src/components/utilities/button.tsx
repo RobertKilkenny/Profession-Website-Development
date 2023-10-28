@@ -7,6 +7,7 @@ const SIZES = ['btn--medium', 'btn--large'];
 
 interface Props {
     _onClick : () => void,
+    _routing: string,
     _buttonStyle: string,
     _buttonSize: string,
     children?: React.ReactNode
@@ -14,6 +15,7 @@ interface Props {
 
 const Button: React.FC<Props> = ({
     _onClick,
+    _routing,
     _buttonStyle,
     _buttonSize,
     children
@@ -22,7 +24,7 @@ const Button: React.FC<Props> = ({
     const checkButtonSize = SIZES.includes(_buttonSize) ? _buttonSize : SIZES[0];
 
     return(
-        <Link to='/sign-up' className='btn-mobile'>
+        <Link to={_routing} className= {_buttonStyle}>
             <button className={`btn ${checkButtonStyle} ${checkButtonSize}`} onClick = {_onClick}>
                 {children}
             </button>
