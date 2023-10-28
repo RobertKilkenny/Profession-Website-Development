@@ -76,7 +76,7 @@ function Navbar() {
                             </Link>
                         </li>
                     </ul>
-                    {button && <Button _buttonStyle='btn--outline' _buttonSize='medium' 
+                    {button && <Button _buttonStyle='btn--outline' _buttonSize='btn--medium'
                     _routing= "/about-me" _onClick={closeMobileMenu}>Contact Me</Button>}
                 </div>
             </nav>

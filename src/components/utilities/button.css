@@ -1,55 +1,58 @@
 :root{
-    --outline-color: rgb(255, 255, 255);
-    --outline-color-alt: rgb(20, 20, 150);
-    --outline-text-light: rgb(255, 255, 255);
-    --outline-text-dark: rgb(10, 10, 10);
-    --primary-color: rgb(255,255,255);
-    --primary-text-light: rgb(30, 150, 190);
-    --primary-text-dark: rgb(10, 10, 10);
+    --main-btn-color: rgb(255, 255, 255);
+    --alt-1-btn-color: rgb(30, 75, 200);
+    --main-text-color: rgb(10, 10, 10);
+    --alt-1-text-color: rgb(255,255,255);
+    --blue-highlight: rgb(0, 150, 225);
 }
 
 .btn{
-    border-radius: 2px;
-    cursor:pointer;
+    cursor: pointer;
     display: flex;
     text-decoration: none;
     align-items: center;
     justify-content: center;
 }
 
+/*The showoff button*/
 .btn--primary{
     text-decoration: inherit;
-    background-color: var(--primary-color);
-    color: #242424;
+    background-color: var(--main-btn-color);
+    color: var(--main-text-color);
 }
 
+/*The subtle button*/
 .btn--outline{
     text-decoration: inherit;
     background-color: transparent;
-    color: var(--outline-text-light);
-    border: 1px solid var(--outline-color);
+    color: var(--main-btn-color);
+    border: thin solid var(--alt-1-text-color);
     transition: all 0.3s ease-out;
 }
 
 .btn--medium {
-    height: 40px;
-    padding: 8px 20px;
-    font-size: 1.5rem;
+    height: 50px;
+    width: 100px;
+    padding: 5px 5px;
+    font-size: 1rem;
 }
 
 .btn--large {
-    padding: 12px 26px;
-    font: 20px;
+    height: 80px;
+    width: 160px;
+    padding: 5px 5px;
+    font-size: 1.6rem;
 }
 
 .btn--primary:hover{
-    background: #000;
+    background: var(--alt-1-btn-color);
     transition: all 0.3s ease-out;
-    border: 1px solid var(--highlight)
+    border: thin solid var(--main-btn-color);
+    color: var(--alt-1-text-color);
 } 
 .btn--outline:hover {
-    background: var(--outline-color);
-    color: var(--outline-text-dark);
+    background: var(--main-btn-color);
     transition: all 0.3s ease-out;
-    border: 1px solid var(--highlight)
+    border: thin solid var(--blue-highlight);
+    color: var(--main-text-color);
 }
