@@ -8,14 +8,16 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="holder">
+    <div className="site-holder">
       <Router>
         <Navbar />
-        <Routes>
-          <Route path="/" Component={Home} />
-          <Route path="/about-me" Component={About} />
-          <Route path="*" Component={NotFound} />
-        </Routes>
+        <div className="page-holder">
+          <Routes>
+            <Route path="/" Component={Home} />
+            <Route path="/about-me" Component={About} />
+            <Route path="*" Component={NotFound} />
+          </Routes>
+        </div>
       </Router>
     </div>
   );

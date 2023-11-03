@@ -17,9 +17,10 @@
   padding: 0;
   font-family: "Arial", sans-serif;
   align-items: center;
+  background-size: cover;
 }
 
-.holder {
+.site-holder {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -27,4 +28,14 @@
   justify-content: top;
   font-size: 3rem;
   background-color: var(--blue-background);
+  height: 100vh;
+}
+
+.page-holder {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: top;
+  padding: 1rem 0 0.5rem 0;
 }
