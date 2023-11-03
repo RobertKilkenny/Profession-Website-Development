@@ -1,87 +1,121 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { HomeIcon, Bars3Icon, XCircleIcon } from '@heroicons/react/24/solid';
-import Button from './../utilities/button'
-import './navbar.css';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { HomeIcon, Bars3Icon, XCircleIcon } from "@heroicons/react/24/solid";
+import Button from "./../utilities/button";
+import "./navbar.css";
 
 function Navbar() {
-    const [click, setClick] = useState(false);
-    const [button, setButton] = useState(true);
+  const [click, setClick] = useState(false);
+  const [button, setButton] = useState(window.innerWidth > 1000);
 
-    const handleClick = () => setClick(!click);
+  const handleClick = () => setClick(!click);
 
-    const showButton = () => {
-        if(window.innerWidth <= 960){
-            setButton(false);
-        }
-        else{
-            setButton(true);
-            closeMobileMenu();
-        }
+  const showButton = () => {
+    if (window.innerWidth <= 1000) {
+      setButton(false);
+    } else {
+      setButton(true);
+      closeMobileMenu();
     }
+  };
 
-    window.addEventListener('resize', showButton);
+  window.addEventListener("resize", showButton);
 
-    const closeMobileMenu = () => setClick(false);
+  const closeMobileMenu = () => setClick(false);
 
-    return (
-        <>
-            <nav className="navbar">
-                <div className="navbar-container">
-                    <Link to="/" className="navbar-logo">
-                        <HomeIcon height={40} color='white'/>
-                        Robert Kilkenny
-                    </Link>
-                    <div className="menu-icon" onClick={handleClick}>
-                        {click ? <XCircleIcon height={40} color='black' /> : <Bars3Icon height={40} color='blue'/>}
-                    </div>
+  return (
+    <>
+      <nav className="navbar">
+        <div className="navbar-container">
+          <div className="navbar-left-container">
+            <Link to="/" className="navbar-logo">
+              <HomeIcon height={40} color="white" />
+              Robert Kilkenny
+            </Link>
+            <div className="menu-icon" onClick={handleClick}>
+              {click ? (
+                <XCircleIcon height={40} color="black" />
+              ) : (
+                <Bars3Icon height={40} color="blue" />
+              )}
+            </div>
 
-                    <ul className="navbar-site-list">
-                        {click ? <></> : <li className='nav-spacer'>|</li>}
-                        <li className='nav-item'>
-                            <Link to='/about-me' className='nav-links' onClick={closeMobileMenu}>
-                                Project 1
-                            </Link>
-                        </li>
+            <ul className="navbar-site-list">
+              {click ? <></> : <li className="nav-spacer">|</li>}
+              <li className="nav-item">
+                <Link
+                  to="/about-me"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
+                  Project 1
+                </Link>
+              </li>
 
-                        {click ? <></> : <li className='nav-spacer'>|</li>}
-                        
-                        <li className='nav-item'>
-                            <Link to='/projects' className='nav-links' onClick={closeMobileMenu}>
-                                Project 2
-                            </Link>
-                        </li>
-                        {click ? <></> : <li className='nav-spacer'>|</li>}
-                        
-                        <li className='nav-item'>
-                            <Link to='/projects' className='nav-links' onClick={closeMobileMenu}>
-                                Website
-                            </Link>
-                        </li>
-                    </ul>
+              {click ? <></> : <li className="nav-spacer">|</li>}
 
-                    <ul className={click ? 'nav-menu-active' : 'nav-menu-inactive'}>
+              <li className="nav-item">
+                <Link
+                  to="/projects"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
+                  Project 2
+                </Link>
+              </li>
+              {click ? <></> : <li className="nav-spacer">|</li>}
 
-                        <li className='nav-item'>
-                            <Link to='/projects' className='nav-links' onClick={closeMobileMenu}>
-                                Project List
-                            </Link>
-                        </li>
+              <li className="nav-item">
+                <Link
+                  to="/projects"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
+                  Website
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-                        {click ? <></> : <li className='nav-spacer'>|</li>}
-                        
-                        <li className='nav-item'>
-                            <Link to='/about-me' className='nav-links' onClick={closeMobileMenu}>
-                                About Me
-                            </Link>
-                        </li>
-                    </ul>
-                    {button && <Button _buttonStyle='btn--outline' _buttonSize='btn--medium'
-                    _routing= "/about-me" _onClick={closeMobileMenu}>Contact Me</Button>}
-                </div>
-            </nav>
-        </>
-    )
+          <div className="navbar-right-container">
+            <ul className={click ? "nav-menu-active" : "nav-menu-inactive"}>
+              <li className="nav-item">
+                <Link
+                  to="/projects"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
+                  Project List
+                </Link>
+              </li>
+
+              {click ? <></> : <li className="nav-spacer">|</li>}
+
+              <li className="nav-item">
+                <Link
+                  to="/about-me"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
+                  About Me
+                </Link>
+              </li>
+            </ul>
+            {button && (
+              <Button
+                _buttonStyle="btn--outline"
+                _buttonSize="btn--medium"
+                _routing="/about-me"
+                _onClick={closeMobileMenu}
+              >
+                Contact Me
+              </Button>
+            )}
+          </div>
+        </div>
+      </nav>
+    </>
+  );
 }
 
-export default Navbar
+export default Navbar;
