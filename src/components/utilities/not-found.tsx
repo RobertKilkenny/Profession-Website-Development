@@ -18,11 +18,10 @@ function NotFound() {
         valid webpage.
       </h1>
       <Button
-        _handleClick={false}
         _routing="/"
         _buttonSize="btn--large"
         _buttonStyle="btn--primary"
-        _onClick={handleClick}
+        _buttonColor="btn--yellow"
       >
         Home Page
       </Button>

@@ -1,50 +1,58 @@
-.btn{
-    cursor: pointer;
-    display: flex;
-    text-decoration: none;
-    align-items: center;
-    justify-content: center;
+.btn {
+  cursor: pointer;
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
 }
 
 /*The showoff button*/
-.btn--primary{
-    text-decoration: inherit;
-    background-color: var(--light-background);
-    color: var(--dark-text);
+.btn--primary {
+  text-decoration: inherit;
+  background-color: var(--light-background);
+  color: var(--dark-text);
 }
 
 /*The subtle button*/
-.btn--outline{
-    text-decoration: inherit;
-    background-color: transparent;
-    color: var(--light-background);
-    border: thin solid var(--light-text);
-    transition: all 0.3s ease-out;
+.btn--outline {
+  text-decoration: inherit;
+  background-color: transparent;
+  color: var(--light-background);
+  border: thin solid var(--light-text);
+  transition: all 0.3s ease-out;
 }
 
 .btn--medium {
-    height: 50px;
-    width: 100px;
-    padding: 5px 5px;
-    font-size: 1rem;
+  height: 50px;
+  width: 100px;
+  padding: 5px 5px;
+  font-size: 1rem;
 }
 
 .btn--large {
-    height: 80px;
-    width: 160px;
-    padding: 5px 5px;
-    font-size: 1.6rem;
+  height: 80px;
+  width: 160px;
+  padding: 5px 5px;
+  font-size: 1.6rem;
 }
 
-.btn--primary:hover{
-    background: var(--blue-background);
-    transition: all 0.3s ease-out;
-    border: thin solid var(--light-background);
-    color: var(--light-text);
-} 
+.btn--yellow {
+  background-color: rgb(255, 223, 0);
+}
+
+.btn--primary:hover {
+  background: var(--blue-background);
+  transition: all 0.3s ease-out;
+  border: thin solid var(--light-background);
+  color: var(--light-text);
+}
 .btn--outline:hover {
-    background: var(--light-background);
-    transition: all 0.3s ease-out;
-    border: thin solid var(--blue-contrast-1);
-    color: var(--dark-text);
+  background: var(--light-background);
+  transition: all 0.3s ease-out;
+  border: thin solid var(--blue-contrast-1);
+  color: var(--dark-text);
+}
+
+.btn--yellow:hover {
+  background-color: rgb(228, 208, 10);
 }
