@@ -114,6 +114,7 @@ function Navbar() {
             </div>
             {button && (
               <Button
+                _handleClick={true}
                 _buttonStyle="btn--outline"
                 _buttonSize="btn--medium"
                 _routing="/contact-me"

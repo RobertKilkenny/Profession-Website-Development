@@ -6,7 +6,8 @@ const STYLES = ["btn--primary", "btn--outline"];
 const SIZES = ["btn--medium", "btn--large"];
 
 interface Props {
-  _onClick: () => void;
+  _handleClick: boolean;
+  _onClick: () => void | null;
   _routing: string;
   _buttonStyle: string;
   _buttonSize: string;
@@ -14,6 +15,7 @@ interface Props {
 }
 
 const Button = ({
+  _handleClick,
   _onClick,
   _routing,
   _buttonStyle,
@@ -24,6 +26,23 @@ const Button = ({
     ? _buttonStyle
     : STYLES[0];
   const checkButtonSize = SIZES.includes(_buttonSize) ? _buttonSize : SIZES[0];
+
+  const result = _handleClick ? (
+    <Link to={_routing} className={_buttonStyle}>
+      <button
+        className={`btn ${checkButtonStyle} ${checkButtonSize}`}
+        onClick={_onClick}
+      >
+        {children}
+      </button>
+    </Link>
+  ) : (
+    <Link to={_routing} className={_buttonStyle}>
+      <button className={`btn ${checkButtonStyle} ${checkButtonSize}`}>
+        {children}
+      </button>
+    </Link>
+  );
 
   return (
     <Link to={_routing} className={_buttonStyle}>

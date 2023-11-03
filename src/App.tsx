@@ -5,6 +5,7 @@ import Home from "./components/web-components/home";
 import About from "./components/web-components/about";
 import NotFound from "./components/utilities/not-found";
 import "./App.css";
+import "./components/utilities/default-page.css";
 
 function App() {
   return (

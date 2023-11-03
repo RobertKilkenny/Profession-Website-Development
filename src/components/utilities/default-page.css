@@ -1,0 +1,41 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: top;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  font-size: 100px;
+  color: var(--header-text);
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.subheader {
+  display: flex;
+  font-size: 80px;
+  color: var(--header-text);
+  font-weight: 450;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.main-content-image-sq {
+  display: flex;
+  width: 25%;
+  height: auto;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.main-content-text {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  height: auto;
+  padding: 0.5rem 0 0.5rem 0;
+  font-size: 20px;
+  text-align: center;
+}
