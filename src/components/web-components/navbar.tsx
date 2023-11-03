@@ -92,6 +92,18 @@ function Navbar() {
                   About Me
                 </Link>
               </li>
+
+              {!button && click && (
+                <li className="nav-item">
+                  <Link
+                    to="/contact-me"
+                    className="nav-links"
+                    onClick={closeMobileMenu}
+                  >
+                    Contact Me
+                  </Link>
+                </li>
+              )}
             </ul>
             <div className="menu-icon" onClick={handleClick}>
               {click ? (
