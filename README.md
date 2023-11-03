@@ -10,6 +10,7 @@ Website created using create-react-app to display projects I've made pursuing a 
 - Navigation Bar that changes the link for different pages
 - A main App Object that changes the page based on the link
 - Able to switch between Page Objects using React Router to use the link.
+- Developed buttons with default and dynamic coloring with defaults for sizing. Also offers a specialized button (outline) and could have more later.
 
 ## Planned Features
 
