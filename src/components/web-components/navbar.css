@@ -122,10 +122,7 @@
     justify-content: end;
     flex-direction: row;
     align-items: center;
-  }
-
-  .NavbarItems {
-    position: relative;
+    width: 80px;
   }
 
   .navbar-site-list {
@@ -166,19 +163,13 @@
   }
 
   .navbar-logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(25%, 50%);
+    display: flex;
+    align-items: center;
   }
 
   .menu-icon {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
     cursor: pointer;
   }
 

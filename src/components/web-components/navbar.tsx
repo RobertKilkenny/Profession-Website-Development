@@ -32,14 +32,6 @@ function Navbar() {
               <HomeIcon height={40} color="white" />
               Robert Kilkenny
             </Link>
-            <div className="menu-icon" onClick={handleClick}>
-              {click ? (
-                <XCircleIcon height={40} color="black" />
-              ) : (
-                <Bars3Icon height={40} color="blue" />
-              )}
-            </div>
-
             <ul className="navbar-site-list">
               {click ? <></> : <li className="nav-spacer">|</li>}
               <li className="nav-item">
@@ -101,6 +93,13 @@ function Navbar() {
                 </Link>
               </li>
             </ul>
+            <div className="menu-icon" onClick={handleClick}>
+              {click ? (
+                <XCircleIcon height={40} color="black" />
+              ) : (
+                <Bars3Icon height={40} color="blue" />
+              )}
+            </div>
             {button && (
               <Button
                 _buttonStyle="btn--outline"
