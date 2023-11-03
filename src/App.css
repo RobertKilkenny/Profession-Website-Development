@@ -5,10 +5,8 @@
   --dark-text: rgb(10, 10, 10);
 
   --light-background: rgb(240, 240, 240);
-  --blue-background: rgb(30, 75, 200);
+  --blue-background: rgb(30, 150, 200);
 
-  --dark-contrast-1: rgb(0, 0, 0);
-  --dark-contrast-2: rgb(0, 0, 70);
   --light-contrast: rgb(255, 255, 255);
   --blue-contrast-1: rgb(0, 150, 225);
   --blue-contrast-2: rgb(0, 0, 200);
@@ -28,4 +26,5 @@
   align-items: center;
   justify-content: top;
   font-size: 3rem;
+  background-color: var(--blue-background);
 }
