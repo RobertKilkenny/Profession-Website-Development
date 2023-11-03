@@ -1,11 +1,3 @@
-:root{
-    --main-btn-color: rgb(255, 255, 255);
-    --alt-1-btn-color: rgb(30, 75, 200);
-    --main-text-color: rgb(10, 10, 10);
-    --alt-1-text-color: rgb(255,255,255);
-    --blue-highlight: rgb(0, 150, 225);
-}
-
 .btn{
     cursor: pointer;
     display: flex;
@@ -17,16 +9,16 @@
 /*The showoff button*/
 .btn--primary{
     text-decoration: inherit;
-    background-color: var(--main-btn-color);
-    color: var(--main-text-color);
+    background-color: var(--light-background);
+    color: var(--dark-text);
 }
 
 /*The subtle button*/
 .btn--outline{
     text-decoration: inherit;
     background-color: transparent;
-    color: var(--main-btn-color);
-    border: thin solid var(--alt-1-text-color);
+    color: var(--light-background);
+    border: thin solid var(--light-text);
     transition: all 0.3s ease-out;
 }
 
@@ -45,14 +37,14 @@
 }
 
 .btn--primary:hover{
-    background: var(--alt-1-btn-color);
+    background: var(--blue-background);
     transition: all 0.3s ease-out;
-    border: thin solid var(--main-btn-color);
-    color: var(--alt-1-text-color);
+    border: thin solid var(--light-background);
+    color: var(--light-text);
 } 
 .btn--outline:hover {
-    background: var(--main-btn-color);
+    background: var(--light-background);
     transition: all 0.3s ease-out;
-    border: thin solid var(--blue-highlight);
-    color: var(--main-text-color);
+    border: thin solid var(--blue-contrast-1);
+    color: var(--dark-text);
 }
