@@ -36,7 +36,7 @@ function Navbar() {
               {click ? <></> : <li className="nav-spacer">|</li>}
               <li className="nav-item">
                 <Link
-                  to="/about-me"
+                  to="/project-1"
                   className="nav-links"
                   onClick={closeMobileMenu}
                 >
@@ -48,7 +48,7 @@ function Navbar() {
 
               <li className="nav-item">
                 <Link
-                  to="/projects"
+                  to="/project-2"
                   className="nav-links"
                   onClick={closeMobileMenu}
                 >
