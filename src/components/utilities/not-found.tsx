@@ -21,7 +21,7 @@ function NotFound() {
         _routing="/"
         _buttonSize="btn-large"
         _buttonStyle="btn-primary"
-        _buttonColor="btn-yellow"
+        _buttonColor="yellow"
       >
         Home Page
       </Button>

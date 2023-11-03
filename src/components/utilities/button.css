@@ -6,13 +6,6 @@
   justify-content: center;
 }
 
-/*The showoff button*/
-.btn-primary {
-  text-decoration: inherit;
-  background-color: var(--light-background);
-  color: var(--dark-text);
-}
-
 /*The subtle button*/
 .btn-outline {
   text-decoration: inherit;
@@ -36,16 +29,6 @@
   font-size: 1.6rem;
 }
 
-.btn-yellow {
-  background-color: rgb(255, 223, 0);
-}
-
-.btn-primary:hover {
-  background: var(--blue-background);
-  transition: all 0.3s ease-out;
-  border: thin solid var(--light-background);
-  color: var(--light-text);
-}
 .btn-outline:hover {
   background: var(--light-background);
   transition: all 0.3s ease-out;
