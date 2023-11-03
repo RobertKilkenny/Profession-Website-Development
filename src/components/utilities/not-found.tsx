@@ -17,11 +17,13 @@ function NotFound() {
         The page "{window.location.href}" does not exist! Please return to a
         valid webpage.
       </h1>
+
       <Button
         _routing="/"
         _buttonSize="btn-large"
-        _buttonStyle="btn-primary"
-        _buttonColor="yellow"
+        _buttonStyle=""
+        _usePalette={true}
+        _palette={["#E6D20A", "#000000", "#000000", "#FFDC00"]}
       >
         Home Page
       </Button>

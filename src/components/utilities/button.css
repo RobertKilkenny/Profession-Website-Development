@@ -6,15 +6,6 @@
   justify-content: center;
 }
 
-/*The subtle button*/
-.btn-outline {
-  text-decoration: inherit;
-  background-color: transparent;
-  color: var(--light-background);
-  border: thin solid var(--light-text);
-  transition: all 0.3s ease-out;
-}
-
 .btn-medium {
   height: 50px;
   width: 100px;
@@ -29,13 +20,18 @@
   font-size: 1.6rem;
 }
 
+/*The subtle button*/
+.btn-outline {
+  text-decoration: inherit;
+  background-color: transparent;
+  color: var(--light-background);
+  border: thin solid var(--light-text);
+  transition: all 0.3s ease-out;
+}
+
 .btn-outline:hover {
   background: var(--light-background);
   transition: all 0.3s ease-out;
   border: thin solid var(--blue-contrast-1);
   color: var(--dark-text);
-}
-
-.btn-yellow:hover {
-  background-color: rgb(228, 208, 10);
 }

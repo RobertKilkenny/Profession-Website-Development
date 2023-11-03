@@ -15,6 +15,8 @@ interface Props {
   children?: React.ReactNode;
   _onClick?: () => void;
   _buttonColor?: string;
+  _usePalette?: boolean;
+  _palette?: [string, string, string, string];
 }
 
 const Button = ({
@@ -24,6 +26,8 @@ const Button = ({
   _buttonSize,
   _buttonColor,
   children,
+  _usePalette,
+  _palette,
 }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
   const handleEnter = () => {
@@ -40,21 +44,37 @@ const Button = ({
   const checkButtonSize = SIZES.includes(_buttonSize) ? _buttonSize : SIZES[0];
   const colorCheck = typeof _buttonColor == "string" ? _buttonColor : "";
   const _className = `btn ${checkButtonStyle} ${checkButtonSize} `;
-  const _styling = COLORS.get(colorCheck)?.[0]
-    ? isHovered
-      ? {
-          backgroundColor: COLORS.get(colorCheck)?.[2],
-          color: COLORS.get(colorCheck)?.[3],
-          border: "1px solid",
-          borderColor: COLORS.get(colorCheck)?.[3],
-        }
-      : {
-          backgroundColor: COLORS.get(colorCheck)?.[0],
-          color: COLORS.get(colorCheck)?.[1],
-          border: "1px solid",
-          borderColor: COLORS.get(colorCheck)?.[1],
-        }
-    : {};
+
+  const _styling =
+    COLORS.get(colorCheck)?.[0] || _usePalette
+      ? isHovered
+        ? {
+            border: "1px solid",
+
+            backgroundColor: _usePalette
+              ? _palette?.[2]
+              : COLORS.get(colorCheck)?.[2],
+
+            color: _usePalette ? _palette?.[3] : COLORS.get(colorCheck)?.[3],
+
+            borderColor: _usePalette
+              ? _palette?.[3]
+              : COLORS.get(colorCheck)?.[3],
+          }
+        : {
+            border: "1px solid",
+
+            backgroundColor: _usePalette
+              ? _palette?.[0]
+              : COLORS.get(colorCheck)?.[0],
+
+            color: _usePalette ? _palette?.[1] : COLORS.get(colorCheck)?.[1],
+
+            borderColor: _usePalette
+              ? _palette?.[1]
+              : COLORS.get(colorCheck)?.[1],
+          }
+      : {};
 
   //console.log(`value ${_buttonColor} gives styling ${_styling}`);
 
