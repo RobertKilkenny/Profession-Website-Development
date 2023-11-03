@@ -19,9 +19,9 @@ function NotFound() {
       </h1>
       <Button
         _routing="/"
-        _buttonSize="btn--large"
-        _buttonStyle="btn--primary"
-        _buttonColor="btn--yellow"
+        _buttonSize="btn-large"
+        _buttonStyle="btn-primary"
+        _buttonColor="btn-yellow"
       >
         Home Page
       </Button>

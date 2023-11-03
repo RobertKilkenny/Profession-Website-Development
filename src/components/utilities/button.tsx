@@ -2,9 +2,9 @@ import React from "react";
 import "./button.css";
 import { Link } from "react-router-dom";
 
-const STYLES = ["btn--primary", "btn--outline"];
-const SIZES = ["btn--medium", "btn--large"];
-const COLORS = ["btn--yellow"];
+const STYLES = ["btn-primary", "btn-outline"];
+const SIZES = ["btn-medium", "btn-large"];
+const COLORS = ["btn-yellow"];
 
 interface Props {
   _routing: string;

@@ -7,14 +7,14 @@
 }
 
 /*The showoff button*/
-.btn--primary {
+.btn-primary {
   text-decoration: inherit;
   background-color: var(--light-background);
   color: var(--dark-text);
 }
 
 /*The subtle button*/
-.btn--outline {
+.btn-outline {
   text-decoration: inherit;
   background-color: transparent;
   color: var(--light-background);
@@ -22,37 +22,37 @@
   transition: all 0.3s ease-out;
 }
 
-.btn--medium {
+.btn-medium {
   height: 50px;
   width: 100px;
   padding: 5px 5px;
   font-size: 1rem;
 }
 
-.btn--large {
+.btn-large {
   height: 80px;
   width: 160px;
   padding: 5px 5px;
   font-size: 1.6rem;
 }
 
-.btn--yellow {
+.btn-yellow {
   background-color: rgb(255, 223, 0);
 }
 
-.btn--primary:hover {
+.btn-primary:hover {
   background: var(--blue-background);
   transition: all 0.3s ease-out;
   border: thin solid var(--light-background);
   color: var(--light-text);
 }
-.btn--outline:hover {
+.btn-outline:hover {
   background: var(--light-background);
   transition: all 0.3s ease-out;
   border: thin solid var(--blue-contrast-1);
   color: var(--dark-text);
 }
 
-.btn--yellow:hover {
+.btn-yellow:hover {
   background-color: rgb(228, 208, 10);
 }
