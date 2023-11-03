@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/web-components/navbar";
 import Home from "./components/web-components/home";
 import About from "./components/web-components/about";
+import NotFound from "./components/utilities/not-found";
 import "./App.css";
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" Component={Home} />
-          <Route path="/about-me" Component={About}></Route>
+          <Route path="/about-me" Component={About} />
+          <Route path="*" Component={NotFound} />
         </Routes>
       </Router>
     </div>
