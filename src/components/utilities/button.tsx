@@ -13,13 +13,13 @@ interface Props {
     children?: React.ReactNode
 }
 
-const Button: React.FC<Props> = ({
+const Button = ({
     _onClick,
     _routing,
     _buttonStyle,
     _buttonSize,
     children
-}) => {
+}:Props) => {
     const checkButtonStyle = STYLES.includes(_buttonStyle) ? _buttonStyle : STYLES[0];
     const checkButtonSize = SIZES.includes(_buttonSize) ? _buttonSize : SIZES[0];
 
