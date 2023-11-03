@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 const STYLES = ["btn-outline"];
 const SIZES = ["btn-medium", "btn-large"];
 const COLORS: Map<string, [string, string, string, string]> = new Map([
-  ["yellow", ["#E6D20A", "#000000", "#000000", "#FFDC00"]],
+  ["green", ["#22AB22", "#000000", "#00CC00", "#FFFFFF"]],
+  ["blue", ["#0000C6", "#DFCC00", "#0000EE", "#FFFFFF"]],
 ]);
 
 interface Props {
