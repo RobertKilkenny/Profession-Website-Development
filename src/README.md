@@ -11,3 +11,7 @@ This is just a list of different features and methodologies I used when creating
 ## Ground Rules for the Codebase
 - All unique page layouts should be stored in the same file as the .tsx file
 - Generic .css files for different parts can be found in "/src/components/web-components" for quick implementation.
+- Most webpages should use the relevant generic .css file for formatting so that each of their special .css files (if there are any), are cut down to just the parts that are unique for that object.
+- Keeping a labeling system for attributes used in web object that is not part of the should be done for easy debugging!
+ - At the minimum, having a comment block at the top of all other .css files used will help a lot
+ - Remember to only **import a .css** once for performance. Generic .css files can be imported in `App.tsx` to avoid duplicate references.
