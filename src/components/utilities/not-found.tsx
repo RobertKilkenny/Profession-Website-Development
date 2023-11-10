@@ -21,7 +21,6 @@ function NotFound() {
       <Button
         _routing=""
         _buttonSize="btn-large"
-        _buttonStyle=""
         _usePalette={true}
         _palette={["#E6D20A", "#000000", "#000000", "#FFDC00"]}
       >

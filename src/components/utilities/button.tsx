@@ -1,4 +1,4 @@
-import React, { Children, useState } from "react";
+import React, { useState } from "react";
 import "./button.css";
 import { Link } from "react-router-dom";
 
@@ -60,7 +60,7 @@ const Button = ({
   _buttonStyle = "",
   _buttonColor = "",
   _palette = ["", "", "", ""],
-}: Props) => {
+}: Props): JSX.Element => {
   const [isHovered, setIsHovered] = useState(false);
   const handleEnter = () => {
     setIsHovered(true);
@@ -74,7 +74,7 @@ const Button = ({
     ? _buttonStyle
     : "";
   const checkButtonSize = SIZES.includes(_buttonSize) ? _buttonSize : SIZES[0];
-  const _className = `btn ${checkButtonStyle} ${checkButtonSize} `;
+  const _className = `btn ${checkButtonStyle} ${checkButtonSize}`;
 
   const _styling =
     COLORS.get(_buttonColor)?.[0] || _usePalette
@@ -107,7 +107,7 @@ const Button = ({
           }
       : {};
 
-  //console.log(`value ${_buttonColor} gives styling ${_styling}`);
+  //console.log(`value ${_className} gives styling ${_styling}`);
   if (!_usePalette && _buttonStyle == "" && checkButtonStyle == "") {
     var report = `A button does not have any type of styling!! It the following children: ${children}`;
     console.log(report);
