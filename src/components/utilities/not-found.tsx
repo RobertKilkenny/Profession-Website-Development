@@ -19,7 +19,7 @@ function NotFound() {
       </h1>
 
       <Button
-        _routing="/"
+        _routing=""
         _buttonSize="btn-large"
         _buttonStyle=""
         _usePalette={true}

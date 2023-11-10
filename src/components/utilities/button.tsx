@@ -12,6 +12,7 @@ const COLORS: Map<string, [string, string, string, string]> = new Map([
   ["UF", ["#004BFF", "#FF6700", "#111288", "#F88F03"]],
   ["greygreen", ["#666666", "#00EF00", "#111111", "#32BC32"]],
 ]);
+const STYLES_LIST = STYLES.toLocaleString;
 
 interface Props {
   _routing: string;
@@ -25,15 +26,40 @@ interface Props {
   _palette?: [string, string, string, string];
 }
 
+/**
+ * Custom button class made to extend more features to the React button class.
+ * ## Required
+ * @param {string} _routing - The extension that the page rests at in the form of "/" + [extension]"
+ * @param {string} _buttonSize - A string that calls to the `button.css` to use a defined size. Only string(s) that work (is/are):
+ * - "btn-medium"
+ * - "btn-large"
+ *
+ * ## Optional
+ * @param {boolean} [_usePalette = false] - When set to true, the value of "_palette" is used for the button
+ * @param {function} [_onClick] - Holder for a function that is called when the button is pressed
+ * @param {string} [_buttonStyle = ""] - A string that calls to the `button.css` for a default button style (like an outline button). Only string(s) that work (is/are):
+ * - "btn-outline"
+ *
+ * @param {string} [_buttonColor = ""] - A string that is compared to the preset palettes in `button.tsx` stored in COLORS.Only string(s) that work (is/are):
+ * - "blue"
+ * - "green"
+ * - "black"
+ * - "white"
+ * - "UF"
+ * - "greygreen"
+ *
+ * @param {[string,string,string,string]} [_palette = ["", "", "", ""]] - array with length = 4 that discribes all buttons. Format each string as "#000000" and the order is [background, details, hover:background, hover:details]
+ * @returns {JSX.Element} Custom button that changes color on hover and links to whatever "_routing" says
+ */
 const Button = ({
-  _onClick,
   _routing,
-  _buttonStyle,
   _buttonSize,
-  _buttonColor,
-  children,
   _usePalette = false,
-  _palette,
+  children = null,
+  _onClick,
+  _buttonStyle = "",
+  _buttonColor = "",
+  _palette = ["", "", "", ""],
 }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
   const handleEnter = () => {
@@ -48,48 +74,47 @@ const Button = ({
     ? _buttonStyle
     : "";
   const checkButtonSize = SIZES.includes(_buttonSize) ? _buttonSize : SIZES[0];
-  const colorCheck = typeof _buttonColor == "string" ? _buttonColor : "";
   const _className = `btn ${checkButtonStyle} ${checkButtonSize} `;
 
   const _styling =
-    COLORS.get(colorCheck)?.[0] || _usePalette
+    COLORS.get(_buttonColor)?.[0] || _usePalette
       ? isHovered
         ? {
             border: "2px solid",
 
             backgroundColor: _usePalette
               ? _palette?.[2]
-              : COLORS.get(colorCheck)?.[2],
+              : COLORS.get(_buttonColor)?.[2],
 
-            color: _usePalette ? _palette?.[3] : COLORS.get(colorCheck)?.[3],
+            color: _usePalette ? _palette?.[3] : COLORS.get(_buttonColor)?.[3],
 
             borderColor: _usePalette
               ? _palette?.[3]
-              : COLORS.get(colorCheck)?.[3],
+              : COLORS.get(_buttonStyle)?.[3],
           }
         : {
             border: "2px solid",
 
             backgroundColor: _usePalette
               ? _palette?.[0]
-              : COLORS.get(colorCheck)?.[0],
+              : COLORS.get(_buttonStyle)?.[0],
 
-            color: _usePalette ? _palette?.[1] : COLORS.get(colorCheck)?.[1],
+            color: _usePalette ? _palette?.[1] : COLORS.get(_buttonStyle)?.[1],
 
             borderColor: _usePalette
               ? _palette?.[1]
-              : COLORS.get(colorCheck)?.[1],
+              : COLORS.get(_buttonStyle)?.[1],
           }
       : {};
 
   //console.log(`value ${_buttonColor} gives styling ${_styling}`);
-  if (!_usePalette && colorCheck == "" && checkButtonStyle == "") {
+  if (!_usePalette && _buttonStyle == "" && checkButtonStyle == "") {
     var report = `A button does not have any type of styling!! It the following children: ${children}`;
     console.log(report);
   }
 
   const result = (
-    <Link to={_routing} className={_buttonStyle}>
+    <Link to={_routing} className={"btn"}>
       <button
         className={_className}
         onClick={_onClick}
