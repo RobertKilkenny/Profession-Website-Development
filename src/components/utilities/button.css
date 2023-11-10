@@ -4,9 +4,11 @@
   text-decoration: none;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease-out;
 }
 
 .btn-medium {
+  text-decoration: none;
   height: 50px;
   width: 100px;
   padding: 5px 5px;
@@ -14,6 +16,7 @@
 }
 
 .btn-large {
+  text-decoration: none;
   height: 80px;
   width: 160px;
   padding: 5px 5px;
@@ -22,16 +25,15 @@
 
 /*The subtle button*/
 .btn-outline {
-  text-decoration: inherit;
+  text-decoration: none;
   background-color: transparent;
   color: var(--light-background);
   border: thin solid var(--light-text);
-  transition: all 0.3s ease-out;
 }
 
 .btn-outline:hover {
+  text-decoration: none;
   background: var(--light-background);
-  transition: all 0.3s ease-out;
   border: thin solid var(--blue-contrast-1);
   color: var(--dark-text);
 }
