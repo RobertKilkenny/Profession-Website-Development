@@ -6,20 +6,8 @@ import "./navbar.css";
 
 function Navbar() {
   const [click, setClick] = useState(false);
-  const [button, setButton] = useState(window.innerWidth > 1000);
 
   const handleClick = () => setClick(!click);
-
-  const showButton = () => {
-    if (window.innerWidth <= 1000) {
-      setButton(false);
-    } else {
-      setButton(true);
-      closeMobileMenu();
-    }
-  };
-
-  window.addEventListener("resize", showButton);
 
   const closeMobileMenu = () => setClick(false);
 
@@ -28,7 +16,7 @@ function Navbar() {
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo">
-            <Home height={40} color="white" />
+            <Home height={40} />
           </Link>
           <div className="navbar-left-container">
             <menu className="navbar-site-list divide-x-2 divide-white">

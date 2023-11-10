@@ -49,6 +49,7 @@
   cursor: pointer;
   text-decoration: none;
   align-items: center;
+  color: white;
 }
 
 .navbar-site-list {
@@ -72,7 +73,6 @@
 
 .nav-links {
   display: flex;
-  color: var(--gray-text-1);
   align-items: center;
   text-decoration: none;
   padding: 0rem 0.5rem;
