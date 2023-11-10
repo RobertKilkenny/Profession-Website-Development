@@ -2,7 +2,7 @@
 
 This is my coding project to develop a personal website for myself. The idea is to have a dynamic website to show my considerations for users while centralizing several project information in one place. This project will be coded by myself using many different resources found on the internet to help me get familiar with React, Vite, CSS, Firebase, and other features required to develop a useful website. Any resources from which a significant amount of code is used will be cited below in "Resources Used and Citations."
 
-Website created using create-react-app to display projects I've made pursuing a career in Software Engineering. I have made some development notes that could be useful for iterating on this code [here](./src/README.md)
+Website created using create-react-app to display projects I've made pursuing a career in Software Engineering. I have made some development notes that could be useful for iterating on this code [here](./src/README.md)!
 
 ## Current Features
 
