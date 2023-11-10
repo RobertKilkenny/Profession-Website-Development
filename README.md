@@ -1,27 +1,49 @@
-# React + TypeScript + Vite
+# Robert Kilkenny's Professional Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my coding project to develop a personal website for myself. The idea is to have a dynamic website to show my considerations for users while centralizing several project information in one place. This project will be coded by myself using many different resources found on the internet to help me get familiar with React, Vite, CSS, Firebase, and other features required to develop a useful website. Any resources from which a significant amount of code is used will be cited below in "Resources Used and Citations."
 
-Currently, two official plugins are available:
+Website created using create-react-app to display projects I've made pursuing a career in Software Engineering. I have made some development notes that could be useful for iterating on this code [here](./src/README.md)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Current Features
 
-## Expanding the ESLint configuration
+- Basic metadata set up to help describe what the website is and make it look more professional.
+- Navigation Bar that changes the link for different pages
+- A main App Object that changes the page based on the link
+- Able to switch between Page Objects using React Router to use the link.
+- Developed buttons with default and dynamic coloring with defaults for sizing. Also offers a specialized button (outline) and could have more later.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Planned Features
 
-- Configure the top-level `parserOptions` property like this:
+- Change site icon to be customized for me
+- Develop a Home/ Landing page that helps guide users
+- Develop a Project List page
+  - Create a Project Object to display a project's details and link to a page
+  - Display Project Objects on the page to display an overview of all projects
+  - Parse a Projects.json file that will contain project names, descriptions, and images (optional)
+  - Search function using the names of the projects
+- Develop a template Project page
+  - Allow for quick generation of project pages for smaller projects
+  - Have a list passed in so there can be images without needing a specific file creation
+  - Use the details from the parsed JSON file above for information
+- Develop the About Me page
+  - Write and display a simple message about my software development journey.
+  - Link to the contact page.
+- Develop the Contact Me
+  - Have contact information for professional contact
+  - Link to external media (LinkedIn, Github, etc.)
+- Launch site with Firebase
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Non-Essential Backlog
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Create functionality for sending me a message from the site
+  - Require a valid email (regex) and message
+  - Optional Subject and name line
+- Use Website to create a custom email and have routing
+
+# Resources Used and Citations
+
+- This project was bootstrapped with React and using [Vite's instructions](https://vitejs.dev/guide/).
+- This project uses [Lucide React Icons](https://lucide.dev/guide/packages/lucide-react) for many of the basic icons.
+- For many of the basic website objects, I used [Shadcn UI elements](https://ui.shadcn.com/).
+- When starting this project, I used Brian Design's YouTube video [React Website Tutorial - Beginner React JS Project Fully Responsive](https://www.youtube.com/watch?v=I2UBjN5ER4s&t=2456s) to help learn the basics for this project.
+- Some projects shown were not developed by myself. See each project for the full credits and details!

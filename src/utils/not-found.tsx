@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import "./not-found.css";
 
@@ -18,7 +18,9 @@ function NotFound() {
         valid webpage.
       </h1>
 
-      <Button>Home Page</Button>
+      <Button>
+        <Link to="/">Home Page</Link>
+      </Button>
     </div>
   );
 }

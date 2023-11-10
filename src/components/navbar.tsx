@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { HomeIcon, Bars3Icon, XCircleIcon } from "@heroicons/react/24/solid";
+import { Home, Menu, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import "./navbar.css";
 import { ModeToggle } from "@/components/mode-toggle";
@@ -30,7 +30,7 @@ function Navbar() {
         <div className="navbar-container">
           <div className="navbar-left-container">
             <Link to="/" className="navbar-logo">
-              <HomeIcon height={40} color="white" />
+              <Home height={40} color="white" />
               Robert Kilkenny
             </Link>
             <ul className="navbar-site-list">
@@ -107,12 +107,16 @@ function Navbar() {
             </ul>
             <div className="menu-icon" onClick={handleClick}>
               {click ? (
-                <XCircleIcon height={40} color="black" />
+                <XCircle height={40} color="black" />
               ) : (
-                <Bars3Icon height={40} color="blue" />
+                <Menu height={40} color="blue" />
               )}
             </div>
-            {button && <Button>Contact Me</Button>}
+            {button && (
+              <Button>
+                <Link to="/contact-me">Contact Me</Link>
+              </Button>
+            )}
           </div>
           <ModeToggle />
         </div>
