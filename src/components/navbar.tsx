@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { HomeIcon, Bars3Icon, XCircleIcon } from "@heroicons/react/24/solid";
-import Button from "../utils/button";
+import { Button } from "@/components/ui/button";
 import "./navbar.css";
+import { ModeToggle } from "@/components/mode-toggle";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -68,7 +69,6 @@ function Navbar() {
               </li>
             </ul>
           </div>
-
           <div className="navbar-right-container">
             <ul className={click ? "nav-menu-active" : "nav-menu-inactive"}>
               <li className="nav-item">
@@ -112,17 +112,9 @@ function Navbar() {
                 <Bars3Icon height={40} color="blue" />
               )}
             </div>
-            {button && (
-              <Button
-                _buttonStyle="btn-outline"
-                _buttonSize="btn-medium"
-                _routing="/contact-me"
-                _onClick={closeMobileMenu}
-              >
-                Contact Me
-              </Button>
-            )}
+            {button && <Button>Contact Me</Button>}
           </div>
+          <ModeToggle />
         </div>
       </nav>
     </>

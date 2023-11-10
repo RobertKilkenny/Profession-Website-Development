@@ -1,25 +1,28 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/web-components/navbar";
-import Home from "./components/web-components/home";
-import About from "./components/web-components/about";
-import NotFound from "./components/utilities/not-found";
-import "./App.css";
-import "./components/utilities/default-page.css";
+import Navbar from "./components/navbar";
+import Home from "./components/home";
+import About from "./components/about";
+import NotFound from "./utils/not-found";
+import "./utils/default-page.css";
+
+import { ThemeProvider } from "./components/theme-provider";
 
 function App() {
   return (
-    <div className="site-holder">
-      <Router>
-        <Navbar />
-        <div className="page-holder">
-          <Routes>
-            <Route path="/" Component={Home} />
-            <Route path="/about-me" Component={About} />
-            <Route path="*" Component={NotFound} />
-          </Routes>
-        </div>
-      </Router>
+    <div>
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <Router>
+          <Navbar />
+          <div>
+            <Routes>
+              <Route path="/" Component={Home} />
+              <Route path="/about-me" Component={About} />
+              <Route path="*" Component={NotFound} />
+            </Routes>
+          </div>
+        </Router>
+      </ThemeProvider>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Button from "./button";
+import { Button } from "@/components/ui/button";
 import "./not-found.css";
 
 const handleClick = () => {};
@@ -18,14 +18,7 @@ function NotFound() {
         valid webpage.
       </h1>
 
-      <Button
-        _routing=""
-        _buttonSize="btn-large"
-        _usePalette={true}
-        _palette={["#E6D20A", "#000000", "#000000", "#FFDC00"]}
-      >
-        Home Page
-      </Button>
+      <Button>Home Page</Button>
     </div>
   );
 }
