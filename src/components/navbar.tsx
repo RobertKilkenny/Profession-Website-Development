@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { HomeIcon, Bars3Icon, XCircleIcon } from "@heroicons/react/24/solid";
-import Button from "./../utilities/button";
+import Button from "../utils/button";
 import "./navbar.css";
 
 function Navbar() {

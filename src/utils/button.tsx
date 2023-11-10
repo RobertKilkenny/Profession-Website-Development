@@ -70,11 +70,7 @@ const Button = ({
     setIsHovered(false);
   };
 
-  const checkButtonStyle = STYLES.includes(_buttonStyle || "")
-    ? _buttonStyle
-    : "";
-  const checkButtonSize = SIZES.includes(_buttonSize) ? _buttonSize : SIZES[0];
-  const _className = `btn ${checkButtonStyle} ${checkButtonSize}`;
+  const _className = `btn ${_buttonSize} ${_buttonStyle}`;
 
   const _styling =
     COLORS.get(_buttonColor)?.[0] || _usePalette
@@ -108,7 +104,7 @@ const Button = ({
       : {};
 
   //console.log(`value ${_className} gives styling ${_styling}`);
-  if (!_usePalette && _buttonStyle == "" && checkButtonStyle == "") {
+  if (!_usePalette && _buttonStyle == "" && COLORS.has(_buttonColor)) {
     var report = `A button does not have any type of styling!! It the following children: ${children}`;
     console.log(report);
   }
