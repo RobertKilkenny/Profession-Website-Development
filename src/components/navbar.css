@@ -13,7 +13,6 @@
   flex-direction: row;
   align-items: center;
   font-size: 1.5rem;
-  position: -webkit-sticky;
   position: sticky;
 }
 
@@ -32,6 +31,7 @@
   justify-content: flex-start;
   flex-direction: row;
   align-items: center;
+  padding-left: 1rem;
 }
 
 .navbar-right-container {
@@ -40,6 +40,7 @@
   justify-content: flex-end;
   flex-direction: row;
   align-items: center;
+  padding-right: 1rem;
 }
 
 .navbar-logo {
@@ -69,18 +70,12 @@
   height: 100%;
 }
 
-.nav-spacer {
-  display: flex;
-  color: var(--gray-text-1);
-  text-align: center;
-}
-
 .nav-links {
   display: flex;
   color: var(--gray-text-1);
   align-items: center;
   text-decoration: none;
-  padding: 0.5rem 0.5rem;
+  padding: 0rem 0.5rem;
   height: 100%;
 }
 

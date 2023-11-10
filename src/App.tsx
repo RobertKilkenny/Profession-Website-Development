@@ -4,16 +4,17 @@ import Home from "./components/home";
 import About from "./components/about";
 import NotFound from "./utils/not-found";
 import "./utils/default-page.css";
+import "./App.css";
 
 import { ThemeProvider } from "./components/theme-provider";
 
 function App() {
   return (
-    <div>
+    <div className="site-holder">
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
         <Router>
           <Navbar />
-          <div>
+          <div className="page-holder">
             <Routes>
               <Route path="/" Component={Home} />
               <Route path="/about-me" Component={About} />
