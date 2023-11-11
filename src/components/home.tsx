@@ -3,9 +3,10 @@ import { Separator } from "@/components/ui/separator";
 function home() {
   return (
     <>
-      <div className="home-container">
-        Robert Kilkenny's Portfolio Website
+      <div className="page-content-holder">
+        <h1>Robert Kilkenny's Portfolio Website</h1>
         <Separator />
+        <p className="main-content-paragraph">This site is to help</p>
       </div>
     </>
   );

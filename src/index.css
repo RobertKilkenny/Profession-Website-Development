@@ -74,3 +74,16 @@
     @apply bg-background text-foreground;
   }
 }
+
+.page-content-holder{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.main-content-paragraph{
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  text-justify: left;
+}
