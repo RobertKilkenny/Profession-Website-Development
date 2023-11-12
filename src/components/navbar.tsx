@@ -15,11 +15,11 @@ function Navbar() {
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <Link to="/" className="navbar-logo">
-            <Home height={40} />
-          </Link>
           <div className="navbar-left-container">
-            <menu className="navbar-site-list divide-x-2 divide-white">
+            <menu className="navbar-site-list divide-x-2">
+              <Link to="/" className="navbar-image">
+                <Home height={40} />
+              </Link>
               <li className="nav-item">
                 <Link
                   to="/projects"
@@ -44,9 +44,7 @@ function Navbar() {
           <div className="navbar-right-container">
             <menu
               className={
-                click
-                  ? "nav-menu-active"
-                  : "nav-menu-inactive divide-x-2 divide-white"
+                click ? "nav-menu-active" : "nav-menu-inactive divide-x-2"
               }
             >
               <li className="nav-item">
@@ -67,6 +65,7 @@ function Navbar() {
                   Contact Me
                 </Link>
               </li>
+              <li></li>
             </menu>
             <div className="menu-icon" onClick={handleClick}>
               {click ? (
@@ -75,8 +74,10 @@ function Navbar() {
                 <Menu height={40} color="blue" />
               )}
             </div>
+            <div className="navbar-image">
+              <ModeToggle />
+            </div>
           </div>
-          <ModeToggle />
         </div>
       </nav>
     </>

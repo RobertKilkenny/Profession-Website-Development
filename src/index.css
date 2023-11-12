@@ -82,33 +82,35 @@
   align-items: center;
 }
 
-.main-header {
+/* Component styling */
+h1 {
   width: 100%;
   padding: 0.5rem 0rem 0.5rem 0rem;
   text-align: center;
   font-size: 60px;
 }
 
-.main-subheader {
+h2 {
   width: 100%;
   padding: 0rem 0rem 0.5rem 0rem;
   text-align: center;
   font-size: 35px;
 }
 
-.main-content-holder {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 0.5rem 15% 0.5rem 15%;
-}
-
-.main-content-paragraph {
+p {
   text-align: left;
   width: 100%;
   text-indent: 1em;
   font-size: 25px;
   padding-bottom: 1rem;
+}
+
+/*Unique Properties styling*/
+.main-content-holder {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0.5rem 15% 0.5rem 15%;
 }
 
 .main-content-text {

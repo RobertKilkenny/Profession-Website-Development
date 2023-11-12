@@ -7,16 +7,16 @@ function about() {
     <div>
       {/* All css attributes from index.css  */}
       <div className="page-content-holder">
-        <h1 className="main-header">About Me</h1>
+        <h1>About Me</h1>
         <Separator />
         <div className="main-content-holder">
-          <p className="main-content-paragraph">
+          <p>
             Hi, I am Robert Kilkenny, currently a student at the University of
             Florida (UF) going into my senior year. I plan to graduate in
             December of 2024 with a Bachelor's Degree in Computer Science and a
             minor in Mathematics.
           </p>
-          <p className="main-content-paragraph">
+          <p>
             I run a club at UF about creating video games called "DevLUp" to
             help students learn about coding principles like using GitHub,
             Object Oriented Programming, and debugging methods. I became
@@ -25,7 +25,7 @@ function about() {
             and creating a game with Unity or Unreal can offer a lot to students
             and improve their coding skills and literacy!
           </p>
-          <p className="main-content-paragraph">
+          <p>
             My experiences running a club and working in different fields have
             taught me a lot about working as a team member and as a leader.
             Throughout my early career as a software engineer, I have worked
@@ -34,7 +34,7 @@ function about() {
             using! I have these projects detailed on my Project List page and
             feel free to reach out to me!
           </p>
-          <div className="object-container-horizon ">
+          <div className="object-container-horizon">
             <Button>
               <Link to="/projects">Project List</Link>
             </Button>

@@ -6,13 +6,13 @@ function home() {
     <>
       {/* All css attributes from index.css  */}
       <div className="page-content-holder">
-        <h1 className="main-header">Hi, I am Robert Kilkenny!</h1>
-        <h2 className="main-subheader">
+        <h1>Hi, I am Robert Kilkenny!</h1>
+        <h2>
           <i>Welcome to my Portfolio Website.</i>
         </h2>
         <Separator />
         <div className="main-content-holder">
-          <p className="main-content-text">
+          <a className="main-content-text">
             You can find all of my projects in{" "}
             <Link to="/projects">
               <strong>Project List</strong>
@@ -26,7 +26,7 @@ function home() {
             <Link to="/contact-me">
               <strong>Contact Me.</strong>
             </Link>
-          </p>
+          </a>
         </div>
       </div>
     </>
