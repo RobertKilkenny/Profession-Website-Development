@@ -6,7 +6,7 @@ import NotFound from "./utils/not-found";
 import "./utils/default-page.css";
 import "./App.css";
 
-import { ThemeProvider } from "./components/theme-provider";
+import { ThemeProvider } from "./utils/theme-provider";
 
 function App() {
   return (

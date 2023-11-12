@@ -22,31 +22,20 @@ function Navbar() {
             <menu className="navbar-site-list divide-x-2 divide-white">
               <li className="nav-item">
                 <Link
-                  to="/project-1"
-                  className="nav-links"
-                  onClick={closeMobileMenu}
-                >
-                  Project 1
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link
-                  to="/project-2"
-                  className="nav-links"
-                  onClick={closeMobileMenu}
-                >
-                  Project 2
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link
                   to="/projects"
                   className="nav-links"
                   onClick={closeMobileMenu}
                 >
-                  Website
+                  <strong>Project List</strong>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/project-website"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
+                  Website Project
                 </Link>
               </li>
             </menu>
@@ -60,16 +49,6 @@ function Navbar() {
                   : "nav-menu-inactive divide-x-2 divide-white"
               }
             >
-              <li className="nav-item">
-                <Link
-                  to="/projects"
-                  className="nav-links"
-                  onClick={closeMobileMenu}
-                >
-                  Project List
-                </Link>
-              </li>
-
               <li className="nav-item">
                 <Link
                   to="/about-me"

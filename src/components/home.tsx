@@ -14,7 +14,7 @@ function home() {
         <div className="main-content-holder">
           <p className="main-content-text">
             You can find all of my projects in{" "}
-            <Link to="/project-list">
+            <Link to="/projects">
               <strong>Project List</strong>
             </Link>{" "}
             or more information about me in{" "}
