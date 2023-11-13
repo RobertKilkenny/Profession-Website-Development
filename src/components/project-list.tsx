@@ -13,14 +13,14 @@ import "./project-list.css";
 import { Button } from "./ui/button";
 
 export interface Project {
-  id: string;
-  name: string;
-  description: string;
-  folder_name: string;
-  cover_image: string;
-  extension: string;
-  tags: string[];
-  ongoing: boolean;
+  id: "";
+  name: "";
+  description: "";
+  folder_name: "";
+  cover_image: "";
+  extension: "";
+  tags: [];
+  ongoing: true;
 }
 
 export async function getProjectList(): Promise<Project[]> {
