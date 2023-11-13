@@ -18,8 +18,9 @@ export interface Project {
   description: "";
   folder_name: "";
   cover_image: "";
+  cycling_images: string[];
   extension: "";
-  tags: [];
+  tags: string[];
   ongoing: true;
 }
 

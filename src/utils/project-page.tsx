@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
+import { Separator } from "@/components/ui/separator";
 import { Project, getProjectList } from "@/components/project-list";
 import NotFound from "./not-found";
-import ReactMarkdown from "react-markdown";
 
 type ProjectDetailsParams = {
   id: string;
@@ -16,7 +17,12 @@ enum Status {
 
 type State =
   | { status: Status.Loading }
-  | { status: Status.Loaded; project: Project; content: string }
+  | {
+      status: Status.Loaded;
+      project: Project;
+      content: string;
+      ShouldCycleImages: boolean;
+    }
   | { status: Status.Error };
 
 const ProjectDetails: React.FC = () => {
@@ -43,6 +49,7 @@ const ProjectDetails: React.FC = () => {
           status: Status.Loaded,
           project: projectData,
           content: content,
+          ShouldCycleImages: projectData.cycling_images.length != 0,
         });
       }
     };
@@ -54,14 +61,32 @@ const ProjectDetails: React.FC = () => {
   switch (state.status) {
     case Status.Loaded:
       return (
-        <div>
+        <div className="page-content-holder">
           <h1>{state.project.name}</h1>
-          <ReactMarkdown>{state.content}</ReactMarkdown>
+          <a className="main-content-text">{state.project.description}</a>
+          <Separator />
+          {state.ShouldCycleImages && (
+            <img
+              width={250}
+              src={"/data/"
+                .concat(state.project.extension)
+                .concat(
+                  state.project.cycling_images[
+                    Math.floor(
+                      Math.random() * state.project.cycling_images.length
+                    )
+                  ]
+                )}
+            ></img>
+          )}
+          <div className="main-content-holder">
+            <ReactMarkdown>{state.content}</ReactMarkdown>
+          </div>
         </div>
       );
 
     case Status.Loading:
-      return <a className="main-content-text">Loading...</a>;
+      return <div className="main-content-text">Loading...</div>;
 
     default:
       return <NotFound />;

@@ -6,6 +6,7 @@
       "description": "The process of building my personal website to show off my different coding projects I have done over the years.",
       "folder_name": "website",
       "cover_image": "",
+      "cycling_images": [],
       "extension": "website",
       "tags": ["TypeScript", "CSS", "React"],
       "ongoing": true
@@ -16,6 +17,7 @@
       "description": "A compilation of the games I have made with a team within the short window of a game jam (usually between 48-72 hours).",
       "folder_name": "game-jams",
       "cover_image": "",
+      "cycling_images": ["/vite.svg"],
       "extension": "game-jams",
       "tags": ["C#", "Unity", "Unreal Engine"],
       "ongoing": true
@@ -26,6 +28,7 @@
       "description": "The process of building my personal website to show off my different coding projects I have done over the years.",
       "folder_name": "ocean-shader",
       "cover_image": "",
+      "cycling_images": [],
       "extension": "ocean-shader",
       "tags": ["C++", "OpenGL"],
       "ongoing": true
