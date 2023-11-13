@@ -30,3 +30,10 @@ Working on the website for a while now when I found out that using the `create-r
 - To start this, I just made a new website using Vite and then ported over the objects I made for this.
 - I referenced the [vite setup](https://ui.shadcn.com/docs/installation/vite) to get ShadCN setup and change how I was using Tailwind CSS.
 - I had to do several rounds of debugging as it seemed that the functionality was not porting. It ended up being an issue with some of the files from `create-react-app` leaking into the new version.
+
+## Task 5: Making the Project List Object
+
+Now I wanted to develop a simple webpage that displays all of the projects as cells within a JSON that contains the data for each project I have done or am currently working on. Also, I will need the Router in App.tsx to iterate through that JSON file to make sure that it catches all potential Routes as I add more projects to the JSON file.
+
+- I started by creating the JSON and making the project list file iterate through each element in the JSON to create a custom Card for it (from ShadCN). Since it uses a Promise to do this (as I can't assume the database will be reached quickly enough), I added a "loading..." text that will take its place in the event it doesn't work as intended.
+  - Because I used a promise, I had to tinker around with different ways of implementing this because React would not take the component as long as it involved a promise directly.

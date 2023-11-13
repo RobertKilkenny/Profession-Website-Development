@@ -12,10 +12,10 @@ function NotFound() {
         src="./assets/vite.svg"
         alt="./assets/vite.svg"
       />
-      <h1 className="main-content-text">
+      <a className="main-content-text">
         The page "{window.location.href}" does not exist! Please return to a
         valid webpage.
-      </h1>
+      </a>
 
       <Button>
         <Link to="/">Home Page</Link>

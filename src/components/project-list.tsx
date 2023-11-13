@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {} from "@/components/ui/card";
 import "./project-list.css";
 
 interface Project {
@@ -43,27 +44,29 @@ const projectList = () => {
   }
 
   const list = (
-    <div className="project-object-holder">
+    <>
       {loading ? (
-        <></>
+        <a className="main-content-text">Loading...</a>
       ) : (
-        data.map((project) => (
-          <Card key={project.id}>
-            <CardHeader>
-              <div>
-                <CardTitle>{project.name}</CardTitle>
-                <CardDescription></CardDescription>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p>{project.description}</p>
-              <img src={project.cover_image} alt="" />
-            </CardContent>
-            <CardFooter>{project.ongoing && <p>is ongoing</p>}</CardFooter>
-          </Card>
-        ))
+        <div className="project-object-holder">
+          {data.map((project) => (
+            <Card key={project.id}>
+              <CardHeader>
+                <div>
+                  <CardTitle>{project.name}</CardTitle>
+                  <CardDescription></CardDescription>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p>{project.description}</p>
+                <img src={project.cover_image} alt="" />
+              </CardContent>
+              <CardFooter>{project.ongoing && <p>is ongoing</p>}</CardFooter>
+            </Card>
+          ))}
+        </div>
       )}
-    </div>
+    </>
   );
   return (
     <div className="page-content-holder">
