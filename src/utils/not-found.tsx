@@ -1,7 +1,5 @@
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-
-const handleClick = () => {};
 
 function NotFound() {
   return (

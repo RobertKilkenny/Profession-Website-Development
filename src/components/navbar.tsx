@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Home, Menu, XCircle } from "lucide-react";
 import { ModeToggle } from "@/components/mode-toggle";
 import "./navbar.css";
