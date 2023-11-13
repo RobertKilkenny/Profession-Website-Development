@@ -12,7 +12,7 @@ import {} from "@/components/ui/card";
 import "./project-list.css";
 import { Button } from "./ui/button";
 
-interface Project {
+export interface Project {
   id: string;
   name: string;
   description: string;
@@ -23,6 +23,17 @@ interface Project {
   ongoing: boolean;
 }
 
+export async function getProjectList(): Promise<Project[]> {
+  const result = await fetch("/data/projects.json", {
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  });
+  const json = await result.json();
+  return json["projects"];
+}
+
 const projectList = () => {
   const [data, setData] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
@@ -30,7 +41,7 @@ const projectList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await getProject();
+        const result = await getProjectList();
         setData(result);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -41,10 +52,6 @@ const projectList = () => {
 
     fetchData();
   }, []);
-  async function getProject(): Promise<Project[]> {
-    const result = await fetch("http://localhost:3000/projects");
-    return await result.json();
-  }
 
   const list = (
     <>
@@ -69,7 +76,7 @@ const projectList = () => {
                 {/*From index.css*/}
                 <div className="object-container-horizon">
                   <Button>
-                    <Link to={"/project-".concat(project.extension)}>
+                    <Link to={"/project/".concat(project.extension)}>
                       View Project
                     </Link>
                   </Button>
