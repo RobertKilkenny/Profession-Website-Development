@@ -16,6 +16,7 @@ interface Project {
   description: string;
   folder_name: string;
   cover_image: string;
+  extension: string;
   tags: string[];
   ongoing: boolean;
 }
@@ -46,6 +47,7 @@ const projectList = () => {
   const list = (
     <>
       {loading ? (
+        /*ClassName comes from index.css*/
         <a className="main-content-text">Loading...</a>
       ) : (
         <div className="project-object-holder">
@@ -70,7 +72,7 @@ const projectList = () => {
   );
   return (
     <div className="page-content-holder">
-      {/*First className comes from index.css*/}
+      {/*ClassName comes from index.css*/}
       <h1>Here are the Projects I have done!</h1>
       {list}
     </div>
