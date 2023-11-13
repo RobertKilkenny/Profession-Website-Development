@@ -5,11 +5,7 @@ function NotFound() {
   return (
     <div className="body">
       <div className="subheader">Error 404: Page Not Found!</div>
-      <img
-        className="main-content-image-sq"
-        src="./assets/vite.svg"
-        alt="./assets/vite.svg"
-      />
+      <img className="main-content-image-sq" src="/assets/vite.svg" />
       <a className="main-content-text">
         The page "{window.location.href}" does not exist! Please return to a
         valid webpage.

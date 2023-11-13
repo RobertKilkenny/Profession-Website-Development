@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   Card,
   CardContent,
@@ -9,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import {} from "@/components/ui/card";
 import "./project-list.css";
+import { Button } from "./ui/button";
 
 interface Project {
   id: string;
@@ -52,7 +54,7 @@ const projectList = () => {
       ) : (
         <div className="project-object-holder">
           {data.map((project) => (
-            <Card key={project.id}>
+            <Card key={project.id} className="project-cell">
               <CardHeader>
                 <div>
                   <CardTitle>{project.name}</CardTitle>
@@ -63,7 +65,19 @@ const projectList = () => {
                 <p>{project.description}</p>
                 <img src={project.cover_image} alt="" />
               </CardContent>
-              <CardFooter>{project.ongoing && <p>is ongoing</p>}</CardFooter>
+              <CardFooter>
+                {/*From index.css*/}
+                <div className="object-container-horizon">
+                  <Button>
+                    <Link to={"/project-".concat(project.extension)}>
+                      View Project
+                    </Link>
+                  </Button>
+                  {project.ongoing && (
+                    <a className="main-content-text">is ongoing</a>
+                  )}
+                </div>
+              </CardFooter>
             </Card>
           ))}
         </div>
