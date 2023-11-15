@@ -18,12 +18,13 @@ This is just a list of different features and methodologies I used when creating
 ## Ground Rules for the Codebase
 
 - All unique page layouts should be stored in the same file as the .tsx file
+  - Did not do for some files like `index.tsx` or `because this is a rule for *my additions to the framework*
 - Most webpages should use the relevant generic .css file for formatting so that each of their special .css files (if there are any), are cut down to just the parts that are unique for that object.
 - Keeping a labeling system for attributes used in web object that is not part of the should be done for easy debugging!
 - At the minimum, having a comment block at the top of all other .css files used will help a lot
 - Remember to only **import a .css once** for performance. Generic .css files can be imported in `App.tsx` to avoid duplicate references.
 
-### Formatting and Naming
+### Formatting
 
 - All React Object files should be PascalCase (ex. "ReactObject.tsx")
 - Other Typescript files should be kebab-case (ex. "web-logic.tsx")
@@ -39,3 +40,10 @@ This is just a list of different features and methodologies I used when creating
   2. Complementary Libraries (ex. ShadCN [think "not essential but nice to have"])
   3. Personal React Object imports (ex. App, Home, NavBar)
   4. CSS Files [Should only be imported once!!!] (ex. App.css, Home.css, NavBar.css)
+
+### Other Nice Things To Do
+- Make enums' values for those that track states or specific stages `strings` that briefly describe what state/stage it is in
+- Use state machines with embedded values to have type and state specific variables (saves time and helps with challenging bad assumptions)
+- Using Prettier can make documents actually readable and I use `2 spaces` for tabs currently!
+- I like having very sorted file structures, like how I have `ui` inside of `components` and `utils` seperate from it because they are a unique subset of objects
+- Having details in commits helps find where things broke, take the 30 seconds to document the changes and make them **small**

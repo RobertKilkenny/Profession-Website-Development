@@ -27,7 +27,7 @@ type State =
 
 const ProjectDetails: React.FC = () => {
   const { id } = useParams<ProjectDetailsParams>();
-  const [state, setStatus] = useState<State>({ status: Status.Loading });
+  const [state, setState] = useState<State>({ status: Status.Loading });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -46,7 +46,7 @@ const ProjectDetails: React.FC = () => {
         }
         const content = await response.text();
 
-        setStatus({
+        setState({
           status: Status.Loaded,
           project: projectData,
           content: content,

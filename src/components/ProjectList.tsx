@@ -39,7 +39,7 @@ export async function getProjectList(): Promise<Project[]> {
   return json["projects"];
 }
 
-const projectList = () => {
+const ProjectList = () => {
   const [data, setData] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -106,4 +106,4 @@ const projectList = () => {
     </div>
   );
 };
-export default projectList;
+export default ProjectList;
