@@ -9,8 +9,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import "./project-list.css";
 import { Button } from "./ui/button";
+import "./ProjectList.css";
 
 export interface Project {
   id: "";
@@ -31,6 +31,10 @@ export async function getProjectList(): Promise<Project[]> {
       Accept: "application/json",
     },
   });
+
+  // For testing loading page feature
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+
   const json = await result.json();
   return json["projects"];
 }

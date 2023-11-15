@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { Separator } from "@/components/ui/separator";
-import { Project, getProjectList } from "@/components/project-list";
-import NotFound from "./not-found";
+import { Project, getProjectList } from "@/components/ProjectList";
+import NotFound from "./NotFound";
 
 type ProjectDetailsParams = {
   id: string;

@@ -1,13 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/navbar";
-import Home from "./components/home";
-import About from "./components/about";
-import ProjectList from "./components/project-list";
-import NotFound from "./utils/not-found";
-import ProjectPage from "./utils/project-page";
-import "./utils/default-page.css";
+import Navbar from "./components/NavBar";
+import Home from "./components/Home";
+import About from "./components/About";
+import ProjectList from "./components/ProjectList";
+import NotFound from "./utils/NotFound";
+import ProjectPage from "./utils/ProjectPage";
+import { ThemeProvider } from "./utils/ThemeProvider";
 import "./App.css";
-import { ThemeProvider } from "./utils/theme-provider";
 
 const App: React.FC = () => {
   return (

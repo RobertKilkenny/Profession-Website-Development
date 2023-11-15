@@ -13,6 +13,7 @@ This is just a list of different features and methodologies I used when creating
 - For the Project List feature
   - Make sure that the folder name is unique or it invalids both addresses!!
   - Folder references should go "/data/[folder_name]/" whatever because it is in the public folder
+- Use `rfc` to create a very basic return function for a new class!
 
 ## Ground Rules for the Codebase
 
@@ -21,3 +22,20 @@ This is just a list of different features and methodologies I used when creating
 - Keeping a labeling system for attributes used in web object that is not part of the should be done for easy debugging!
 - At the minimum, having a comment block at the top of all other .css files used will help a lot
 - Remember to only **import a .css once** for performance. Generic .css files can be imported in `App.tsx` to avoid duplicate references.
+
+### Formatting and Naming
+
+- All React Object files should be PascalCase (ex. "ReactObject.tsx")
+- Other Typescript files should be kebab-case (ex. "web-logic.tsx")
+- CSS files should share the **exact name** for the file they are made for (ex. "ReactObject.css")
+- Global Variables, when unavoidable, should be UPPER_SNAKE_CASE (ex. "MEANING_OF_LIFE = 42")
+- Local Typescript Variables should always be camelCase (ex. "sodaCalled:string = "pop")
+- Local CSS Variables should always be kebab-case (ex. "--best-color = "#ff80ed" [according to [them](https://www.color-hex.com/popular-colors.php)])
+- Any confusion should be resolved with the [Google Typescript Style Guide](https://google.github.io/styleguide/tsguide.html#local-variable-declarations)
+  - All these given rules should not confilt with this guide besides the file naming rules, but that makes developing better (in my opinion)
+
+-Imports should be:
+  1. Core libraries (ex. React, React Router Dom)
+  2. Complementary Libraries (ex. ShadCN [think "not essential but nice to have"])
+  3. Personal React Object imports (ex. App, Home, NavBar)
+  4. CSS Files [Should only be imported once!!!] (ex. App.css, Home.css, NavBar.css)

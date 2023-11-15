@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Home, Menu, XCircle } from "lucide-react";
-import { ModeToggle } from "@/components/mode-toggle";
-import "./navbar.css";
+import { ModeToggle } from "@/components/ModeToggle";
+import "./NavBar.css";
 
 function Navbar() {
   const [click, setClick] = useState(false);
