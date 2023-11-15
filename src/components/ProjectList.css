@@ -8,10 +8,10 @@
 }
 
 .project-cell {
-  min-width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-width: 300px;
 }
 
 @media (max-width: 1200px) {
