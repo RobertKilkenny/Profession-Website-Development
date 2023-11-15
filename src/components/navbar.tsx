@@ -18,7 +18,7 @@ function Navbar() {
   const closeMobileMenu = () => setClick(false);
 
   return (
-    <nav className="navbar">
+    <nav className="bg-gradient-to-r from-navbar-start via-navbar-middle to-navbar-end navbar">
       <div className="navbar-container">
         <div className="navbar-left-container">
           <menu className="navbar-site-list divide-x-2">

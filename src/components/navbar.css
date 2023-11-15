@@ -1,12 +1,4 @@
 .navbar {
-  background: linear-gradient(
-    90deg,
-    rgb(0, 0, 100) 0%,
-    rgb(0, 0, 125) 25%,
-    rgb(0, 0, 155) 50%,
-    rgb(0, 0, 125) 75%,
-    rgb(0, 0, 100) 100%
-  );
   min-height: 110px;
   width: 100%;
   display: flex;
