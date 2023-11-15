@@ -10,6 +10,8 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "./ui/button";
+import { Separator } from "@/components/ui/separator";
+import LoadingProjectList from "@/utils/LoadingProjectList";
 import "./ProjectList.css";
 
 export interface Project {
@@ -32,8 +34,8 @@ export async function getProjectList(): Promise<Project[]> {
     },
   });
 
-  // For testing loading page feature
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  // For testing loading page feature numOfSeconds * 1000
+  //await new Promise((resolve) => setTimeout(resolve, 3 * 1000));
 
   const json = await result.json();
   return json["projects"];
@@ -57,12 +59,11 @@ const ProjectList = () => {
 
     fetchData();
   }, []);
-
+  const title = loading ? "Loading..." : "Here are the Projects I have done!";
   const list = (
     <>
       {loading ? (
-        /*ClassName comes from index.css*/
-        <a className="main-content-text">Loading...</a>
+        <LoadingProjectList />
       ) : (
         <div className="project-object-holder">
           {data.map((project) => (
@@ -101,7 +102,8 @@ const ProjectList = () => {
   return (
     <div className="page-content-holder">
       {/*ClassName comes from index.css*/}
-      <h1>Here are the Projects I have done!</h1>
+      <h1>{title}</h1>
+      <Separator />
       {list}
     </div>
   );

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 function NotFound() {
   return (
-    <div className="body">
+    <div className="page-content-holder">
       <div className="subheader">Error 404: Page Not Found!</div>
       <img className="main-content-image-sq" src="/assets/vite.svg" />
       <a className="main-content-text">

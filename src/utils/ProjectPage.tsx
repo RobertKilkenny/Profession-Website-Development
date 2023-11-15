@@ -55,7 +55,7 @@ const ProjectDetails: React.FC = () => {
       }
     };
     fetchData().catch(() => {
-      // setStatus({ status: Status.Error });
+      setState({ status: Status.Error });
     });
   }, []);
 
