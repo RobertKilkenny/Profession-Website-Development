@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import "./project-list.css";
 import { Button } from "./ui/button";
 
@@ -76,13 +76,15 @@ const projectList = () => {
               <CardFooter>
                 {/*From index.css*/}
                 <div className="object-container-horizon">
-                  <Button>
+                  <Button size={"lg"}>
                     <Link to={"/project/".concat(project.extension)}>
                       View Project
                     </Link>
                   </Button>
                   {project.ongoing && (
-                    <a className="main-content-text">is ongoing</a>
+                    <Badge variant={"secondary"}>
+                      <a className="secondary-text">ongoing</a>
+                    </Badge>
                   )}
                 </div>
               </CardFooter>

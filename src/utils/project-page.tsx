@@ -40,6 +40,7 @@ const ProjectDetails: React.FC = () => {
           .concat("/content.md");
 
         const response = await fetch(fileLocation);
+        console.log(fileLocation);
         if (!response.ok) {
           throw new Error(`${response.status} ${response.statusText}`);
         }
@@ -54,7 +55,7 @@ const ProjectDetails: React.FC = () => {
       }
     };
     fetchData().catch(() => {
-      setStatus({ status: Status.Error });
+      // setStatus({ status: Status.Error });
     });
   }, []);
 

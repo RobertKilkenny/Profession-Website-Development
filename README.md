@@ -44,6 +44,6 @@ Website created using create-react-app to display projects I've made pursuing a 
 
 - This project was bootstrapped with React and using [Vite's instructions](https://vitejs.dev/guide/).
 - This project uses [Lucide React Icons](https://lucide.dev/guide/packages/lucide-react) for many of the basic icons.
-- For many of the basic website objects, I used [Shadcn UI elements](https://ui.shadcn.com/).
+- For many of the basic website objects, I used [Shadcn UI elements](https://ui.shadcn.com/) and used [Net Ninjas Course on ShadCN](https://www.youtube.com/playlist?list=PL4cUxeGkcC9h1NXLUuiAQ7c4UtdEInqma) to get started.
 - When starting this project, I used Brian Design's YouTube video [React Website Tutorial - Beginner React JS Project Fully Responsive](https://www.youtube.com/watch?v=I2UBjN5ER4s&t=2456s) to help learn the basics for this project.
 - Some projects shown were not developed by myself. See each project for the full credits and details!

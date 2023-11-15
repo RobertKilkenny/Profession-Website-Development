@@ -121,6 +121,14 @@ p {
   padding-bottom: 1rem;
 }
 
+.secondary-text {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  padding-bottom: 0.25rem;
+}
+
 .object-container-vert {
   display: flex;
   flex-direction: column;

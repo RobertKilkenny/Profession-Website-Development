@@ -1,6 +1,17 @@
 {
   "projects":[
     {
+      "id": "-1",
+      "name": "Testing Block",
+      "description": "To test if this feature works as intended.",
+      "folder_name": "testing",
+      "cover_image": "",
+      "cycling_images": ["/vite.svg", "/logo192.png"],
+      "extension": "testing",
+      "tags": ["TypeScript", "C#", "React", "Unity"],
+      "ongoing": true
+    },
+    {
       "id": "0",
       "name": "Personal Portfolio Website",
       "description": "The process of building my personal website to show off my different coding projects I have done over the years.",
@@ -17,7 +28,7 @@
       "description": "A compilation of the games I have made with a team within the short window of a game jam (usually between 48-72 hours).",
       "folder_name": "game-jams",
       "cover_image": "",
-      "cycling_images": ["/vite.svg"],
+      "cycling_images": [],
       "extension": "game-jams",
       "tags": ["C#", "Unity", "Unreal Engine"],
       "ongoing": true

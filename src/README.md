@@ -10,7 +10,9 @@ This is just a list of different features and methodologies I used when creating
 - All webpages (besides error pages and redirection pages) are stored in "/src/components"
 - All utilities like the NavBar and the unique Button classes are in "/src/components/utils"
 - Any feature that you want to implement using a Shadcn UI Element should be imported using `npx shadcn-ui@latest add [element name]`
-- To use the Project List feature, make sure to have the `Project.json` running. I currently use `json-server --watch ./data/projects.json --port 3000` for development testing.
+- For the Project List feature
+  - Make sure that the folder name is unique or it invalids both addresses!!
+  - Folder references should go "/data/[folder_name]/" whatever because it is in the public folder
 
 ## Ground Rules for the Codebase
 
