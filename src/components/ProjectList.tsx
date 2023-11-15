@@ -11,7 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "./ui/button";
 import { Separator } from "@/components/ui/separator";
-import LoadingProjectList from "@/utils/LoadingProjectList";
+import LoadingProjectList from "@/utils/loading-pages/LoadingProjectList";
 import "./ProjectList.css";
 
 export interface Project {
@@ -35,7 +35,7 @@ export async function getProjectList(): Promise<Project[]> {
   });
 
   // For testing loading page feature numOfSeconds * 1000
-  await new Promise((resolve) => setTimeout(resolve, 1000 * 1000));
+  // await new Promise((resolve) => setTimeout(resolve, 1000 * 1000));
 
   const json = await result.json();
   return json["projects"];
