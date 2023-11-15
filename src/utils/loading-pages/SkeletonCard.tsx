@@ -11,15 +11,16 @@ export default function SkeletonCard() {
   return (
     <Card className="project-cell">
       <CardHeader>
-        <Skeleton className="fake-header" />
+        <Skeleton className="h-10 fake-header" />
       </CardHeader>
       <CardContent>
-        <Skeleton className="fake-text-full" />
-        <Skeleton className="fake-text-full" />
-        <Skeleton className="fake-text-half" />
+        <Skeleton className="h-4 fake-text-full" />
+        <Skeleton className="h-4 fake-text-full" />
+        <Skeleton className="h-4 fake-text-full" />
+        <Skeleton className="h-4 fake-text-half" />
       </CardContent>
       <CardFooter>
-        <Skeleton className="fake-button" />
+        <Skeleton className="flex h-10 w-2/3" />
       </CardFooter>
     </Card>
   );

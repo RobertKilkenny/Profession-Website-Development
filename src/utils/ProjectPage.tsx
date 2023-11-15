@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import { Separator } from "@/components/ui/separator";
 import { Project, getProjectList } from "@/components/ProjectList";
 import NotFound from "./NotFound";
+import DefaultPageSkeleton from "./loading-pages/DefaultPageSkeleton";
 
 type ProjectDetailsParams = {
   id: string;
@@ -87,7 +88,7 @@ const ProjectDetails: React.FC = () => {
       );
 
     case Status.Loading:
-      return <div className="main-content-text">Loading...</div>;
+      return <DefaultPageSkeleton />;
 
     default:
       return <NotFound />;

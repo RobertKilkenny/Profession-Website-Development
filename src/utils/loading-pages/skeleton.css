@@ -1,14 +1,19 @@
 .fake-header {
   display: flex;
-  height: 1.5rem;
   width: 100%;
 }
 
 .fake-text-full {
   display: flex;
-  height: 0.75rem;
   width: 100%;
   margin-top: 0.5rem;
+}
+
+.fake-text-indent {
+  display: flex;
+  width: 93.6%;
+  margin-top: 0.5rem;
+  margin-left: 4rem;
 }
 
 .fake-text-half {
@@ -16,12 +21,6 @@
   height: 0.75rem;
   width: 50%;
   margin-top: 0.5rem;
-}
-
-.fake-button {
-  display: flex;
-  height: 36px;
-  width: 40%;
 }
 
 .fake-image-sq {
