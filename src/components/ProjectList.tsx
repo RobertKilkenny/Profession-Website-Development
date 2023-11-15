@@ -35,7 +35,7 @@ export async function getProjectList(): Promise<Project[]> {
   });
 
   // For testing loading page feature numOfSeconds * 1000
-  // await new Promise((resolve) => setTimeout(resolve, 3 * 1000));
+  await new Promise((resolve) => setTimeout(resolve, 1000 * 1000));
 
   const json = await result.json();
   return json["projects"];
