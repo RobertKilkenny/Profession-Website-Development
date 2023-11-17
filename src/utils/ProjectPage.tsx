@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { Separator } from "@/components/ui/separator";
 import { Project, getProjectList } from "@/components/ProjectList";
 import NotFound from "./NotFound";
@@ -48,7 +49,7 @@ const ProjectDetails: React.FC = () => {
           throw new Error(`${response.status} ${response.statusText}`);
         }
         const content = await response.text();
-        console.log(projectData);
+        console.log(content);
         setState({
           status: Status.Loaded,
           project: projectData,
@@ -87,8 +88,13 @@ const ProjectDetails: React.FC = () => {
               </CardFooter>
             </Card>
           )}
-          <div className="main-content-holder">
-            <ReactMarkdown>{state.content}</ReactMarkdown>
+          <div>
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              className="main-content-text"
+            >
+              {state.content}
+            </ReactMarkdown>
           </div>
         </div>
       );
