@@ -6,7 +6,6 @@ import { Project, getProjectList } from "@/components/ProjectList";
 import NotFound from "./NotFound";
 import DefaultPageSkeleton from "./loading-pages/DefaultPageSkeleton";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { stat } from "fs";
 
 type ProjectDetailsParams = {
   id: string;
