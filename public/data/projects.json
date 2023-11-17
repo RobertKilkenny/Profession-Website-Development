@@ -6,7 +6,7 @@
       "description": "To test if this feature works as intended.",
       "folder_name": "testing",
       "cover_image": "",
-      "cycling_images": ["/vite.svg", "/logo192.png"],
+      "cycling_images": [["/vite.svg", "vite icon"], ["/logo192.png", "React icon"]],
       "extension": "testing",
       "tags": ["TypeScript", "C#", "React", "Unity"],
       "ongoing": true

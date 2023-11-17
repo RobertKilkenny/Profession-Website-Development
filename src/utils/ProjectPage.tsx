@@ -5,6 +5,8 @@ import { Separator } from "@/components/ui/separator";
 import { Project, getProjectList } from "@/components/ProjectList";
 import NotFound from "./NotFound";
 import DefaultPageSkeleton from "./loading-pages/DefaultPageSkeleton";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { stat } from "fs";
 
 type ProjectDetailsParams = {
   id: string;
@@ -23,8 +25,9 @@ type State =
       project: Project;
       content: string;
       ShouldCycleImages: boolean;
+      cycleIndex: number;
     }
-  | { status: Status.Error };
+  | { status: Status.Error; errorCode: string };
 
 const ProjectDetails: React.FC = () => {
   const { id } = useParams<ProjectDetailsParams>();
@@ -46,17 +49,20 @@ const ProjectDetails: React.FC = () => {
           throw new Error(`${response.status} ${response.statusText}`);
         }
         const content = await response.text();
-
+        console.log(projectData);
         setState({
           status: Status.Loaded,
           project: projectData,
           content: content,
           ShouldCycleImages: projectData.cycling_images.length != 0,
+          cycleIndex: Math.floor(
+            Math.random() * projectData.cycling_images.length
+          ),
         });
       }
     };
-    fetchData().catch(() => {
-      setState({ status: Status.Error });
+    fetchData().catch((error) => {
+      setState({ status: Status.Error, errorCode: error });
     });
   }, []);
 
@@ -66,20 +72,21 @@ const ProjectDetails: React.FC = () => {
         <div className="page-content-holder">
           <h1>{state.project.name}</h1>
           <a className="main-content-text">{state.project.description}</a>
-          <Separator />
+          <Separator className="mb-5" />
           {state.ShouldCycleImages && (
-            <img
-              width={250}
-              src={"/data/"
-                .concat(state.project.extension)
-                .concat(
-                  state.project.cycling_images[
-                    Math.floor(
-                      Math.random() * state.project.cycling_images.length
-                    )
-                  ]
-                )}
-            ></img>
+            <Card>
+              <CardContent>
+                <img
+                  width={250}
+                  src={"/data/"
+                    .concat(state.project.extension)
+                    .concat(state.project.cycling_images[state.cycleIndex][0])}
+                ></img>
+              </CardContent>
+              <CardFooter className="main-content-text">
+                {state.project.cycling_images[state.cycleIndex][1]}
+              </CardFooter>
+            </Card>
           )}
           <div className="main-content-holder">
             <ReactMarkdown>{state.content}</ReactMarkdown>
@@ -91,6 +98,7 @@ const ProjectDetails: React.FC = () => {
       return <DefaultPageSkeleton />;
 
     default:
+      console.log(state.errorCode);
       return <NotFound />;
   }
 };
