@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import ReactMarkdown from "react-markdown";
+import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Separator } from "@/components/ui/separator";
 import { Project, getProjectList } from "@/components/ProjectList";
@@ -72,29 +72,31 @@ const ProjectDetails: React.FC = () => {
         <div className="page-content-holder">
           <h1>{state.project.name}</h1>
           <a className="main-content-text">{state.project.description}</a>
-          <Separator className="mb-5" />
-          {state.ShouldCycleImages && (
-            <Card>
-              <CardContent>
-                <img
-                  width={250}
-                  src={"/data/"
-                    .concat(state.project.extension)
-                    .concat(state.project.cycling_images[state.cycleIndex][0])}
-                ></img>
-              </CardContent>
-              <CardFooter className="main-content-text">
-                {state.project.cycling_images[state.cycleIndex][1]}
-              </CardFooter>
-            </Card>
-          )}
-          <div>
-            <ReactMarkdown
+          <div className="main-content-holder">
+            <Separator className="mb-5" />
+            {state.ShouldCycleImages && (
+              <Card>
+                <CardContent>
+                  <img
+                    width={250}
+                    src={"/data/"
+                      .concat(state.project.extension)
+                      .concat(
+                        state.project.cycling_images[state.cycleIndex][0]
+                      )}
+                  ></img>
+                </CardContent>
+                <CardFooter className="main-content-text">
+                  {state.project.cycling_images[state.cycleIndex][1]}
+                </CardFooter>
+              </Card>
+            )}
+            <Markdown
+              className="main-content-paragraph"
               remarkPlugins={[remarkGfm]}
-              className="main-content-text"
             >
               {state.content}
-            </ReactMarkdown>
+            </Markdown>
           </div>
         </div>
       );
