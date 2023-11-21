@@ -72,13 +72,13 @@ const ProjectDetails: React.FC = () => {
         <div className="page-content-holder">
           <h1>{state.project.name}</h1>
           <a className="main-content-text">{state.project.description}</a>
+          <Separator className="mb-5" />
           <div className="main-content-holder">
-            <Separator className="mb-5" />
             {state.ShouldCycleImages && (
               <Card>
                 <CardContent>
                   <img
-                    width={250}
+                    className="main-content-image-sq"
                     src={"/data/"
                       .concat(state.project.extension)
                       .concat(
