@@ -18,7 +18,7 @@ function home() {
               <strong>Project List</strong>
             </Link>{" "}
             or more information about me in{" "}
-            <Link to="/about-me">
+            <Link to="/about">
               <strong>About Me.</strong>
             </Link>{" "}
             Feel free to look around the site, and if you want to reach out to

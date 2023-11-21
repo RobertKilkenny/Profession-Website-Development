@@ -66,7 +66,17 @@ function Navbar() {
                 Contact Me
               </Link>
             </li>
-            <li></li>
+            {click && (
+              <li>
+                <Link
+                  to="/projects"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
+                  Project List
+                </Link>
+              </li>
+            )}
           </menu>
           <div
             className="menu-icon"

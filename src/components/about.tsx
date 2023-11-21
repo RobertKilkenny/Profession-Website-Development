@@ -39,7 +39,7 @@ function about() {
               <Link to="/projects">Project List</Link>
             </Button>
             <Button>
-              <Link to="/project-website">Website Project Page</Link>
+              <Link to="/project/website">Website Project Page</Link>
             </Button>
             <Button>
               <Link to="/contact-me">Contact Me</Link>
