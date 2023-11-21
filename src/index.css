@@ -114,7 +114,7 @@ p {
   text-align: left;
   width: 100%;
   text-indent: 1em;
-  font-size: 25px;
+  font-size: 20px;
   padding-bottom: 1rem;
 }
 
@@ -141,12 +141,13 @@ p {
   padding-bottom: 1rem;
 }
 
-.main-content-paragraph {
-  display: inline-block;
+.main-content-list {
+  display: initial;
   width: 100%;
   text-align: left;
   font-size: 20px;
   padding-bottom: 1rem;
+  list-style-type: circle;
 }
 
 .main-content-image-sq {

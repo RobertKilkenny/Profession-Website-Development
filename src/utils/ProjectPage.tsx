@@ -92,8 +92,17 @@ const ProjectDetails: React.FC = () => {
               </Card>
             )}
             <Markdown
-              className="main-content-paragraph"
               remarkPlugins={[remarkGfm]}
+              components={{
+                p(props) {
+                  const { node, ...rest } = props;
+                  return <p {...rest} />;
+                },
+                ul(props) {
+                  const { node, ...rest } = props;
+                  return <ul className="main-content-list" {...rest} />;
+                },
+              }}
             >
               {state.content}
             </Markdown>
