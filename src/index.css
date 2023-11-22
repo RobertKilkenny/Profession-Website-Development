@@ -154,7 +154,7 @@ p {
   display: block;
   margin: auto;
   width: 250px;
-  height: 250px;
+  aspect-ratio: 1 / 1;
 }
 
 .secondary-text {
@@ -171,12 +171,19 @@ p {
   border-radius: 50%;
 }
 
+.secondary-content-image-sq {
+  display: block;
+  width: 100px;
+  aspect-ratio: 1 / 1;
+}
+
 .object-container-vert {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   justify-content: space-between;
   align-items: center;
+  padding: 20% 1rem 20% 1rem;
 }
 
 .object-container-horizon {
@@ -185,5 +192,5 @@ p {
   flex-grow: 1;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 20% 1rem 20%;
 }
