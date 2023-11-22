@@ -7,9 +7,7 @@ function home() {
       {/* All css attributes from index.css  */}
       <div className="page-content-holder">
         <h1>Hi, I am Robert Kilkenny!</h1>
-        <h2>
-          <i>Welcome to my Portfolio Website.</i>
-        </h2>
+        <h2>Welcome to my Portfolio Website.</h2>
         <Separator />
         <div className="main-content-holder">
           <a className="main-content-text">

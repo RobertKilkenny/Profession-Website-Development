@@ -35,6 +35,8 @@ export default function ContactMe() {
     fetchData();
   }, []);
 
+  // Most of the css styling here is from index.css
+  // Added a little Tailwind CSS to make the images interact like I want them to
   return (
     <div className="page-content-holder">
       <h1>Have Something to Say?</h1>

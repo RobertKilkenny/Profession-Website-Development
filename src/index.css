@@ -101,13 +101,15 @@ h1 {
   padding: 0.5rem 0rem 0.5rem 0rem;
   text-align: center;
   font-size: 60px;
+  font-weight: bold;
 }
 
 h2 {
   width: 100%;
-  padding: 0rem 0rem 0.5rem 0rem;
+  padding: 0.5rem 0rem 0.5rem 0rem;
   text-align: center;
   font-size: 35px;
+  font-style: italic;
 }
 
 p {
@@ -193,4 +195,46 @@ p {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 20% 1rem 20%;
+}
+
+.object-container-horizon {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 20% 1rem 20%;
+}
+
+.object-container-grid {
+  display: grid;
+  flex-grow: 1;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-content: center;
+  gap: 2rem;
+  padding: 20px 100px;
+}
+
+.grid-cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.hidden-grid-content {
+  overflow: auto;
+  height: 150px;
+}
+
+@media (max-width: 1200px) {
+  .object-container-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .object-container-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }

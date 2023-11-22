@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -12,7 +11,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "./ui/button";
 import { Separator } from "@/components/ui/separator";
 import LoadingProjectList from "@/utils/loading-pages/LoadingProjectList";
-import "./ProjectList.css";
 
 export interface Project {
   id: "";
@@ -65,13 +63,12 @@ const ProjectList = () => {
       {loading ? (
         <LoadingProjectList />
       ) : (
-        <div className="project-object-holder">
+        <div className="object-container-grid">
           {data.map((project) => (
-            <Card key={project.id} className="project-cell">
+            <Card key={project.id} className="grid-cell">
               <CardHeader>
                 <div>
                   <CardTitle>{project.name}</CardTitle>
-                  <CardDescription></CardDescription>
                 </div>
               </CardHeader>
               <CardContent>
@@ -81,11 +78,9 @@ const ProjectList = () => {
               <CardFooter>
                 {/*From index.css*/}
                 <div className="object-container-horizon">
-                  <Button size={"lg"}>
-                    <Link to={"/project/".concat(project.extension)}>
-                      View Project
-                    </Link>
-                  </Button>
+                  <Link to={"/project/".concat(project.extension)}>
+                    <Button size={"lg"}>View Project</Button>
+                  </Link>
                   {project.ongoing && (
                     <Badge variant={"secondary"}>
                       <a className="secondary-text">ongoing</a>

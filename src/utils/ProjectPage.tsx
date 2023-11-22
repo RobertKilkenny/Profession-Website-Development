@@ -71,7 +71,7 @@ const ProjectDetails: React.FC = () => {
       return (
         <div className="page-content-holder">
           <h1>{state.project.name}</h1>
-          <a className="main-content-text">{state.project.description}</a>
+          <h2>{state.project.description}</h2>
           <Separator className="mb-5" />
           <div className="main-content-holder">
             {state.ShouldCycleImages && (
@@ -94,6 +94,7 @@ const ProjectDetails: React.FC = () => {
             <Markdown
               remarkPlugins={[remarkGfm]}
               components={{
+                h1: "h2",
                 p(props) {
                   const { node, ...rest } = props;
                   return <p {...rest} />;
