@@ -29,16 +29,6 @@ type State =
     }
   | { status: Status.Error; errorCode: string };
 
-const CustomUL: React.FC = (props) => {
-  const {...rest } = props;
-  return (<ul className="main-content-list" {...rest}/>)
-}
-
-const CustomP: React.FC = (props) => {
-  const {...rest} = props;
-  return (<p {...rest}/>)
-}
-
   const ProjectDetails: React.FC = () => {
   const { id } = useParams<ProjectDetailsParams>();
   const [state, setState] = useState<State>({ status: Status.Loading });
@@ -104,13 +94,7 @@ const CustomP: React.FC = (props) => {
             <Markdown
               remarkPlugins={[remarkGfm]}
               components={{
-                h1: "h2",
-                p(props) {
-                  return <CustomP {...props}></CustomP>;
-                },
-                ul(props) {
-                  return <CustomUL {...props}></CustomUL>;
-                },
+                h1: "h2"
               }}
             >
               {state.content}

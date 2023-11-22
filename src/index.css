@@ -97,27 +97,39 @@
 
 /* Component styling */
 h1 {
+  display: inline-block;
   width: 100%;
-  padding: 0.5rem 0rem 0.5rem 0rem;
   text-align: center;
   font-size: 60px;
   font-weight: bold;
+  padding: 0.5rem 0rem 0.5rem 0rem;
 }
 
 h2 {
+  display: inline-block;
   width: 100%;
-  padding: 0.5rem 0rem 0.5rem 0rem;
   text-align: center;
   font-size: 35px;
   font-style: italic;
+  padding: 0.5rem 0rem 0.5rem 0rem;
 }
 
 p {
-  text-align: left;
+  display: inline-block;
   width: 100%;
+  text-align: left;
   text-indent: 1em;
   font-size: 20px;
   padding-bottom: 1rem;
+}
+
+ul {
+  display: initial;
+  width: 100%;
+  text-align: left;
+  font-size: 20px;
+  padding-bottom: 1rem;
+  list-style-type: circle;
 }
 
 /*Unique Properties styling*/
@@ -142,15 +154,6 @@ p {
   text-align: center;
   font-size: 20px;
   padding-bottom: 1rem;
-}
-
-.main-content-list {
-  display: initial;
-  width: 100%;
-  text-align: left;
-  font-size: 20px;
-  padding-bottom: 1rem;
-  list-style-type: circle;
 }
 
 .main-content-image-sq {
