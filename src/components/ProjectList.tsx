@@ -11,9 +11,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "./ui/button";
 import { Separator } from "@/components/ui/separator";
 import LoadingProjectList from "@/utils/loading-pages/LoadingProjectList";
+import test from "node:test";
 
 export interface Project {
-  id: "";
+  id: number;
   name: "";
   description: "";
   folder_name: "";
@@ -23,6 +24,8 @@ export interface Project {
   tags: string[];
   ongoing: true;
 }
+
+const isDevelopment = process.env.NODE_ENV === "development";
 
 export async function getProjectList(): Promise<Project[]> {
   const result = await fetch("/data/projects.json", {
@@ -58,6 +61,14 @@ const ProjectList = () => {
     fetchData();
   }, []);
   const title = loading ? "Loading..." : "Here are the Projects I have done!";
+
+  if (!isDevelopment) {
+    const temp = data.filter((project) => {
+      return project.id < 0;
+    });
+    setData(temp);
+  }
+
   const list = (
     <>
       {loading ? (
