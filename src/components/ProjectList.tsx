@@ -11,7 +11,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "./ui/button";
 import { Separator } from "@/components/ui/separator";
 import LoadingProjectList from "@/utils/loading-pages/LoadingProjectList";
-import test from "node:test";
 
 export interface Project {
   id: number;
