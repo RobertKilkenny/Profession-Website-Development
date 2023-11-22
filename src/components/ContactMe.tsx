@@ -56,6 +56,10 @@ export default function ContactMe() {
           ))}
         </div>
         <p className="main-content-text">
+          Feel free to connect with me on{" "}
+          <Link to="https://www.linkedin.com/in/robert-kilkenny3/">
+            <strong>LinkedIn</strong>
+          </Link>{" "}
           or you can email me at <strong>robert.kilkenny7@gmail.com</strong>
         </p>
       </div>
