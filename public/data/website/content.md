@@ -3,12 +3,21 @@ When I started doing projects for computer science, I wanted to have a local pla
 # Current Features
 
 - Developed several static pages to convey basic information
+    - [*Home Page*](/../../)
+        - Has introduction to the site with hyperlinks to important sections
+        - Includes "work in progress disclaimer" since this will be launched while the site is in Beta
+    - [*About Page*](/../../about)
+        - Links to other pages referenced above it
+        - Has Cards that show relevant classes I have taken
+    - [*About Page*](/../../contact-me)
+        - Links to other pages I have that show my work or other career details (LinkedIn, GitHub, and Itch.io currently)
+        - Shows my email (should be redone later to look better)
 - Created a system where all my projects are generated from content in a specific folder and a JSON with the basic information
 - Have different themes that the site can switch between using a mode toggle
 - Made all project pages use Markdown files to extend what I can show
 
 # Planned Features
-
+- Create page to demo all theming colors with ShadCN objects to ensure that the palette is consistent.
 - Hosting this website on either using GitHub or Firebase
 - Allowing for the contact me to have a unique message input that will be forwarded to my email
 - Have my Game Jam games able to run in browser on this site

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Markdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import ReactMarkdown from "react-markdown";
 import { Separator } from "@/components/ui/separator";
 import { Project, getProjectList } from "@/components/ProjectList";
 import NotFound from "./NotFound";
@@ -91,14 +90,13 @@ type State =
                 </CardFooter>
               </Card>
             )}
-            <Markdown
-              remarkPlugins={[remarkGfm]}
+            <ReactMarkdown
               components={{
                 h1: "h2"
               }}
             >
               {state.content}
-            </Markdown>
+            </ReactMarkdown>
           </div>
         </div>
       );
