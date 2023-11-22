@@ -40,7 +40,7 @@ function Navbar() {
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Website Project
+                Making this Site
               </Link>
             </li>
           </menu>

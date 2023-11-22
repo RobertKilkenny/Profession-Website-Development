@@ -10,7 +10,7 @@ function home() {
         <h2>Welcome to my Portfolio Website.</h2>
         <Separator />
         <div className="main-content-holder">
-          <a className="main-content-text">
+          <p>
             You can find all of my projects in{" "}
             <Link to="/projects">
               <strong>Project List</strong>
@@ -24,7 +24,15 @@ function home() {
             <Link to="/contact-me">
               <strong>Contact Me.</strong>
             </Link>
-          </a>
+          </p>
+          <h2>Please keep in mind that this site is a work in progress!</h2>
+          <p>
+            I plan to update this site periodically. From adding new progress in
+            my current projects to adding more features on the site to make it a
+            better experience to use. All current features are subject to be
+            altered and many of the current feature are made to give a basic
+            structure to host the website.
+          </p>
         </div>
       </div>
     </>
