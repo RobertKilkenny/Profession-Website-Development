@@ -29,7 +29,17 @@ type State =
     }
   | { status: Status.Error; errorCode: string };
 
-const ProjectDetails: React.FC = () => {
+const CustomUL: React.FC = (props) => {
+  const {...rest } = props;
+  return (<ul className="main-content-list" {...rest}/>)
+}
+
+const CustomP: React.FC = (props) => {
+  const {...rest} = props;
+  return (<p {...rest}/>)
+}
+
+  const ProjectDetails: React.FC = () => {
   const { id } = useParams<ProjectDetailsParams>();
   const [state, setState] = useState<State>({ status: Status.Loading });
 
@@ -64,7 +74,7 @@ const ProjectDetails: React.FC = () => {
     fetchData().catch((error) => {
       setState({ status: Status.Error, errorCode: error });
     });
-  }, []);
+  });
 
   switch (state.status) {
     case Status.Loaded:
@@ -96,12 +106,10 @@ const ProjectDetails: React.FC = () => {
               components={{
                 h1: "h2",
                 p(props) {
-                  const { node, ...rest } = props;
-                  return <p {...rest} />;
+                  return <CustomP {...props}></CustomP>;
                 },
                 ul(props) {
-                  const { node, ...rest } = props;
-                  return <ul className="main-content-list" {...rest} />;
+                  return <CustomUL {...props}></CustomUL>;
                 },
               }}
             >

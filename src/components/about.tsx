@@ -22,7 +22,7 @@ async function getClassList() {
   return json["classes"];
 }
 
-function about() {
+function About() {
   const [data, setData] = useState<Class[]>([]);
 
   useEffect(() => {
@@ -111,4 +111,4 @@ function about() {
   );
 }
 
-export default about;
+export default About;

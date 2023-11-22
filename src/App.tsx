@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/NavBar";
-import Home from "./components/Home";
-import About from "./components/About";
 import ContactMe from "./components/ContactMe";
 import ProjectList from "./components/ProjectList";
 import NotFound from "./utils/NotFound";
 import ProjectPage from "./utils/ProjectPage";
 import { ThemeProvider } from "./utils/ThemeProvider";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import About from "./components/About";
 import "./App.css";
 
 const App: React.FC = () => {
