@@ -46,7 +46,7 @@ export default function ContactMe() {
           You can find me here on my different pages
         </p>
 
-        <div className="object-container-horizon space-x-10">
+        <div className="object-container-horizon">
           {data.map((social) => (
             <Link to={social.link} key={social.id}>
               <img

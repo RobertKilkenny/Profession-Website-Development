@@ -71,13 +71,13 @@ function about() {
             feel free to reach out to me!
           </p>
           <div className="object-container-horizon">
-            <Link to="/projects">
+            <Link to="/projects" className="flex justify-center">
               <Button>Project List</Button>
             </Link>
-            <Link to="/project/website">
+            <Link to="/project/website" className="flex justify-center">
               <Button>Website Project Page</Button>
             </Link>
-            <Link to="/contact-me">
+            <Link to="/contact-me" className="flex justify-center">
               <Button>Contact Me</Button>
             </Link>
           </div>
@@ -89,9 +89,11 @@ function about() {
           </a>
           <div className="object-container-grid space-x-5">
             {data.map((Class) => (
-              <Card key={Class.id} className="grid-cell">
-                <CardTitle className="text-accent pb-5">{Class.name}</CardTitle>
-                <Separator />
+              <Card key={Class.id} className="grid-cell bg-accent">
+                <CardTitle className="text-foreground pb-5">
+                  {Class.name}
+                </CardTitle>
+                <Separator className="bg-foreground" />
                 <CardContent className="hidden-grid-content">
                   <a className="main-content-text">{Class.description}</a>
                 </CardContent>

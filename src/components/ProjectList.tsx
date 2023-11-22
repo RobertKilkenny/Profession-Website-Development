@@ -88,7 +88,10 @@ const ProjectList = () => {
               <CardFooter>
                 {/*From index.css*/}
                 <div className="object-container-horizon">
-                  <Link to={"/project/".concat(project.extension)}>
+                  <Link
+                    to={"/project/".concat(project.extension)}
+                    className="flex justify-center"
+                  >
                     <Button size={"lg"}>View Project</Button>
                   </Link>
                   {project.ongoing && (

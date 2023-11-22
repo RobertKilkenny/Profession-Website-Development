@@ -133,6 +133,7 @@ p {
   flex-direction: column;
   width: 100%;
   padding: 0.5rem 15% 0.5rem 15%;
+  align-items: center;
 }
 
 .main-content-text {
@@ -183,7 +184,7 @@ p {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   padding: 20% 1rem 20% 1rem;
 }
@@ -192,18 +193,10 @@ p {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
-  justify-content: space-between;
+  width: 100%;
+  justify-content: space-evenly;
   align-items: center;
-  padding: 1rem 20% 1rem 20%;
-}
-
-.object-container-horizon {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 20% 1rem 20%;
+  padding: 1rem 0 1rem 0;
 }
 
 .object-container-grid {
