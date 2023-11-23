@@ -92,7 +92,8 @@ type State =
             )}
             <ReactMarkdown
               components={{
-                h1: "h2"
+                h1: "h2",
+                h2: "h3"
               }}
             >
               {state.content}
