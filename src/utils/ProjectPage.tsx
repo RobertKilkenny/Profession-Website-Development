@@ -42,6 +42,7 @@ const ProjectDetails: React.FC = () => {
 
     await wait(1000 * 10);
     cycleImages();
+    return;
   }
 
   window.addEventListener("load", cycleImages);
