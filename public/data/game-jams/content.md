@@ -19,6 +19,7 @@
 - Made two types of buttons to clear a level, press and hold buttons
   - _Press buttons:_ Only require a collider to interact with the button
   - _Hold Buttons:_ Requires a collider on it for the user to be able to escape the level
+- Itch.io page can be found [here](https://mckoleman.itch.io/hopshot)
 
 # [Bars, Barns, and Bartering](https://studiokoleman.itch.io/bbb)
 
@@ -42,3 +43,4 @@
 - Different events cue the soundtrack to change. These events are the menu, main game loop, and blackjack
 - Resources are shown at the bottom of the bar and the challenge shows too. The value for the challenge are grayed out if the is not enough of the resource and green if there is
 - Trading cards show if the user has enough of the resource for the giving part of the trade (the top section)
+- Itch.io page can be found [here](https://studiokoleman.itch.io/bbb)

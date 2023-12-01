@@ -26,9 +26,11 @@
     /*Custom theming for site*/
     --navbar-end: 240 100% 60%;
     --navbar-middle: 240 100% 70%;
+    --link: 208, 100%, 50%;
+    --link-hover: 208, 100%, 30%;
 
     --ring: 221.2 83.2% 53.3%;
-    --radius: 0.5rem;
+    --radius: 1rem;
   }
 
   .dark {
@@ -54,6 +56,8 @@
     /*Custom theming for site*/
     --navbar-end: 240 100% 30%;
     --navbar-middle: 240 100% 45%;
+    --link: 208, 100%, 50%;
+    --link-hover: 208, 100%, 80%;
 
     --ring: 224.3 76.3% 48%;
   }
@@ -81,8 +85,10 @@
     /*Custom theming for site*/
     --navbar-end: 106 70% 30%;
     --navbar-middle: 100 80% 40%;
+    --link: 40 95% 40%;
+    --link-hover: 40 100% 60%;
 
-    --ring: 224.3 76.3% 48%;
+    --ring: 224.3 76.3% 50%;
   }
 }
 
@@ -95,7 +101,7 @@
   }
 }
 
-/* Component styling */
+/*----------------------------------- Element styling -----------------------------------*/
 h1 {
   display: inline-block;
   width: 100%;
@@ -132,7 +138,18 @@ p {
   padding-bottom: 1rem;
 }
 
-/* Special formatting for unordered lists*/
+p a {
+  text-decoration: underline;
+  font-weight: 600;
+  @apply text-link-regular;
+
+  &:hover {
+    font-weight: 500;
+    @apply text-link-hover;
+  }
+}
+
+/*------------------------- Special formatting for unordered list -----------------------*/
 ul {
   display: initial;
   text-align: left;
@@ -162,7 +179,7 @@ ul li li li {
   font-weight: lighter;
 }
 
-/*Unique Properties styling*/
+/*------------------------------ Unique Properties styling ------------------------------*/
 .page-content-holder {
   display: flex;
   flex-direction: column;

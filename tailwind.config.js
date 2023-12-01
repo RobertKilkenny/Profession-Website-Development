@@ -50,10 +50,15 @@ module.exports = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
 
-        "navbar": {
-          "start": "hsl(var(--navbar-end))",
-          "middle": "hsl(var(--navbar-middle))",
-          "end": "hsl(var(--navbar-end))",
+        // Custom Variables from index.css
+        navbar: {
+          start: "hsl(var(--navbar-end))",
+          middle: "hsl(var(--navbar-middle))",
+          end: "hsl(var(--navbar-end))",
+        },
+        link: {
+          regular: "hsl(var(--link))",
+          hover: "hsl(var(--link-hover))"
         },
 
         ring: "hsl(var(--ring))",
