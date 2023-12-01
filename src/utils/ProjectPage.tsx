@@ -36,15 +36,16 @@ const ProjectDetails: React.FC = () => {
   const wait = (n: number) => new Promise((resolve) => setTimeout(resolve, n));
 
   async function cycleImages() {
+    await wait(1000 * 10);
     if (state.status != Status.Loaded || !state.ShouldCycleImages) return;
     if (cycleIndex >= state.project.cycling_images.length - 1) setCycleIndex(0);
     else setCycleIndex(cycleIndex + 1);
-
-    await wait(1000 * 10);
     cycleImages();
   }
 
-  window.addEventListener("load", cycleImages);
+  window.addEventListener("load", function () {
+    cycleImages();
+  });
 
   useCallback(() => {
     const fetchData = async () => {
