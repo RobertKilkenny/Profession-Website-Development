@@ -32,17 +32,6 @@
       "extension": "game-jams",
       "tags": ["C#", "Unity", "Unreal Engine"],
       "ongoing": true
-    },
-    {
-      "id": 2,
-      "name": "Ocean Shader Simulation",
-      "description": "The process of building my personal website to show off my different coding projects I have done over the years.",
-      "folder_name": "ocean-shader",
-      "cover_image": "",
-      "cycling_images": [],
-      "extension": "ocean-shader",
-      "tags": ["C++", "OpenGL"],
-      "ongoing": true
     }
   ]
 }
