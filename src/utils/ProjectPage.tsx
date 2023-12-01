@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect as useCallback } from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { Separator } from "@/components/ui/separator";
@@ -35,37 +35,53 @@ const ProjectDetails: React.FC = () => {
 
   const wait = (n: number) => new Promise((resolve) => setTimeout(resolve, n));
 
-  const cycleImages = () => {
+  async function cycleImages() {
     if (state.status != Status.Loaded || !state.ShouldCycleImages) return;
     if (cycleIndex >= state.project.cycling_images.length - 1) setCycleIndex(0);
     else setCycleIndex(cycleIndex + 1);
-  };
 
-  useEffect(() => {
+    await wait(1000 * 10);
+    cycleImages();
+  }
+
+  window.addEventListener("load", cycleImages);
+
+  useCallback(() => {
     const fetchData = async () => {
       const projects = await getProjectList();
-      const projectData = projects.find((item) => item.extension === id);
+      try {
+        const projectData = projects.find((item) => item.extension === id);
+        if (
+          (!projectData && state.status == Status.Error) ||
+          (state.status == Status.Loaded &&
+            projectData &&
+            state.project.id == projectData.id)
+        )
+          return;
 
-      if (projectData) {
-        const fileLocation = "/data/"
-          .concat(projectData.folder_name)
-          .concat("/content.md");
+        if (projectData) {
+          const fileLocation = "/data/"
+            .concat(projectData.folder_name)
+            .concat("/content.md");
 
-        const response = await fetch(fileLocation);
-        if (!response.ok) {
-          throw new Error(`${response.status} ${response.statusText}`);
+          const response = await fetch(fileLocation);
+          if (!response.ok) {
+            throw new Error(`${response.status} ${response.statusText}`);
+          }
+          const content = await response.text();
+          setState({
+            status: Status.Loaded,
+            project: projectData,
+            content: content,
+            ShouldCycleImages: projectData.cycling_images.length != 0,
+            cycleIndex: cycleIndex,
+          });
+        } else {
+          throw new Error("Page does not exist!");
         }
-        const content = await response.text();
-        setState({
-          status: Status.Loaded,
-          project: projectData,
-          content: content,
-          ShouldCycleImages: projectData.cycling_images.length != 0,
-          cycleIndex: cycleIndex,
-        });
+      } catch (error: any) {
+        setState({ status: Status.Error, errorCode: error });
       }
-      await wait(1000 * 10);
-      cycleImages();
     };
     fetchData().catch((error) => {
       setState({ status: Status.Error, errorCode: error });

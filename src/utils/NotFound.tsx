@@ -7,17 +7,16 @@ function NotFound() {
       <div className="subheader">Error 404: Page Not Found!</div>
       <img
         className="main-content-image-sq"
-        src="/assets/vite.svg"
+        src="/favicon.png"
         alt="Error Image"
       />
-      <a className="main-content-text">
+      <h4 className="main-content-text">
         The page "{window.location.href}" does not exist! Please return to a
         valid webpage.
-      </a>
-
-      <Button>
-        <Link to="/">Home Page</Link>
-      </Button>
+      </h4>
+      <Link to="/">
+        <Button>Home Page</Button>
+      </Link>
     </div>
   );
 }
