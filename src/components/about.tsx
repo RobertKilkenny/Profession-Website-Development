@@ -83,10 +83,10 @@ function About() {
           </div>
           <Separator className="mt-10 mb-10 bg-foreground" />
           <h2>Classes I've Taken</h2>
-          <a className="main-content-text">
+          <p className="main-content-text">
             A short list of classes I've taken that have improved me as a
             software developer.
-          </a>
+          </p>
           <div className="object-container-grid space-x-5">
             {data.map((Class) => (
               <Card key={Class.id} className="grid-cell bg-accent">
@@ -95,12 +95,12 @@ function About() {
                 </CardTitle>
                 <Separator className="bg-foreground" />
                 <CardContent className="hidden-grid-content">
-                  <a className="main-content-text">{Class.description}</a>
+                  <p className="main-content-text">{Class.description}</p>
                 </CardContent>
                 <CardFooter>
-                  <a className="main-content-text pt-5">
+                  <p className="main-content-text pt-5">
                     <strong>Skills Learned:</strong> {Class.tags.join(", ")}
-                  </a>
+                  </p>
                 </CardFooter>
               </Card>
             ))}
