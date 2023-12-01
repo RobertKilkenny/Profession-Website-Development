@@ -127,7 +127,7 @@ p {
   display: inline-block;
   width: 100%;
   text-align: left;
-  text-indent: 1em;
+  text-indent: 1rem;
   font-size: 20px;
   padding-bottom: 1rem;
 }
@@ -138,6 +138,10 @@ ul {
   text-align: left;
   font-size: 20px;
   width: 100%;
+}
+
+ul p {
+  text-indent: 0rem;
 }
 
 ul li {
