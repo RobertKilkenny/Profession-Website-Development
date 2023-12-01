@@ -179,6 +179,12 @@ ul li li li {
   font-weight: lighter;
 }
 
+/*---------------------------------- Component Styling ----------------------------------*/
+.project-card-image {
+  display: block;
+  height: 300px;
+  padding: 10px;
+}
 /*------------------------------ Unique Properties styling ------------------------------*/
 .page-content-holder {
   display: flex;

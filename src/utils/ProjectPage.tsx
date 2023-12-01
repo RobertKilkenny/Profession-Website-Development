@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { Project, getProjectList } from "@/components/ProjectList";
 import NotFound from "./NotFound";
 import DefaultPageSkeleton from "./loading-pages/DefaultPageSkeleton";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 
 type ProjectDetailsParams = {
   id: string;
@@ -28,9 +28,18 @@ type State =
     }
   | { status: Status.Error; errorCode: string };
 
-  const ProjectDetails: React.FC = () => {
+const ProjectDetails: React.FC = () => {
   const { id } = useParams<ProjectDetailsParams>();
   const [state, setState] = useState<State>({ status: Status.Loading });
+  const [cycleIndex, setCycleIndex] = useState(0);
+
+  const wait = (n: number) => new Promise((resolve) => setTimeout(resolve, n));
+
+  const cycleImages = () => {
+    if (state.status != Status.Loaded || !state.ShouldCycleImages) return;
+    if (cycleIndex >= state.project.cycling_images.length - 1) setCycleIndex(0);
+    else setCycleIndex(cycleIndex + 1);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -43,22 +52,20 @@ type State =
           .concat("/content.md");
 
         const response = await fetch(fileLocation);
-        console.log(fileLocation);
         if (!response.ok) {
           throw new Error(`${response.status} ${response.statusText}`);
         }
         const content = await response.text();
-        console.log(content);
         setState({
           status: Status.Loaded,
           project: projectData,
           content: content,
           ShouldCycleImages: projectData.cycling_images.length != 0,
-          cycleIndex: Math.floor(
-            Math.random() * projectData.cycling_images.length
-          ),
+          cycleIndex: cycleIndex,
         });
       }
+      await wait(1000 * 10);
+      cycleImages();
     };
     fetchData().catch((error) => {
       setState({ status: Status.Error, errorCode: error });
@@ -77,23 +84,24 @@ type State =
               <Card>
                 <CardContent>
                   <img
-                    className="main-content-image-sq"
+                    className="project-card-image"
                     src={"/data/"
                       .concat(state.project.extension)
                       .concat(
                         state.project.cycling_images[state.cycleIndex][0]
                       )}
-                  ></img>
+                    alt="Project Image Carousel"
+                  />
+                  <p className="main-content-text">
+                    {state.project.cycling_images[state.cycleIndex][1]}
+                  </p>
                 </CardContent>
-                <CardFooter className="main-content-text">
-                  {state.project.cycling_images[state.cycleIndex][1]}
-                </CardFooter>
               </Card>
             )}
             <ReactMarkdown
               components={{
                 h1: "h2",
-                h2: "h3"
+                h2: "h3",
               }}
             >
               {state.content}
