@@ -95,8 +95,8 @@ const ProjectList = () => {
                     <Button size={"lg"}>View Project</Button>
                   </Link>
                   {project.ongoing && (
-                    <Badge variant={"secondary"}>
-                      <a className="secondary-text">ongoing</a>
+                    <Badge variant={"secondary"} className="justify-center">
+                      <h6 className="secondary-text">ongoing</h6>
                     </Badge>
                   )}
                 </div>

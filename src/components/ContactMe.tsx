@@ -53,6 +53,7 @@ export default function ContactMe() {
                 className="secondary-content-image-sq"
                 src={social.image_location}
                 color="accent"
+                alt="Social Image"
               />
             </Link>
           ))}

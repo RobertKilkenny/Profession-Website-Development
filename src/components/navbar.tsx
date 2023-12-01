@@ -9,7 +9,7 @@ function Navbar() {
 
   const handleClick = () => setClick(!click);
 
-  const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>) => {
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLButtonElement>) => {
     if (event.key == "Enter") {
       setClick(!click);
     }
@@ -78,7 +78,7 @@ function Navbar() {
               </li>
             )}
           </menu>
-          <div
+          <button
             className="menu-icon"
             onClick={handleClick}
             onKeyDown={handleKeyPress}
@@ -88,7 +88,7 @@ function Navbar() {
             ) : (
               <Menu height={40} color="blue" />
             )}
-          </div>
+          </button>
           <div className="navbar-image">
             <ModeToggle />
           </div>
