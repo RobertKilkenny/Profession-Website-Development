@@ -31,7 +31,7 @@ function Navbar() {
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                <strong>Project List</strong>
+                Project List
               </Link>
             </li>
             <li className="nav-item">

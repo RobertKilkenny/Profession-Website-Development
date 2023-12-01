@@ -138,7 +138,7 @@ p {
   padding-bottom: 1rem;
 }
 
-p a {
+a {
   text-decoration: underline;
   font-weight: 600;
   @apply text-link-regular;
