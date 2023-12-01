@@ -142,11 +142,10 @@ a {
   text-decoration: underline;
   font-weight: 600;
   @apply text-link-regular;
-
-  &:hover {
-    font-weight: 500;
-    @apply text-link-hover;
-  }
+}
+a:hover {
+  font-weight: 500;
+  @apply text-link-hover;
 }
 
 /*------------------------- Special formatting for unordered list -----------------------*/
