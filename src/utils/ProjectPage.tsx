@@ -80,14 +80,18 @@ const ProjectDetails: React.FC = () => {
         } else {
           throw new Error("Page does not exist!");
         }
-      } catch (error: any) {
-        setState({ status: Status.Error, errorCode: error });
+      } catch (error: unknown) {
+        if (error instanceof Error) {
+          setState({ status: Status.Error, errorCode: error.message });
+        } else {
+          throw new Error("Something went HORRIBLY wrong.");
+        }
       }
     };
     fetchData().catch((error) => {
       setState({ status: Status.Error, errorCode: error });
     });
-  });
+  }, [cycleIndex, state, id]);
 
   switch (state.status) {
     case Status.Loaded:

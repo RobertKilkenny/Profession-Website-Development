@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Home, Menu, XCircle } from "lucide-react";
 import { ModeToggle } from "@/components/ModeToggle";
-import "./NavBar.css";
+import "@/components/NavBar.css";
 
 function Navbar() {
   const [click, setClick] = useState(false);
