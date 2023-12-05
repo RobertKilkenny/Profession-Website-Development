@@ -4,9 +4,9 @@ import ProjectList from "./components/ProjectList";
 import NotFound from "./utils/NotFound";
 import ProjectPage from "./utils/ProjectPage";
 import { ThemeProvider } from "./utils/ThemeProvider";
-import Home from "@/components/Home";
-import About from "@/components/About";
-import Navbar from "@/components/NavBar";
+import Home from "@/components/Home1";
+import About from "@/components/About1";
+import Navbar from "@/components/NavBar1";
 import "./App.css";
 
 const App: React.FC = () => {
