@@ -27,7 +27,7 @@ export interface Project {
 const isDevelopment = process.env.NODE_ENV === "development";
 
 export async function getProjectList(): Promise<Project[]> {
-  const result = await fetch("/data/projects.json", {
+  const response = await fetch("/data/projects.json", {
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
@@ -37,8 +37,14 @@ export async function getProjectList(): Promise<Project[]> {
   // For testing loading page feature numOfSeconds * 1000
   // await new Promise((resolve) => setTimeout(resolve, 1000 * 1000));
 
-  const json = await result.json();
-  return json["projects"];
+  const json = await response.json();
+  let projects: Project[] = json["projects"];
+  if (!isDevelopment) {
+    projects = projects.filter((project) => {
+      return project.id > 0;
+    });
+  }
+  return projects;
 }
 
 const ProjectList = () => {
@@ -60,13 +66,6 @@ const ProjectList = () => {
     fetchData();
   }, []);
   const title = loading ? "Loading..." : "Here are the Projects I have done!";
-
-  if (!isDevelopment) {
-    const temp = data.filter((project) => {
-      return project.id < 0;
-    });
-    setData(temp);
-  }
 
   const list = (
     <>
