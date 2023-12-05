@@ -28,11 +28,11 @@ When I started doing projects for computer science, I wanted to have a local pla
 
     - Made all project pages use Markdown files to extend what I can show
 
+    - Hosting this website Using Github Pages and routing through CloudFlare
+
 # Planned Features
 
 - Create a page to demo all theming colors with ShadCN objects to ensure that the palette is consistent.
-
-- Hosting this website on either using GitHub or Firebase
 
 - Allowing for the contact me to have a unique message input that will be forwarded to my email
 
