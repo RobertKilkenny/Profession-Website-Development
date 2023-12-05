@@ -41,7 +41,7 @@ export async function getProjectList(): Promise<Project[]> {
   let projects: Project[] = json["projects"];
   if (!isDevelopment) {
     projects = projects.filter((project) => {
-      return project.id > 0;
+      return project.id > -1;
     });
   }
   return projects;
