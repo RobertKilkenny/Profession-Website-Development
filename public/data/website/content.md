@@ -1,5 +1,7 @@
 When I started doing projects for computer science, I wanted to have a local place to show off all of the progress that I had made. Initially, I had it hosted exclusively on GitHub by repositories, but I wanted more control over what I could show on the site. I soon realized that I was not too fond of this solution as it meant that many of the projects' features were only reflected in the README.md files at best. As such, I wanted to develop a site to both serve as my first large-scale coding project and also give me the liberty to show off more of my prior projects. If everything goes well with this website, I want to be able to have some of my projects running on these pages to avoid forcing you to download the repository to test my projects.
 
+GitHub Repository can be found [here](https://github.com/RobertKilkenny/Professional-Website-Development)!
+
 # Current Features
 
 - Developed several static pages to convey basic information
