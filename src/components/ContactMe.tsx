@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Separator } from "./ui/separator";
-import MessageContainer from "@/utils/MessageContainer";
 
 interface Social {
   id: "";
@@ -67,7 +66,6 @@ export default function ContactMe() {
           or you can email me at <strong>robert.kilkenny7@gmail.com</strong>
         </p>
       </div>
-      <MessageContainer />
     </div>
   );
 }
