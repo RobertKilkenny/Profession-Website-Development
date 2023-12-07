@@ -14,11 +14,12 @@ This is just a list of different features and methodologies I used when creating
   - Make sure that the folder name is unique or it invalids both addresses!!
   - Folder references should go "/data/[folder_name]/" whatever because it is in the public folder
 - Use `rfc` to create a very basic return function for a new class!
+- Check out the GitHub action I have in `./.github/workflows` for the automation I included in the website!
 
 ## Ground Rules for the Codebase
 
 - All unique page layouts should be stored in the same file as the .tsx file
-  - Did not do for some files like `index.tsx` or `because this is a rule for *my additions to the framework*
+  - Did not do for some files like `index.tsx` or `because this is a rule for _my additions to the framework_
 - Most webpages should use the relevant generic .css file for formatting so that each of their special .css files (if there are any), are cut down to just the parts that are unique for that object.
 - Keeping a labeling system for attributes used in web object that is not part of the should be done for easy debugging!
 - At the minimum, having a comment block at the top of all other .css files used will help a lot
@@ -27,7 +28,7 @@ This is just a list of different features and methodologies I used when creating
 ### Formatting
 
 - All React Object files should be PascalCase (ex. "ReactObject.tsx")
-- Other Typescript files should be kebab-case (ex. "web-logic.tsx")
+- Other Typescript files should be kebab-case and using .ts instead of tsx (ex. "web-logic.ts")
 - CSS files should share the **exact name** for the file they are made for (ex. "ReactObject.css")
 - Global Variables, when unavoidable, should be UPPER_SNAKE_CASE (ex. "MEANING_OF_LIFE = 42")
 - Local Typescript Variables should always be camelCase (ex. "sodaCalled:string = "pop")
@@ -36,12 +37,14 @@ This is just a list of different features and methodologies I used when creating
   - All these given rules should not confilt with this guide besides the file naming rules, but that makes developing better (in my opinion)
 
 -Imports should be:
-  1. Core libraries (ex. React, React Router Dom)
-  2. Complementary Libraries (ex. ShadCN [think "not essential but nice to have"])
-  3. Personal React Object imports (ex. App, Home, NavBar)
-  4. CSS Files [Should only be imported once!!!] (ex. App.css, Home.css, NavBar.css)
+
+1. Core libraries (ex. React, React Router Dom)
+2. Complementary Libraries (ex. ShadCN [think "not essential but nice to have"])
+3. Personal React Object imports (ex. App, Home, NavBar)
+4. CSS Files [Should only be imported once!!!] (ex. App.css, Home.css, NavBar.css)
 
 ### Other Nice Things To Do
+
 - Make enums' values for those that track states or specific stages `strings` that briefly describe what state/stage it is in
 - Use state machines with embedded values to have type and state specific variables (saves time and helps with challenging bad assumptions)
 - Using Prettier can make documents actually readable and I use `2 spaces` for tabs currently!
