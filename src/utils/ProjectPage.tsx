@@ -2,56 +2,30 @@ import React, { useState, useEffect as useCallback } from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { Separator } from "@/components/ui/separator";
-import { Project, getProjectList } from "@/components/ProjectList";
+import { ProjectDetailsParams, getProjectList, Status, State } from "./functions/project-custom-types";
+import { cycleImages } from "./loading-pages/image-cycling";
 import NotFound from "./NotFound";
 import DefaultPageSkeleton from "./loading-pages/DefaultPageSkeleton";
 import { Card, CardContent } from "@/components/ui/card";
-
-type ProjectDetailsParams = {
-  id: string;
-};
-
-enum Status {
-  Loading = "loading",
-  Loaded = "loaded",
-  Error = "error",
-}
-
-type State =
-  | { status: Status.Loading }
-  | {
-      status: Status.Loaded;
-      project: Project;
-      content: string;
-      ShouldCycleImages: boolean;
-      cycleIndex: number;
-    }
-  | { status: Status.Error; errorCode: string };
 
 const ProjectDetails: React.FC = () => {
   const { id } = useParams<ProjectDetailsParams>();
   const [state, setState] = useState<State>({ status: Status.Loading });
   const [cycleIndex, setCycleIndex] = useState(0);
+  const [isCycling, setIsCycling] = useState(false);
 
-  const wait = (n: number) => new Promise((resolve) => setTimeout(resolve, n));
-
-  async function cycleImages() {
-    await wait(1000 * 10);
-    if (state.status != Status.Loaded || !state.ShouldCycleImages) return;
-    if (cycleIndex >= state.project.cycling_images.length - 1) setCycleIndex(0);
-    else setCycleIndex(cycleIndex + 1);
-    cycleImages();
-  }
-
-  window.addEventListener("load", function () {
-    cycleImages();
+  window.addEventListener("cycleImage", function () {
+    cycleImages(state, setCycleIndex, cycleIndex);
   });
 
+  // Handle loading the slug page and setting what details to show!
   useCallback(() => {
     const fetchData = async () => {
       const projects = await getProjectList();
       try {
         const projectData = projects.find((item) => item.extension === id);
+        // If there is an error that has already been logged (state.status is error) OR
+        // If the page has already loaded the correct project end this early!
         if (
           (!projectData && state.status == Status.Error) ||
           (state.status == Status.Loaded &&
@@ -59,16 +33,20 @@ const ProjectDetails: React.FC = () => {
             state.project.id == projectData.id)
         )
           return;
-
+        
+        // If the data for the project is in the JSON file "project.json"
         if (projectData) {
           const fileLocation = "/data/"
             .concat(projectData.folder_name)
             .concat("/content.md");
 
           const response = await fetch(fileLocation);
+          // If the data cannot be fetched, throw an error (odds are fileDirectory does not exist)
           if (!response.ok) {
             throw new Error(`${response.status} ${response.statusText}`);
           }
+
+          // Grab the data from the markdown file to parse later
           const content = await response.text();
           setState({
             status: Status.Loaded,
@@ -77,6 +55,7 @@ const ProjectDetails: React.FC = () => {
             ShouldCycleImages: projectData.cycling_images.length != 0,
             cycleIndex: cycleIndex,
           });
+          console.log("Loaded data")
         } else {
           throw new Error("Page does not exist!");
         }
@@ -93,6 +72,19 @@ const ProjectDetails: React.FC = () => {
     });
   }, [cycleIndex, state, id]);
 
+  // Send the event out to start the cycling image function
+  if(!isCycling && state.status == Status.Loaded && state.ShouldCycleImages){
+    const event = new Event('cycleImage');
+    window.dispatchEvent(event);
+    setIsCycling(true);
+  }
+
+  // Change the state's image index if it is loaded and the active cycling function has given a new value
+  if(isCycling && state.status == Status.Loaded && state.cycleIndex !== cycleIndex ){
+    state.cycleIndex = cycleIndex;
+  }
+
+  // Display Webpage details
   switch (state.status) {
     case Status.Loaded:
       return (
@@ -103,7 +95,7 @@ const ProjectDetails: React.FC = () => {
           <div className="main-content-holder">
             {state.ShouldCycleImages && (
               <Card>
-                <CardContent>
+                <CardContent className="flex flex-col">
                   <img
                     className="project-card-image"
                     src={"/data/"

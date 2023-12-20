@@ -27,8 +27,9 @@ This is just a list of different features and methodologies I used when creating
 
 ### Formatting
 
-- All React Object files should be PascalCase (ex. "ReactObject.tsx")
+- All React Object files and functions should be PascalCase (ex. "ReactObject.tsx" -> "ReactObject(){}")
 - Other Typescript files should be kebab-case and using .ts instead of tsx (ex. "web-logic.ts")
+- Any non-React functions should be camelCase (ex. "runWebsiteLogic(){}")
 - CSS files should share the **exact name** for the file they are made for (ex. "ReactObject.css")
 - Global Variables, when unavoidable, should be UPPER_SNAKE_CASE (ex. "MEANING_OF_LIFE = 42")
 - Local Typescript Variables should always be camelCase (ex. "sodaCalled:string = "pop")

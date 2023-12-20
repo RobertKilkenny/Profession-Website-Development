@@ -179,15 +179,14 @@ ul li li li {
 }
 
 /*---------------------------------- Component Styling ----------------------------------*/
-.project-card-title {
-  display: flex;
-}
-
 .project-card-image {
   display: block;
   height: 300px;
   padding: 10px;
+  justify-self: center;
+  align-self: center;
 }
+
 /*------------------------------ Unique Properties styling ------------------------------*/
 .page-content-holder {
   display: flex;
