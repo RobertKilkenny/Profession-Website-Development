@@ -25,7 +25,7 @@
     {
       "id": 1,
       "name": "Games made from Game Jams",
-      "description": "A compilation of the games I have made with a team within the short window of a game jam (usually between 48-72 hours).",
+      "description": "A compilation of the games I have made with a team within the short window of a game jam.",
       "folder_name": "game-jams",
       "cover_image": "",
       "cycling_images": [["/Hopshot.0.png", "The logo for Hopshot."],
@@ -44,6 +44,15 @@
       "extension": "game-jams",
       "tags": ["C#", "Unity", "Unreal Engine"],
       "ongoing": true
+    },
+    {
+      "name": "Ocean Waves Simulation",
+      "description": "Create a shader and display it in an application using OpenGL.",
+      "folder_name": "",
+      "cycling_images": [],
+      "extension": "",
+      "tags": ["C++", "OpenGL", "Shaders"],
+      "ongoing": false
     }
   ]
 }
