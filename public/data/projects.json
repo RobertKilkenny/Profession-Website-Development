@@ -48,7 +48,8 @@
     {
       "name": "Ocean Waves Simulation",
       "description": "Create a shader and display it in an application using OpenGL.",
-      "folder_name": "",
+      "folder_name": "ocean-sim",
+      "cover_image": "",
       "cycling_images": [],
       "extension": "",
       "tags": ["C++", "OpenGL", "Shaders"],

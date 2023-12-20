@@ -1,17 +1,12 @@
-
 # Codebase notes and tips
 
-  
-
-This is just a list of different features and methodologies I used when creating this site to help keep it organized in my own way. Maintaining this principles would be best when iterating off of this branch, so it would be smart to take the time to understand what goes where! Go to the [main read me file](../README.md) for the project details and different acknowledgements.
+This is just a list of different features and methodologies I used when creating this site to help keep it organized in my way. Maintaining this principle would be best when iterating off of this branch, so it would be smart to take the time to understand what goes where! Go to the [main read me file](../README.md) for the project details and different acknowledgments.
 
   
 
 ## Getting started with Codebase
 
-  
-
-- To get all dependencies for the code to run, download [Node](https://nodejs.org/en/), use `npm install` in "/" to get all dependences.
+- To get all dependencies for the code to run, download [Node](https://nodejs.org/en/), and use `npm install` in "/" to get all dependencies.
 
 - Use `npm run dev` to run the React App in the [local host](http://localhost:3000/)
 
@@ -25,40 +20,30 @@ This is just a list of different features and methodologies I used when creating
 
 - For the Project List feature
 
-- Make sure that the folder name is unique or it invalids both addresses!!
+- Make sure that the folder name is unique or it invalidates both addresses!!
 
-- `folder_name` assumes that the data for the project is in `"./public/data/".concat(folder_name)`
-  - `cycling_images` uses this same address to find the images!
+- Folder references should go "/data/[folder_name]/" whatever because it is in the public folder
 
 - In the projects.json, each project should be in the format of:
 ```
 {
-
 "name": "",
-
 "description": "",
-
 "folder_name": "",
-
+"cover_image": "",
 "cycling_images": [],
-
 "extension": "",
-
 "tags": [],
-
 "ongoing": false
-
 }
 ```
-- Use `rfc` to create a very basic return function for a new class!
+- Use `rfc` to create a fundamental return function for a new class!
 
 - Check out the GitHub action I have in `./.github/workflows` for the automation I included in the website!
 
   
 
 ## Ground Rules for the Codebase
-
-  
 
 - All unique page layouts should be stored in the same file as the .tsx file
 
@@ -76,11 +61,9 @@ This is just a list of different features and methodologies I used when creating
 
 ### Formatting
 
-  
-
 - All React Object files and functions should be PascalCase (ex. "ReactObject.tsx" -> "ReactObject(){}")
 
-- Other Typescript files should be kebab-case and using .ts instead of tsx (ex. "web-logic.ts")
+- Other Typescript files should be kebab-case and use .ts instead of tsx (ex. "web-logic.ts")
 
 - Any non-React functions should be camelCase (ex. "runWebsiteLogic(){}")
 
@@ -88,40 +71,29 @@ This is just a list of different features and methodologies I used when creating
 
 - Global Variables, when unavoidable, should be UPPER_SNAKE_CASE (ex. "MEANING_OF_LIFE = 42")
 
-- Local Typescript Variables should always be camelCase (ex. "sodaCalled:string = "pop")
+- Local Typescript Variables should always be camelCase (ex. "sodaCalled: string = "pop")
 
 - Local CSS Variables should always be kebab-case (ex. "--best-color = "#ff80ed" [according to [them](https://www.color-hex.com/popular-colors.php)])
 
 - Any confusion should be resolved with the [Google Typescript Style Guide](https://google.github.io/styleguide/tsguide.html#local-variable-declarations)
 
-- All these given rules should not confilt with this guide besides the file naming rules, but that makes developing better (in my opinion)
+- All these given rules should not conflict with this guide besides the file naming rules, but that makes developing better (in my opinion)
 
-  
+- Imports should be:
+  1. Core libraries (ex. React, React Router Dom)
 
--Imports should be:
+  2. Complementary Libraries (ex. ShadCN [think "not essential but nice to have"])
 
-  
+  3. Personal React Object imports (ex. App, Home, NavBar)
 
-1. Core libraries (ex. React, React Router Dom)
-
-2. Complementary Libraries (ex. ShadCN [think "not essential but nice to have"])
-
-3. Personal React Object imports (ex. App, Home, NavBar)
-
-4. CSS Files [Should only be imported once!!!] (ex. App.css, Home.css, NavBar.css)
+  4. CSS Files [Should only be imported once!!!] (ex. App.css, Home.css, NavBar.css)
 
   
 
 ### Other Nice Things To Do
 
-  
-
 - Make enums' values for those that track states or specific stages `strings` that briefly describe what state/stage it is in
-
-- Use state machines with embedded values to have type and state specific variables (saves time and helps with challenging bad assumptions)
-
-- Using Prettier can make documents actually readable and I use `2 spaces` for tabs currently!
-
-- I like having very sorted file structures, like how I have `ui` inside of `components` and `utils` seperate from it because they are a unique subset of objects
-
-- Having details in commits helps find where things broke, take the 30 seconds to document the changes and make them **small**
+- Use state machines with embedded values to have type and state-specific variables (saves time and helps with challenging bad assumptions)
+- Using Prettier can make documents readable, and I currently use `2 spaces` for tabs!
+- I like having very sorted file structures, like how I have `ui` inside of `components` and `utils` separate from it because they are a unique subset of objects
+- Having details in commits helps find where things broke, take the 30 seconds to document the changes, and make them **small**
