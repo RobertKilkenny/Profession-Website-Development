@@ -14,6 +14,7 @@ import LoadingProjectList from "@/utils/loading-pages/LoadingProjectList";
 import {
   Project,
   getProjectList,
+  readJsonDate,
 } from "@/utils/Custom functions/project-custom-types";
 
 const ProjectList = () => {
@@ -53,7 +54,7 @@ const ProjectList = () => {
                 <p>
                   {project.description}
                   <br />
-                  <i>Started in {project.start_year}</i>
+                  <i>Started {readJsonDate(project.start_time)}</i>
                 </p>
                 {project.cover_image && (
                   <img

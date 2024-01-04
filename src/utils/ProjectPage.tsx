@@ -99,7 +99,10 @@ const ProjectDetails: React.FC = () => {
       return (
         <div className="page-content-holder">
           <h1>{state.project.name}</h1>
-          <h2>{state.project.description}</h2>
+          <h2>
+            {state.project.description} <br /> Started in{" "}
+            {state.project.start_time}
+          </h2>
           <Separator className="mb-5" />
           <div className="main-content-holder">
             {state.ShouldCycleImages && (

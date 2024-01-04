@@ -34,7 +34,8 @@ This is just a list of different features and methodologies I used when creating
   {
   "id": ,
   "name": "",
-  "start_year": 20xx,
+  "start_time": "MM/YYYY",
+  "end_time": "",
   "description": "",
   "folder_name": "",
   "cover_image": "",
