@@ -11,7 +11,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "./ui/button";
 import { Separator } from "@/components/ui/separator";
 import LoadingProjectList from "@/utils/loading-pages/LoadingProjectList";
-import { Project, getProjectList } from "@/utils/functions/project-custom-types";
+import {
+  Project,
+  getProjectList,
+  readJsonDate,
+} from "@/utils/Custom functions/project-custom-types";
 
 const ProjectList = () => {
   const [data, setData] = useState<Project[]>([]);
@@ -47,8 +51,21 @@ const ProjectList = () => {
                 </div>
               </CardHeader>
               <CardContent>
-                <p>{project.description}</p>
-                <img src={project.cover_image} alt="" />
+                <p>
+                  {project.description}
+                  <br />
+                  <i>Started {readJsonDate(project.start_time)}</i>
+                </p>
+                {project.cover_image && (
+                  <img
+                    src={"/data/".concat(
+                      project.folder_name,
+                      "/",
+                      project.cover_image
+                    )}
+                    alt=""
+                  />
+                )}
               </CardContent>
               <CardFooter>
                 {/*From index.css*/}

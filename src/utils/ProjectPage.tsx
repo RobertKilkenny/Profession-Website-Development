@@ -2,11 +2,17 @@ import React, { useState, useEffect as useCallback } from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { Separator } from "@/components/ui/separator";
-import { ProjectDetailsParams, getProjectList, Status, State } from "./functions/project-custom-types";
+import {
+  ProjectDetailsParams,
+  getProjectList,
+  Status,
+  State,
+} from "./Custom functions/project-custom-types";
 import { cycleImages } from "./loading-pages/image-cycling";
+import { readJsonDate } from "./Custom functions/project-custom-types";
 import NotFound from "./NotFound";
 import DefaultPageSkeleton from "./loading-pages/DefaultPageSkeleton";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 
 const ProjectDetails: React.FC = () => {
   const { id } = useParams<ProjectDetailsParams>();
@@ -33,7 +39,7 @@ const ProjectDetails: React.FC = () => {
             state.project.id == projectData.id)
         )
           return;
-        
+
         // If the data for the project is in the JSON file "project.json"
         if (projectData) {
           const fileLocation = "/data/"
@@ -55,7 +61,7 @@ const ProjectDetails: React.FC = () => {
             ShouldCycleImages: projectData.cycling_images.length != 0,
             cycleIndex: cycleIndex,
           });
-          console.log("Loaded data")
+          console.log("Loaded data");
         } else {
           throw new Error("Page does not exist!");
         }
@@ -73,14 +79,18 @@ const ProjectDetails: React.FC = () => {
   }, [cycleIndex, state, id]);
 
   // Send the event out to start the cycling image function
-  if(!isCycling && state.status == Status.Loaded && state.ShouldCycleImages){
-    const event = new Event('cycleImage');
+  if (!isCycling && state.status == Status.Loaded && state.ShouldCycleImages) {
+    const event = new Event("cycleImage");
     window.dispatchEvent(event);
     setIsCycling(true);
   }
 
   // Change the state's image index if it is loaded and the active cycling function has given a new value
-  if(isCycling && state.status == Status.Loaded && state.cycleIndex !== cycleIndex ){
+  if (
+    isCycling &&
+    state.status == Status.Loaded &&
+    state.cycleIndex !== cycleIndex
+  ) {
     state.cycleIndex = cycleIndex;
   }
 
@@ -90,25 +100,41 @@ const ProjectDetails: React.FC = () => {
       return (
         <div className="page-content-holder">
           <h1>{state.project.name}</h1>
-          <h2>{state.project.description}</h2>
+          <h2>
+            Started {readJsonDate(state.project.start_time)}
+            {state.project.ongoing ||
+            typeof state.project.end_time == "undefined"
+              ? ""
+              : " and ended ".concat(readJsonDate(state.project.end_time))}
+          </h2>
           <Separator className="mb-5" />
           <div className="main-content-holder">
+            {state.project.github_link && (
+              <h3>
+                <a href={state.project.github_link}>
+                  GitHub Repository can be found here!
+                </a>
+              </h3>
+            )}
             {state.ShouldCycleImages && (
               <Card>
                 <CardContent className="flex flex-col">
                   <img
                     className="project-card-image"
                     src={"/data/"
-                      .concat(state.project.extension)
+                      .concat(state.project.folder_name)
                       .concat(
+                        "/",
                         state.project.cycling_images[state.cycleIndex][0]
                       )}
                     alt="Project Image Carousel"
                   />
+                </CardContent>
+                <CardFooter>
                   <p className="main-content-text">
                     {state.project.cycling_images[state.cycleIndex][1]}
                   </p>
-                </CardContent>
+                </CardFooter>
               </Card>
             )}
             <ReactMarkdown
@@ -116,6 +142,7 @@ const ProjectDetails: React.FC = () => {
                 h1: "h2",
                 h2: "h3",
               }}
+              className="mt-7"
             >
               {state.content}
             </ReactMarkdown>
