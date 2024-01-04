@@ -141,7 +141,7 @@ const ProjectDetails: React.FC = () => {
                 h1: "h2",
                 h2: "h3",
               }}
-              className="mt-5"
+              className="mt-7"
             >
               {state.content}
             </ReactMarkdown>
