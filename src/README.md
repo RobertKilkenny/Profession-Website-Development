@@ -20,7 +20,13 @@ This is just a list of different features and methodologies I used when creating
 
   - Make sure that the folder name is unique or it invalidates both addresses!!
 
-  - Folder references should go **/data/[folder_name]/**
+  - the `"id"` json attribute defines the order of the project list by default so each should be unique and which number you use should be considered with that in mind
+
+    - Please keep the JSON elements in order by their id too please!!!
+
+  - Folders should be located by **./public/data/[folder_name]/**
+
+    - For example, for **./public/data/website** is referenced via `"folder_name": "website",`
 
   - In the projects.json, each project should be in the format of:
 
@@ -28,9 +34,9 @@ This is just a list of different features and methodologies I used when creating
   {
   "id": ,
   "name": "",
-  "start_date": 20xx,
+  "start_year": 20xx,
   "description": "",
-  "folder_name": "/data/",
+  "folder_name": "",
   "cover_image": "",
   "cycling_images": [],
   "extension": "",

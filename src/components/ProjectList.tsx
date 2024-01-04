@@ -50,8 +50,21 @@ const ProjectList = () => {
                 </div>
               </CardHeader>
               <CardContent>
-                <p>{project.description}</p>
-                <img src={project.cover_image} alt="" />
+                <p>
+                  {project.description}
+                  <br />
+                  <i>Started in {project.start_year}</i>
+                </p>
+                {project.cover_image && (
+                  <img
+                    src={"/data/".concat(
+                      project.folder_name,
+                      "/",
+                      project.cover_image
+                    )}
+                    alt=""
+                  />
+                )}
               </CardContent>
               <CardFooter>
                 {/*From index.css*/}
