@@ -2,7 +2,12 @@ import React, { useState, useEffect as useCallback } from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { Separator } from "@/components/ui/separator";
-import { ProjectDetailsParams, getProjectList, Status, State } from "./functions/project-custom-types";
+import {
+  ProjectDetailsParams,
+  getProjectList,
+  Status,
+  State,
+} from "./Custom functions/project-custom-types";
 import { cycleImages } from "./loading-pages/image-cycling";
 import NotFound from "./NotFound";
 import DefaultPageSkeleton from "./loading-pages/DefaultPageSkeleton";
@@ -33,7 +38,7 @@ const ProjectDetails: React.FC = () => {
             state.project.id == projectData.id)
         )
           return;
-        
+
         // If the data for the project is in the JSON file "project.json"
         if (projectData) {
           const fileLocation = "/data/"
@@ -55,7 +60,7 @@ const ProjectDetails: React.FC = () => {
             ShouldCycleImages: projectData.cycling_images.length != 0,
             cycleIndex: cycleIndex,
           });
-          console.log("Loaded data")
+          console.log("Loaded data");
         } else {
           throw new Error("Page does not exist!");
         }
@@ -73,14 +78,18 @@ const ProjectDetails: React.FC = () => {
   }, [cycleIndex, state, id]);
 
   // Send the event out to start the cycling image function
-  if(!isCycling && state.status == Status.Loaded && state.ShouldCycleImages){
-    const event = new Event('cycleImage');
+  if (!isCycling && state.status == Status.Loaded && state.ShouldCycleImages) {
+    const event = new Event("cycleImage");
     window.dispatchEvent(event);
     setIsCycling(true);
   }
 
   // Change the state's image index if it is loaded and the active cycling function has given a new value
-  if(isCycling && state.status == Status.Loaded && state.cycleIndex !== cycleIndex ){
+  if (
+    isCycling &&
+    state.status == Status.Loaded &&
+    state.cycleIndex !== cycleIndex
+  ) {
     state.cycleIndex = cycleIndex;
   }
 

@@ -1,4 +1,4 @@
-import {State, Status} from "@/utils/functions/project-custom-types"
+import {State, Status} from "@/utils/Custom functions/project-custom-types"
 
 const wait = (n: number) => new Promise((resolve) => setTimeout(resolve, n));
 

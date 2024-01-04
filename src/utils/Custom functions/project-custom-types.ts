@@ -5,6 +5,7 @@ export type ProjectDetailsParams = {
   export interface Project {
     id: number;
     name: "";
+    start_date: number;
     description: "";
     folder_name: "";
     cover_image: "";

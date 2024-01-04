@@ -3,6 +3,7 @@
     {
       "id": -1,
       "name": "Testing Block",
+      "start_date": 2002,
       "description": "To test if this feature works as intended.",
       "folder_name": "testing",
       "cover_image": "",

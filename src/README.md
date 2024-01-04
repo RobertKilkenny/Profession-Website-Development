@@ -2,46 +2,46 @@
 
 This is just a list of different features and methodologies I used when creating this site to help keep it organized in my way. Maintaining this principle would be best when iterating off of this branch, so it would be smart to take the time to understand what goes where! Go to the [main read me file](../README.md) for the project details and different acknowledgments.
 
-  
-
 ## Getting started with Codebase
 
 - To get all dependencies for the code to run, download [Node](https://nodejs.org/en/), and use `npm install` in "/" to get all dependencies.
 
 - Use `npm run dev` to run the React App in the [local host](http://localhost:3000/)
 
-- All color variables will be stored in `index.css` within "/src/components/web-components"
+- All color variables will be stored in `index.css` within **/src/components/web-components**
 
-- All webpages (besides error pages and redirection pages) are stored in "/src/components"
+- All webpages (besides error pages and redirection pages) are stored in **/src/components**
 
-- All utilities like the NavBar and the unique Button classes are in "/src/components/utils"
+- All utilities like the NavBar and the unique Button classes are in **/src/components/utils**
 
 - Any feature that you want to implement using a Shadcn UI Element should be imported using `npx shadcn-ui@latest add [element name]`
 
 - For the Project List feature
 
-- Make sure that the folder name is unique or it invalidates both addresses!!
+  - Make sure that the folder name is unique or it invalidates both addresses!!
 
-- Folder references should go "/data/[folder_name]/" whatever because it is in the public folder
+  - Folder references should go **/data/[folder_name]/**
 
-- In the projects.json, each project should be in the format of:
-```
-{
-"name": "",
-"description": "",
-"folder_name": "",
-"cover_image": "",
-"cycling_images": [],
-"extension": "",
-"tags": [],
-"ongoing": false
-}
-```
+  - In the projects.json, each project should be in the format of:
+
+  ```
+  {
+  "id": ,
+  "name": "",
+  "start_date": 20xx,
+  "description": "",
+  "folder_name": "/data/",
+  "cover_image": "",
+  "cycling_images": [],
+  "extension": "",
+  "tags": [],
+  "ongoing": false
+  }
+  ```
+
 - Use `rfc` to create a fundamental return function for a new class!
 
-- Check out the GitHub action I have in `./.github/workflows` for the automation I included in the website!
-
-  
+- Check out the GitHub action I have in **./.github/workflows** for the automation I included in the website!
 
 ## Ground Rules for the Codebase
 
@@ -56,8 +56,6 @@ This is just a list of different features and methodologies I used when creating
 - At the minimum, having a comment block at the top of all other .css files used will help a lot
 
 - Remember to only **import a .css once** for performance. Generic .css files can be imported in `App.tsx` to avoid duplicate references.
-
-  
 
 ### Formatting
 
@@ -80,6 +78,7 @@ This is just a list of different features and methodologies I used when creating
 - All these given rules should not conflict with this guide besides the file naming rules, but that makes developing better (in my opinion)
 
 - Imports should be:
+
   1. Core libraries (ex. React, React Router Dom)
 
   2. Complementary Libraries (ex. ShadCN [think "not essential but nice to have"])
@@ -87,8 +86,6 @@ This is just a list of different features and methodologies I used when creating
   3. Personal React Object imports (ex. App, Home, NavBar)
 
   4. CSS Files [Should only be imported once!!!] (ex. App.css, Home.css, NavBar.css)
-
-  
 
 ### Other Nice Things To Do
 

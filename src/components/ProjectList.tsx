@@ -11,7 +11,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "./ui/button";
 import { Separator } from "@/components/ui/separator";
 import LoadingProjectList from "@/utils/loading-pages/LoadingProjectList";
-import { Project, getProjectList } from "@/utils/functions/project-custom-types";
+import {
+  Project,
+  getProjectList,
+} from "@/utils/Custom functions/project-custom-types";
 
 const ProjectList = () => {
   const [data, setData] = useState<Project[]>([]);
