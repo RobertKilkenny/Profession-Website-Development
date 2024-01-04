@@ -58,12 +58,25 @@
       "github_link": "https://github.com/MCKoleman/OceanSimulation",
       "description": "Create a shader and display it in an application using OpenGL.",
       "folder_name": "ocean-sim",
-      "cover_image": "cover_gif.gif",
+      "cover_image": "",
       "cycling_images": [["cover_gif.gif", "How the ocean simulation looks in the regular view"],
     ["wireframe_view.gif", "The underlying wireframe for the shader."]],
       "extension": "ocean-simulation",
       "tags": ["C++", "OpenGL", "Shaders"],
       "ongoing": false
-    }
+    },
+    {
+      "id": 3,
+      "name": "Creating My Own Minesweeper",
+      "start_time": "10/2021",
+      "end_time": "11/2021",
+      "description": "A class project to create a Minesweeper clone using assets provided by the professor.",
+      "folder_name": "MineSweeper-Clone",
+      "cover_image": "",
+      "cycling_images": [],
+      "extension": "MySweeper",
+      "tags": [],
+      "ongoing": false
+  }
   ]
 }
