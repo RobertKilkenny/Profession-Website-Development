@@ -122,8 +122,9 @@ const ProjectDetails: React.FC = () => {
                   <img
                     className="project-card-image"
                     src={"/data/"
-                      .concat(state.project.extension)
+                      .concat(state.project.folder_name)
                       .concat(
+                        "/",
                         state.project.cycling_images[state.cycleIndex][0]
                       )}
                     alt="Project Image Carousel"
