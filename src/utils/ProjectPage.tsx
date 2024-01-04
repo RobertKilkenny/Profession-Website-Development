@@ -9,9 +9,10 @@ import {
   State,
 } from "./Custom functions/project-custom-types";
 import { cycleImages } from "./loading-pages/image-cycling";
+import { readJsonDate } from "./Custom functions/project-custom-types";
 import NotFound from "./NotFound";
 import DefaultPageSkeleton from "./loading-pages/DefaultPageSkeleton";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 
 const ProjectDetails: React.FC = () => {
   const { id } = useParams<ProjectDetailsParams>();
@@ -100,11 +101,21 @@ const ProjectDetails: React.FC = () => {
         <div className="page-content-holder">
           <h1>{state.project.name}</h1>
           <h2>
-            {state.project.description} <br /> Started in{" "}
-            {state.project.start_time}
+            Started {readJsonDate(state.project.start_time)}
+            {state.project.ongoing ||
+            typeof state.project.end_time == "undefined"
+              ? ""
+              : " and ended ".concat(readJsonDate(state.project.end_time))}
           </h2>
           <Separator className="mb-5" />
           <div className="main-content-holder">
+            {state.project.github_link && (
+              <h3>
+                <a href={state.project.github_link}>
+                  GitHub Repository can be found here!
+                </a>
+              </h3>
+            )}
             {state.ShouldCycleImages && (
               <Card>
                 <CardContent className="flex flex-col">
@@ -117,10 +128,12 @@ const ProjectDetails: React.FC = () => {
                       )}
                     alt="Project Image Carousel"
                   />
+                </CardContent>
+                <CardFooter>
                   <p className="main-content-text">
                     {state.project.cycling_images[state.cycleIndex][1]}
                   </p>
-                </CardContent>
+                </CardFooter>
               </Card>
             )}
             <ReactMarkdown
@@ -128,6 +141,7 @@ const ProjectDetails: React.FC = () => {
                 h1: "h2",
                 h2: "h3",
               }}
+              className="mt-5"
             >
               {state.content}
             </ReactMarkdown>

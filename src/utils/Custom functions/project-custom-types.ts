@@ -7,6 +7,7 @@ export type ProjectDetailsParams = {
     name: string;
     start_time: string;
     end_time?: string;
+    github_link?: string;
     description: string;
     folder_name: string;
     cover_image: string;
