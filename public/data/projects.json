@@ -47,7 +47,7 @@
         ["BBB.3.png", "The trading menu in Bars, Barns, & Bartering."],
         ["BBB.4.png", "The blackjack mini-game in Bars, Barns, & Bartering."]],
       "extension": "game-jams",
-      "tags": ["C#", "Unity", "Unreal Engine"],
+      "tags": ["C#", "Unity", "Unreal Engine", "Game Development"],
       "ongoing": true
     },
     {
@@ -75,8 +75,24 @@
       "cover_image": "",
       "cycling_images": [],
       "extension": "MySweeper",
-      "tags": [],
+      "tags": ["C++", "SFML", "Game Development"],
       "ongoing": false
+  },
+  {
+  "id": 4,
+  "name": "Quote Finder",
+  "start_time": "04/24/2023",
+  "end_time": "05/22/2023",
+  "github_link": "https://github.com/dannirash/Quote-Finder",
+  "description": "Create an application using Java and C++ to implement two different data structures.",
+  "folder_name": "quote-finder",
+  "cover_image": "",
+  "cycling_images": [["main-menu.png", "This is the front page of the application, which allowed the user to choose between the two different datastructures we implemented."],
+["map-search.png", "This capture is how using the map structure implementation looked, where we selected 'love' for the category we wanted to search for."],
+["map-result.png", "This is the result of the search from the last image. As you can see, there are arrows on either side that allows the user to see other quotes in that category and a randomizer for a newn search!"]],
+  "extension": "quote-finder",
+  "tags": ["C++", "Java", "Processing", "Data Structures"],
+  "ongoing": false
   }
   ]
 }

@@ -108,41 +108,43 @@ const ProjectDetails: React.FC = () => {
               : " and ended ".concat(readJsonDate(state.project.end_time))}
           </h2>
           <Separator className="mb-5" />
+          {state.ShouldCycleImages && (
+            <Card className="w-1/3 min-w-[350px]">
+              <CardContent className="flex flex-col">
+                <img
+                  className="project-card-image"
+                  src={"/data/"
+                    .concat(state.project.folder_name)
+                    .concat(
+                      "/",
+                      state.project.cycling_images[state.cycleIndex][0]
+                    )}
+                  alt="Project Image Carousel"
+                />
+              </CardContent>
+              <CardFooter>
+                <p className="main-content-text">
+                  {state.project.cycling_images[state.cycleIndex][1]}
+                </p>
+              </CardFooter>
+            </Card>
+          )}
+
           <div className="main-content-holder">
             {state.project.github_link && (
-              <h3>
+              <h3 className="mt-5">
                 <a href={state.project.github_link}>
                   GitHub Repository can be found here!
                 </a>
               </h3>
             )}
-            {state.ShouldCycleImages && (
-              <Card>
-                <CardContent className="flex flex-col">
-                  <img
-                    className="project-card-image"
-                    src={"/data/"
-                      .concat(state.project.folder_name)
-                      .concat(
-                        "/",
-                        state.project.cycling_images[state.cycleIndex][0]
-                      )}
-                    alt="Project Image Carousel"
-                  />
-                </CardContent>
-                <CardFooter>
-                  <p className="main-content-text">
-                    {state.project.cycling_images[state.cycleIndex][1]}
-                  </p>
-                </CardFooter>
-              </Card>
-            )}
+
             <ReactMarkdown
               components={{
                 h1: "h2",
                 h2: "h3",
               }}
-              className="mt-7"
+              className="mt-5"
             >
               {state.content}
             </ReactMarkdown>
