@@ -1,4 +1,8 @@
+# Background
+
 This project was done by myself and Kristian Koleman (his website is [here](https://koleman.dev/)) in C++ using the [OpenGL library](https://www.opengl.org/). This coding project was for my Linear Algebra for Data Science class, where we were allowed to pursue any topic as long as it related to math and we wrote a summary explaining our development process. We decided to create a shader using OpenGL to simulate the currents seen in the middle of the ocean. This came to mind as we are both game developers and simulating ocean currents has a storied history in games.
+
+# Developing the Shader
 
 Since we had a short window for development and wanted to ensure we had a finished product at the end, we originally planned to use a Sum of Sins approximation that we found in Nvidia's GPUGems book (accessible online [here](https://developer.nvidia.com/gpugems/gpugems/) the specific work we referenced can be found in [Chapter 1. Effective Water Simulation from Physical Models](https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models) for the original book). On top of that, we implemented a simple skybox system where the user can shift between different environments to see how it affects the ocean simulation (this was mostly created if we could make more accurate reflections to project back onto the ocean). As our final task for this project, we wanted to create a different method for the wave to be created. We chose to emulate a Fourier transform formula we found by creating a Discrete Fourier transform solution and then upgrading to a Fast Fourier transform later in development.
 
