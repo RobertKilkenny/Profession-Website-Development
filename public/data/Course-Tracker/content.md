@@ -4,7 +4,9 @@ For years, I had used an Excel spreadsheet to track my classes and current plans
 
 # Project Specifics
 
-In prior classes, I worked with Pyside2 and matplotlib, so this seemed like an obvious choice for the front end of this application. While I had considered curses (as I also have worked with them in the past) since I have worked with the curses library before, I didn't want to use it again. I also saw this as a great project to wrap C++ code for the Python project, as I will be using a CSV file to save the course and personal data. The main goal of this project will be to make the application very customizable by offering many different features. The current list of features I want to implement are:
+In prior classes, I worked with Pyside2 and matplotlib, so this seemed like an obvious choice for the front end of this application. While I had considered curses (as I also have worked with them in the past) since I have worked with the curses library before, I didn't want to use it again. I will be testing this project a lot because working with pure Python can make the code take much longer to be processed, so if this becomes a problem, I will have to either create some Rust code to do the computations or transfer the work to C++. 
+
+## Features I Want For This Project:
 
 - Reading a CSV file to add a batch of classes to the master list
 - Manual single / batch additions to the master list in the app
