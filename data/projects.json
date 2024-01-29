@@ -25,9 +25,37 @@
       "extension": "website",
       "tags": ["TypeScript", "CSS", "React"],
       "ongoing": true
+    },  
+    {
+    "id": 1,
+    "name": "Course Tracker",
+    "start_time": "01/08/2024",
+    "github_link": "https://github.com/RobertKilkenny/Course-Tracker",
+    "description": "",
+    "folder_name": "Course-Tracker",
+    "cover_image": "",
+    "cycling_images": [],
+    "extension": "course-tracker",
+    "tags": [],
+    "ongoing": true
     },
     {
-      "id": 1,
+      "id": 2,
+      "name": "Ocean Waves Simulation",
+      "start_time": "10/2023",
+      "end_time": "12/2023",
+      "github_link": "https://github.com/MCKoleman/OceanSimulation",
+      "description": "Create a shader and display it in an application using OpenGL.",
+      "folder_name": "ocean-sim",
+      "cover_image": "",
+      "cycling_images": [["cover_gif.gif", "How the ocean simulation looks in the regular view"],
+    ["wireframe_view.gif", "The underlying wireframe for the shader."]],
+      "extension": "ocean-simulation",
+      "tags": ["C++", "OpenGL", "Shaders"],
+      "ongoing": false
+    },
+    {
+      "id": 3,
       "name": "Games made from Game Jams",
       "start_time": "2019",
       "description": "A compilation of the games I have made with a team within the short window of a game jam.",
@@ -51,22 +79,7 @@
       "ongoing": true
     },
     {
-      "id": 2,
-      "name": "Ocean Waves Simulation",
-      "start_time": "10/2023",
-      "end_time": "12/2023",
-      "github_link": "https://github.com/MCKoleman/OceanSimulation",
-      "description": "Create a shader and display it in an application using OpenGL.",
-      "folder_name": "ocean-sim",
-      "cover_image": "",
-      "cycling_images": [["cover_gif.gif", "How the ocean simulation looks in the regular view"],
-    ["wireframe_view.gif", "The underlying wireframe for the shader."]],
-      "extension": "ocean-simulation",
-      "tags": ["C++", "OpenGL", "Shaders"],
-      "ongoing": false
-    },
-    {
-      "id": 3,
+      "id": 4,
       "name": "Creating My Own Minesweeper",
       "start_time": "10/2021",
       "end_time": "11/2021",
@@ -94,7 +107,7 @@
       "ongoing": false
   },
   {
-  "id": 4,
+  "id": 5,
   "name": "Quote Finder",
   "start_time": "04/24/2023",
   "end_time": "05/22/2023",
