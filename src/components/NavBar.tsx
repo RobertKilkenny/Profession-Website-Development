@@ -21,10 +21,10 @@ function Navbar() {
     <nav className="bg-gradient-to-r from-navbar-start via-navbar-middle to-navbar-end navbar">
       <div className="navbar-container">
         <div className="navbar-left-container">
+          <Link to="/" className="navbar-image">
+            <Home height={40} className="text-foreground"/>
+          </Link>
           <menu className="navbar-site-list divide-x-2">
-            <Link to="/" className="navbar-image">
-              <Home height={40} />
-            </Link>
             <li className="nav-item">
               <Link
                 to="/projects"
@@ -49,7 +49,7 @@ function Navbar() {
         <div className="navbar-right-container">
           <menu
             className={
-              click ? "nav-menu-active" : "nav-menu-inactive divide-x-2"
+              click ? "nav-menu-active bg-foreground" : "nav-menu-inactive divide-x-2"
             }
           >
             <li className="nav-item">
@@ -86,7 +86,7 @@ function Navbar() {
             {click ? (
               <XCircle height={40} color="black" />
             ) : (
-              <Menu height={40} color="blue" />
+              <Menu height={40} className="text-foreground" />
             )}
           </button>
           <div className="navbar-image">
