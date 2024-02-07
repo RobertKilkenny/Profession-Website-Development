@@ -1,4 +1,4 @@
-# Codebase notes and tips
+np# Codebase notes and tips
 
 This is just a list of different features and methodologies I used when creating this site to help keep it organized in my way. Maintaining this principle would be best when iterating off of this branch, so it would be smart to take the time to understand what goes where! Go to the [main read me file](../README.md) for the project details and different acknowledgments.
 

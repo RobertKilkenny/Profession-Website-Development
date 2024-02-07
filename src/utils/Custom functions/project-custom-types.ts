@@ -164,6 +164,5 @@ export type ProjectDetailsParams = {
         project: Project;
         content: string;
         ShouldCycleImages: boolean;
-        cycleIndex: number;
       }
     | { status: Status.Error; errorCode: string };

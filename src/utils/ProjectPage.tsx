@@ -1,7 +1,6 @@
 import React, { useState, useEffect as useCallback } from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
-import { ArrowBigLeftDash, ArrowBigRightDash } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import {
   ProjectDetailsParams,
@@ -9,21 +8,15 @@ import {
   Status,
   State,
 } from "./Custom functions/project-custom-types";
-import { cycleImages } from "./Custom functions/image-cycling";
 import { readJsonDate } from "./Custom functions/project-custom-types";
 import NotFound from "./NotFound";
 import DefaultPageSkeleton from "./loading-pages/DefaultPageSkeleton";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import ImageCarousel from "./ImageCarousel"
 
 const ProjectDetails: React.FC = () => {
   const { id } = useParams<ProjectDetailsParams>();
   const [state, setState] = useState<State>({ status: Status.Loading });
-  const [cycleIndex, setCycleIndex] = useState(0);
   const [isCycling, setIsCycling] = useState(false);
-
-  window.addEventListener("cycleImage", function () {
-    cycleImages(state, setCycleIndex, cycleIndex);
-  });
 
   // Handle loading the slug page and setting what details to show!
   useCallback(() => {
@@ -60,7 +53,6 @@ const ProjectDetails: React.FC = () => {
             project: projectData,
             content: content,
             ShouldCycleImages: projectData.cycling_images.length != 0,
-            cycleIndex: cycleIndex,
           });
           console.log("Loaded data");
         } else {
@@ -77,22 +69,13 @@ const ProjectDetails: React.FC = () => {
     fetchData().catch((error) => {
       setState({ status: Status.Error, errorCode: error });
     });
-  }, [cycleIndex, state, id]);
+  }, [state, id]);
 
   // Send the event out to start the cycling image function
   if (!isCycling && state.status == Status.Loaded && state.ShouldCycleImages) {
     const event = new Event("cycleImage");
     window.dispatchEvent(event);
     setIsCycling(true);
-  }
-
-  // Change the state's image index if it is loaded and the active cycling function has given a new value
-  if (
-    isCycling &&
-    state.status == Status.Loaded &&
-    state.cycleIndex !== cycleIndex
-  ) {
-    state.cycleIndex = cycleIndex;
   }
 
   // Display Webpage details
@@ -109,29 +92,7 @@ const ProjectDetails: React.FC = () => {
               : " and ended ".concat(readJsonDate(state.project.end_time))}
           </h2>
           <Separator className="mb-5" />
-          {state.ShouldCycleImages && (
-            <Card className="w-1/3 min-w-[350px]">
-              <CardContent className="flex flex-row">
-              {state.project.cycling_images.length > 1 && <ArrowBigLeftDash/>}
-                <img
-                  className="project-card-image"
-                  src={"/data/"
-                    .concat(state.project.folder_name)
-                    .concat(
-                      "/",
-                      state.project.cycling_images[state.cycleIndex][0]
-                    )}
-                  alt="Project Image Carousel"
-                />
-              {state.project.cycling_images.length > 1 && <ArrowBigRightDash/>}
-              </CardContent>
-              <CardFooter>
-                <p className="main-content-text">
-                  {state.project.cycling_images[state.cycleIndex][1]}
-                </p>
-              </CardFooter>
-            </Card>
-          )}
+          {state.ShouldCycleImages && <ImageCarousel {...state.project}/>}
 
           <div className="main-content-holder">
             {state.project.github_link && (
