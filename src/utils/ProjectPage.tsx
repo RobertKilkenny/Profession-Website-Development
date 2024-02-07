@@ -1,6 +1,7 @@
 import React, { useState, useEffect as useCallback } from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import { ArrowBigLeftDash, ArrowBigRightDash } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import {
   ProjectDetailsParams,
@@ -8,7 +9,7 @@ import {
   Status,
   State,
 } from "./Custom functions/project-custom-types";
-import { cycleImages } from "./loading-pages/image-cycling";
+import { cycleImages } from "./Custom functions/image-cycling";
 import { readJsonDate } from "./Custom functions/project-custom-types";
 import NotFound from "./NotFound";
 import DefaultPageSkeleton from "./loading-pages/DefaultPageSkeleton";
@@ -110,7 +111,8 @@ const ProjectDetails: React.FC = () => {
           <Separator className="mb-5" />
           {state.ShouldCycleImages && (
             <Card className="w-1/3 min-w-[350px]">
-              <CardContent className="flex flex-col">
+              <CardContent className="flex flex-row">
+              {state.project.cycling_images.length > 1 && <ArrowBigLeftDash/>}
                 <img
                   className="project-card-image"
                   src={"/data/"
@@ -121,6 +123,7 @@ const ProjectDetails: React.FC = () => {
                     )}
                   alt="Project Image Carousel"
                 />
+              {state.project.cycling_images.length > 1 && <ArrowBigRightDash/>}
               </CardContent>
               <CardFooter>
                 <p className="main-content-text">
