@@ -92,7 +92,7 @@ const ProjectDetails: React.FC = () => {
               : " and ended ".concat(readJsonDate(state.project.end_time))}
           </h2>
           <Separator className="mb-5" />
-          {state.ShouldCycleImages && <ImageCarousel {...state.project}/>}
+          {(state.ShouldCycleImages && state.project.cycling_images) && <ImageCarousel rootDir={state.project.folder_name} imagesToCycle={state.project.cycling_images}/>}
 
           <div className="main-content-holder">
             {state.project.github_link && (

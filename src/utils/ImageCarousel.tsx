@@ -2,38 +2,41 @@ import { useState } from "react";
 import { ArrowBigLeftDash, ArrowBigRightDash } from "lucide-react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { cycleImages } from "./Custom functions/image-cycling";
-import {Project} from "./Custom functions/project-custom-types"
 
-const ImageCarousel = (project: Project) => {
-  if (project == null || !project.cycling_images.length || project.cycling_images.length < 1)
-    return null
+interface ImageCarouselProps {
+  rootDir: string;
+  imagesToCycle: string[][];
+}
+
+const ImageCarousel: React.FC<ImageCarouselProps> = ({ rootDir, imagesToCycle }) => {
   const [cycleIndex, setCycleIndex] = useState<number>(0);
-  console.log(project)
+  if (!imagesToCycle || imagesToCycle.length < 1)
+    return null
 
   if (cycleIndex < 1) {
     setCycleIndex(1);
-    cycleImages(project.cycling_images.length, setCycleIndex, cycleIndex);
-  };
+    cycleImages(imagesToCycle.length, setCycleIndex, cycleIndex);
+  }
 
   return (    
-  <Card className="w-1/3 min-w-[350px]">
+  <Card className="flex flex-col w-1/3 min-w-[350px]">
     <CardContent className="flex flex-row items-center">
-      {project.cycling_images.length > 1 && <ArrowBigLeftDash width={50}/>}
+      {imagesToCycle.length > 1 && <ArrowBigLeftDash className="w-10 h-10"/>}
       <img
         className="project-card-image"
         src={"/data/"
-          .concat(project.folder_name)
+          .concat(rootDir)
           .concat(
             "/",
-            project.cycling_images[cycleIndex][0]
+            imagesToCycle[cycleIndex][0]
           )}
         alt="Project Image Carousel"
       />
-      {project.cycling_images.length > 1 && <ArrowBigRightDash width={50}/>}
+      {imagesToCycle.length > 1 && <ArrowBigRightDash className="w-10 h-10"/>}
     </CardContent>
   <CardFooter>
     <p className="main-content-text">
-      {project.cycling_images[cycleIndex][1]}
+      {imagesToCycle[cycleIndex][1]}
     </p>
   </CardFooter>
 </Card>)
