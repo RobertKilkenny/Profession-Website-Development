@@ -10,13 +10,13 @@ When I started doing projects for computer science, I wanted to have a local pla
 
     - Includes "work in progress disclaimer" since this will be launched while the site is in Beta
 
-  - [_About Page_](/../../about)
+  - [_About Page_](/../../#/about)
 
     - Links to other pages referenced above it
 
     - Has Cards that show relevant classes I have taken
 
-  - [_Contact Page_](/../../contact-me)
+  - [_Contact Page_](/../../#/contact-me)
 
     - Links to other pages I have that show my work or other career details (LinkedIn, GitHub, and Itch.io currently)
 
