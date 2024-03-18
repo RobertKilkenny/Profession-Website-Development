@@ -19,7 +19,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ rootDir, imagesToCycle}) 
   if (!imagesToCycle || imagesToCycle.length < 1) return null;
 
   return (
-    <div className={`flex flex-col align-middle w-1/4 max-h-[25vm]`}>
+    <div className={`flex flex-col align-middle w-1/4 min-w-[300px] max-h-[25vm]`}>
       <Card className="flex flex-col items-center aspect-[2] p-5 max-h-[20vm]">
         <CardContent className="flex flex-row justify-center">
           <img
