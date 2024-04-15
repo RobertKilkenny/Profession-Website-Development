@@ -8,6 +8,7 @@ import Home from "@/components/Home";
 import About from "@/components/About";
 import Navbar from "@/components/NavBar";
 import "./App.css";
+import TestingStyling from "./components/TestingStyling";
 
 const App: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const App: React.FC = () => {
               <Route path="/contact-me" Component={ContactMe} />
               <Route path="/projects" element={<ProjectList />} />
               <Route path="/project/:id" Component={ProjectPage} />
+              <Route path="/test-styling" Component={TestingStyling} />
               <Route path="*" Component={NotFound} />
             </Routes>
           </div>
