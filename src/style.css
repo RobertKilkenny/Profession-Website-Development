@@ -33,7 +33,7 @@
       --radius: 1rem;
     }
   
-    .dark {
+    .Dark {
       --background: 222.2 84% 4.9%;
       --foreground: 210 40% 98%;
       --card: 222.2 84% 4.9%;
@@ -51,12 +51,12 @@
       --destructive: 0 62.8% 30.6%;
       --destructive-foreground: 210 40% 98%;
       --border: 217.2 32.6% 17.5%;
-      --input: 217.2 32.6% 17.5%;
+      --input: 200 30% 46%;
   
       --ring: 224.3 76.3% 48%;
     }
   
-    .xmas {
+    .Xmas {
       --background: 2 100% 40%;
       --foreground: 210 40% 98%;
       --card: 100 80% 50%;

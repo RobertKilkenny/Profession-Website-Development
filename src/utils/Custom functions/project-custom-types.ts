@@ -27,7 +27,7 @@ export type ProjectDetailsParams = {
     });
   
     // For testing loading page feature numOfSeconds * 1000
-    // await new Promise((resolve) => setTimeout(resolve, 1000 * 1000));
+    //await new Promise((resolve) => setTimeout(resolve, 1000 * 1000));
   
     const json = await response.json();
     let projects: Project[] = json["projects"];

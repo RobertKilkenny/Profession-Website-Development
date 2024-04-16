@@ -1,5 +1,4 @@
 import { Moon, Sun } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -8,9 +7,22 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTheme } from "@/utils/Custom functions/use-theme";
+import {Theme} from "@/utils/ThemeProvider"
+
+export const themes: Theme[] = ["Light", "Dark", "Xmas", "System"];
 
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
+
+  const menu = <DropdownMenuContent align="end">
+    {themes.map((tempTheme) => (
+      tempTheme != theme && 
+      <DropdownMenuItem onClick={() => setTheme(tempTheme)} key={tempTheme}>
+        {tempTheme}
+      </DropdownMenuItem>
+    ))
+    }
+  </DropdownMenuContent>
 
   return (
     <DropdownMenu>
@@ -20,28 +32,7 @@ export function ModeToggle() {
           <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        {theme != "light" && (
-          <DropdownMenuItem onClick={() => setTheme("light")}>
-            Light
-          </DropdownMenuItem>
-        )}
-        {theme != "dark" && (
-          <DropdownMenuItem onClick={() => setTheme("dark")}>
-            Dark
-          </DropdownMenuItem>
-        )}
-        {theme != "system" && (
-          <DropdownMenuItem onClick={() => setTheme("system")}>
-            System
-          </DropdownMenuItem>
-        )}
-        {theme != "xmas" && (
-          <DropdownMenuItem onClick={() => setTheme("xmas")}>
-            Christmas
-          </DropdownMenuItem>
-        )}
-      </DropdownMenuContent>
+      {menu}
     </DropdownMenu>
   );
 }
