@@ -47,7 +47,6 @@ function TestingStyling() {
     const {toast} = useToast();
     const message: string = "Testing text";
     const formatBlock = "flex flex-col bg-accent rounded-md p-5";
-    const formatBlockHollow = "border-8 border-accent p-2 rounded-md";
     const formatSeperator = "bg-accent-foreground mt-5 mb-5";
     const [theme, changeTheme] = useState<Theme>("System");
     const { setTheme } = useTheme();
