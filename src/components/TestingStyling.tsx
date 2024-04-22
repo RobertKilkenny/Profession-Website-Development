@@ -34,7 +34,7 @@ import {
     } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { themes } from "@/components/ModeToggle";
+import { themes } from "@/utils/Custom functions/project-custom-variables";
 import { Theme } from "@/utils/ThemeProvider";
 import { useTheme } from "@/utils/Custom functions/use-theme";
 import { Badge } from "@/components/ui/badge";
