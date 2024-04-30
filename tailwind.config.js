@@ -15,7 +15,7 @@ module.exports = {
         "2xl": "1400px",
       },
     },
-    extend: { 
+    extend: {
       keyframes: {
         pulse: {
           '0%, 100%': { opacity: '1' },
@@ -69,7 +69,7 @@ module.exports = {
           regular: "hsl(var(--link))",
           hover: "hsl(var(--link-hover))"
         },
-
+        skeleton: "hsl(var(--skeleton)",
         ring: "hsl(var(--ring))",
       },
       borderRadius: {

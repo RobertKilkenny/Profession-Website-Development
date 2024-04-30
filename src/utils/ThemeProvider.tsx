@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState, useMemo } from "react";
 
-export type Theme = "Dark" | "Light" | "System" | "Xmas";
+export type Theme = "Dark" | "Light" | "System" | "Halloween" | "Xmas";
 
 type ThemeProviderProps = {
   readonly children: React.ReactNode;
