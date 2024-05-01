@@ -25,6 +25,7 @@ const App: React.FC = () => {
               <Route path="/projects" element={<ProjectList />} />
               <Route path="/project/:id" Component={ProjectPage} />
               <Route path="/test-styling" Component={TestingStyling} />
+              <Route path="/404" Component={NotFound} />
               <Route path="*" Component={NotFound} />
             </Routes>
           </div>
