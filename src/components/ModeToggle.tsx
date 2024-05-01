@@ -7,9 +7,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTheme } from "@/utils/Custom functions/use-theme";
-import {Theme} from "@/utils/ThemeProvider"
+import { themes } from "@/utils/Custom functions/project-custom-variables";
 
-export const themes: Theme[] = ["Light", "Dark", "Xmas", "System"];
+
 
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();

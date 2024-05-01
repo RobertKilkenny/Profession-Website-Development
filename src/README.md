@@ -8,11 +8,11 @@ This is just a list of different features and methodologies I used when creating
 
 - Use `npm run dev` to run the React App in the [local host](http://localhost:3000/)
 
-- All color variables will be stored in `index.css` within **/src/components/web-components**
+- All color variables will be stored in `stlye.css` within **/src/**
 
 - All webpages (besides error pages and redirection pages) are stored in **/src/components**
 
-- All utilities like the NavBar and the unique Button classes are in **/src/components/utils**
+- All utilities like the NavBar and the unique Button classes are in **/src/utils**
 
 - Any feature that you want to implement using a Shadcn UI Element should be imported using `npx shadcn-ui@latest add [element name]`
 
