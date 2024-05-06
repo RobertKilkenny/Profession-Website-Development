@@ -1,0 +1,7 @@
+# Ignore artifacts
+build/
+dist/
+doc/
+
+# Exceptions
+package-lock.json
