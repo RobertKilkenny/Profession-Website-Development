@@ -1,12 +1,14 @@
 name: All-branch-lint
+
 on:
   workflow_dispatch:
   push:
     branches:
       - '*'
-  pull_requests:
+  pull_request:
     branches:
       - '*'
+
 jobs:
   lint:
     runs-on: ubuntu-latest
