@@ -51,6 +51,8 @@ This is just a list of different features and methodologies I used when creating
 
 - Check out the GitHub action I have in **./.github/workflows** for the automation I included in the website!
 
+- The commit system uses **commitlint** so it requires a specific struture to send out a commit
+
 ## Ground Rules for the Codebase
 
 - All unique page layouts should be stored in the same file as the .tsx file
