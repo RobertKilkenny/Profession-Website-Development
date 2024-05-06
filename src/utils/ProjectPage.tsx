@@ -11,11 +11,13 @@ import {
 import { readJsonDate } from "./Custom functions/project-custom-types";
 import NotFound from "./NotFound";
 import DefaultPageSkeleton from "./loading-pages/DefaultPageSkeleton";
-import ImageCarousel from "./ImageCarousel"
+import ImageCarousel from "./ImageCarousel";
 
 const ProjectDetails: React.FC = () => {
   const { id } = useParams<ProjectDetailsParams>();
-  const [state, setState] = useState<State>({ status: Status.Loading });
+  const [state, setState] = useState<State>({
+    status: Status.Loading,
+  });
   const [isCycling, setIsCycling] = useState(false);
 
   // Handle loading the slug page and setting what details to show!
@@ -60,14 +62,20 @@ const ProjectDetails: React.FC = () => {
         }
       } catch (error: unknown) {
         if (error instanceof Error) {
-          setState({ status: Status.Error, errorCode: error.message });
+          setState({
+            status: Status.Error,
+            errorCode: error.message,
+          });
         } else {
           throw new Error("Something went HORRIBLY wrong.");
         }
       }
     };
     fetchData().catch((error) => {
-      setState({ status: Status.Error, errorCode: error });
+      setState({
+        status: Status.Error,
+        errorCode: error,
+      });
     });
   }, [state, id]);
 
@@ -92,7 +100,12 @@ const ProjectDetails: React.FC = () => {
               : " and ended ".concat(readJsonDate(state.project.end_time))}
           </h2>
           <Separator className="mb-5" />
-          {(state.ShouldCycleImages && state.project.cycling_images) && <ImageCarousel rootDir={state.project.folder_name} imagesToCycle={state.project.cycling_images}/>}
+          {state.ShouldCycleImages && state.project.cycling_images && (
+            <ImageCarousel
+              rootDir={state.project.folder_name}
+              imagesToCycle={state.project.cycling_images}
+            />
+          )}
 
           <div className="main-content-holder">
             {state.project.github_link && (

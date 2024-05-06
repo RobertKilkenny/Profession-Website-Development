@@ -9,7 +9,7 @@ import About from "@/components/About";
 import Navbar from "@/components/NavBar";
 import "./App.css";
 import TestingStyling from "@/components/TestingStyling";
-import { Toaster } from "@/components/ui/toaster"
+import { Toaster } from "@/components/ui/toaster";
 
 const App: React.FC = () => {
   return (
@@ -30,7 +30,7 @@ const App: React.FC = () => {
             </Routes>
           </div>
         </Router>
-        <Toaster/>
+        <Toaster />
       </ThemeProvider>
     </div>
   );

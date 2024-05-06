@@ -100,7 +100,7 @@ ul li li li {
   text-overflow: ellipsis;
 }
 
-.project-card-text:hover{
+.project-card-text:hover {
   text-overflow: unset;
 }
 

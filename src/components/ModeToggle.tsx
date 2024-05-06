@@ -9,20 +9,24 @@ import {
 import { useTheme } from "@/utils/Custom functions/use-theme";
 import { themes } from "@/utils/Custom functions/project-custom-variables";
 
-
-
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
 
-  const menu = <DropdownMenuContent align="end">
-    {themes.map((tempTheme) => (
-      tempTheme != theme && 
-      <DropdownMenuItem onClick={() => setTheme(tempTheme)} key={tempTheme}>
-        {tempTheme}
-      </DropdownMenuItem>
-    ))
-    }
-  </DropdownMenuContent>
+  const menu = (
+    <DropdownMenuContent align="end">
+      {themes.map(
+        (tempTheme) =>
+          tempTheme != theme && (
+            <DropdownMenuItem
+              onClick={() => setTheme(tempTheme)}
+              key={tempTheme}
+            >
+              {tempTheme}
+            </DropdownMenuItem>
+          )
+      )}
+    </DropdownMenuContent>
+  );
 
   return (
     <DropdownMenu>
