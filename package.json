@@ -12,7 +12,7 @@
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css}'",
     "preview": "vite preview",
     "prepare": "husky",
-    "commit": "git add -A && commit"
+    "commit": "git add -A && cz"
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
@@ -47,6 +47,7 @@
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.3",
     "autoprefixer": "^10.4.16",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
@@ -68,5 +69,10 @@
       "npm run format",
       "git add -A"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
