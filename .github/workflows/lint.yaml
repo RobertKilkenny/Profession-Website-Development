@@ -1,4 +1,4 @@
-name: All-branch-lint
+name: Lint Branch
 
 on:
   workflow_dispatch:
