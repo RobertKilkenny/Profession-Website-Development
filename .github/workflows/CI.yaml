@@ -2,10 +2,16 @@ name: CI
 
 on:
   workflow_run:
-    branches:
-      - master
+    push:
+      branches:
+        - master
+    pull_request:
+      branch:
+        - master
     workflows: 
       - "Lint Branch"
+    types:
+      - completed
 
 jobs:
   setup:
