@@ -1,7 +1,10 @@
-name: CI
+name: All branch lint
 on:
   workflow_dispatch:
   push:
+    branches:
+      - '*'
+  pull_requests:
     branches:
       - '*'
 jobs:
