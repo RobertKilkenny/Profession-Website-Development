@@ -11,7 +11,8 @@
     "lint-fix": "eslint src --ext js,jsx,ts,tsx --fix",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css}'",
     "preview": "vite preview",
-    "prepare": "husky"
+    "prepare": "husky",
+    "commit": "git add -A && commit"
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",

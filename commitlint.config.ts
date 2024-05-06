@@ -24,7 +24,7 @@ export default {
       ["start-case", "pascal-case", "upper-case"],
     ] as [RuleConfigSeverity, RuleConfigCondition, TargetCaseType[]],
     "subject-empty": [RuleConfigSeverity.Error, "never"] as const,
-    "type-case": [RuleConfigSeverity.Error, "always", "Upper-case"] as const,
+    "type-case": [RuleConfigSeverity.Error, "always", "upper-case"] as const,
     "type-empty": [RuleConfigSeverity.Error, "never"] as const,
     "type-enum": [
       RuleConfigSeverity.Error,
