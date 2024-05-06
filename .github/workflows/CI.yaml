@@ -1,14 +1,11 @@
 name: CI
 
 on:
-  workflow_dispatch:
-  workflows: ["Lint Branch"]
-  push:
+  workflow_run:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
+    workflows: 
+      - "Lint Branch"
 
 jobs:
   setup:
