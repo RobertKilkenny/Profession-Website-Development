@@ -1,4 +1,4 @@
-name: All branch lint
+name: All-branch-lint
 on:
   workflow_dispatch:
   push:
