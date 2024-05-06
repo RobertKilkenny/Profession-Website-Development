@@ -28,6 +28,7 @@ jobs:
     needs:
       - build
     steps:
+      - uses: actions/checkout@v2
       - name: Delete Old Site
         run: rm -rf docs
       - name: Change "dist" to "docs"
