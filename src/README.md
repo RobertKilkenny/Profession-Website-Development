@@ -52,6 +52,7 @@ This is just a list of different features and methodologies I used when creating
 - Check out the GitHub action I have in **./.github/workflows** for the automation I included in the website!
 
 - The commit system uses **commitlint** so it requires a specific struture to send out a commit
+  - For a guide to how to comment correctly according to this format, run `npm run commit` (Note, this command also does `git add -A` automatically because I am lazy)
 
 ## Ground Rules for the Codebase
 
