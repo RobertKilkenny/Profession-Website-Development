@@ -11,9 +11,6 @@ Website created using create-react-app to display projects I've made pursuing a 
 - A main App Object that changes the page based on the link
 - Able to switch between Page Objects using React Router to use the link.
 - Developed buttons with default and dynamic coloring with defaults for sizing. Also offers a specialized button (outline) and could have more later.
-
-## Planned Features
-
 - Change site icon to be customized for me
 - Develop a Home/ Landing page that helps guide users
 - Develop a Project List page
@@ -31,7 +28,10 @@ Website created using create-react-app to display projects I've made pursuing a 
 - Develop the Contact Me
   - Have contact information for professional contact
   - Link to external media (LinkedIn, Github, etc.)
-- Launch site with Firebase
+
+## Planned Features
+
+Completed planned for now. Still needs maintenance due to starting or ending projects.
 
 ## Non-Essential Backlog
 
