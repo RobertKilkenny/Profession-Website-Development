@@ -1,17 +1,15 @@
 name: CI
 
 on:
+  push:
+    branches:
+      - master
   workflow_run:
-    push:
-      branches:
-        - master
-    pull_request:
-      branch:
-        - master
     workflows: 
       - "Check Master for Build"
     types:
       - pass
+  workflow_dispatch:
 
 jobs:
   setup:
