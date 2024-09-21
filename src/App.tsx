@@ -15,13 +15,13 @@ import { Toaster } from "@/components/ui/toaster";
 const App: React.FC = () => {
   return (
     <div className="site-holder">
-      <ThemeProvider defaultTheme="Dark" storageKey="vite-ui-theme">                                  
+      <ThemeProvider defaultTheme="Dark" storageKey="vite-ui-theme">
         <Router>
           <Navbar />
           <div className="page-holder">
             <Routes>
               <Route path="/" Component={Home} />
-              <Route path="/about" Component={About} />                                 
+              <Route path="/about" Component={About} />
               <Route path="/contact-me" Component={ContactMe} />
               <Route path="/WheelSpin/*" Component={RouteToRandomWheel} />
               <Route path="/projects" element={<ProjectList />} />
