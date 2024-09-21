@@ -1,4 +1,5 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import RouteToRandomWheel from "./utils/RouteToRandomWheel";
 import ContactMe from "./components/ContactMe";
 import ProjectList from "./components/ProjectList";
 import NotFound from "./utils/NotFound";
@@ -22,6 +23,7 @@ const App: React.FC = () => {
               <Route path="/" Component={Home} />
               <Route path="/about" Component={About} />
               <Route path="/contact-me" Component={ContactMe} />
+              <Route path="/WheelSpin/*" Component={RouteToRandomWheel} />
               <Route path="/projects" element={<ProjectList />} />
               <Route path="/project/:id" Component={ProjectPage} />
               <Route path="/test-styling" Component={TestingStyling} />
