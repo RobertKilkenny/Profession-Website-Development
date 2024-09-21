@@ -5,7 +5,7 @@ on:
     workflows: [Check Master for Build]
     types: [success]
     branches:
-    - "master"
+    - master
   workflow_dispatch:
 
 jobs:
