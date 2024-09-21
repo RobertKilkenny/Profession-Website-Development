@@ -44,5 +44,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git commit -m "Fix lint errors" || echo "No changes to commit"
+          echo "fix: lint errors" | cz --message
           git push origin ${{ github.head_ref }}
