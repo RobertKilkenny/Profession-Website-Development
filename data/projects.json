@@ -75,7 +75,7 @@
         ["BBB.3.png", "The trading menu in Bars, Barns, & Bartering."],
         ["BBB.4.png", "The blackjack mini-game in Bars, Barns, & Bartering."]],
       "extension": "game-jams",
-      "tags": ["C#", "Unity", "Unreal Engine", "Game Development"],
+      "tags": ["C#", "Unity", "Unreal Engine", "Game Development", "Weekend Project"],
       "ongoing": true
     },
     {
@@ -105,9 +105,23 @@
       "extension": "MySweeper",
       "tags": ["C++", "SFML", "Game Development"],
       "ongoing": false
-  },
+    },
+    {
+      "id": 5,
+      "name": "Random Wheel",
+      "start_time": "09/18/2024",
+      "end_time": "09/20/2024",
+      "github_link": "https://github.com/RobertKilkenny/Random-Wheel/",
+      "description": "Create web app to spin a wheel using options in the URL.",
+      "folder_name": "Random-Wheel",
+      "cover_image": "",
+      "cycling_images": [],
+      "extension": "random-wheel",
+      "tags": ["React", "Weekend Project", "Side Project"],
+      "ongoing": false
+    },
   {
-  "id": 5,
+  "id": 6,
   "name": "Quote Finder",
   "start_time": "04/24/2023",
   "end_time": "05/22/2023",
