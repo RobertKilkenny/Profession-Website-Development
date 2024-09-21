@@ -1,4 +1,4 @@
-# Codebase notes and tips
+np# Codebase notes and tips
 
 This is just a list of different features and methodologies I used when creating this site to help keep it organized in my way. Maintaining this principle would be best when iterating off of this branch, so it would be smart to take the time to understand what goes where! Go to the [main read me file](../README.md) for the project details and different acknowledgments.
 
@@ -8,11 +8,11 @@ This is just a list of different features and methodologies I used when creating
 
 - Use `npm run dev` to run the React App in the [local host](http://localhost:3000/)
 
-- All color variables will be stored in `index.css` within **/src/components/web-components**
+- All color variables will be stored in `stlye.css` within **/src/**
 
 - All webpages (besides error pages and redirection pages) are stored in **/src/components**
 
-- All utilities like the NavBar and the unique Button classes are in **/src/components/utils**
+- All utilities like the NavBar and the unique Button classes are in **/src/utils**
 
 - Any feature that you want to implement using a Shadcn UI Element should be imported using `npx shadcn-ui@latest add [element name]`
 
@@ -50,6 +50,9 @@ This is just a list of different features and methodologies I used when creating
 - Use `rfc` to create a fundamental return function for a new class!
 
 - Check out the GitHub action I have in **./.github/workflows** for the automation I included in the website!
+
+- The commit system uses **commitlint** so it requires a specific struture to send out a commit
+  - For a guide to how to comment correctly according to this format, run `npm run commit` (Note, this command also does `git add -A` automatically because I am lazy)
 
 ## Ground Rules for the Codebase
 

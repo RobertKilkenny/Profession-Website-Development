@@ -9,11 +9,13 @@ import Home from "@/components/Home";
 import About from "@/components/About";
 import Navbar from "@/components/NavBar";
 import "./App.css";
+import TestingStyling from "@/components/TestingStyling";
+import { Toaster } from "@/components/ui/toaster";
 
 const App: React.FC = () => {
   return (
     <div className="site-holder">
-      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <ThemeProvider defaultTheme="Dark" storageKey="vite-ui-theme">
         <Router>
           <Navbar />
           <div className="page-holder">
@@ -24,10 +26,13 @@ const App: React.FC = () => {
               <Route path='/WheelSpin/*' Component={RouteToRandomWheel}/>
               <Route path="/projects" element={<ProjectList />} />
               <Route path="/project/:id" Component={ProjectPage} />
+              <Route path="/test-styling" Component={TestingStyling} />
+              <Route path="/404" Component={NotFound} />
               <Route path="*" Component={NotFound} />
             </Routes>
           </div>
         </Router>
+        <Toaster />
       </ThemeProvider>
     </div>
   );

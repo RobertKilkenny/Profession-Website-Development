@@ -10,13 +10,13 @@ When I started doing projects for computer science, I wanted to have a local pla
 
     - Includes "work in progress disclaimer" since this will be launched while the site is in Beta
 
-  - [_About Page_](/../../about)
+  - [_About Page_](/../../#/about)
 
     - Links to other pages referenced above it
 
     - Has Cards that show relevant classes I have taken
 
-  - [_Contact Page_](/../../contact-me)
+  - [_Contact Page_](/../../#/contact-me)
 
     - Links to other pages I have that show my work or other career details (LinkedIn, GitHub, and Itch.io currently)
 
@@ -30,9 +30,13 @@ When I started doing projects for computer science, I wanted to have a local pla
 
     - Hosting this website Using Github Pages and routing through CloudFlare
 
-# Planned Features
+  - [_Theme Tester_](/../../#/test-styling)
 
-- Create a page to demo all theming colors with ShadCN objects to ensure that the palette is consistent.
+    - A hidden page to test all themes that I have made to see if they are up to snuff
+
+    - Loads all UI elements to ensure even components not implemented are working intentionally
+
+# Planned Features
 
 - Allowing for the contact me to have a unique message input that will be forwarded to my email
 

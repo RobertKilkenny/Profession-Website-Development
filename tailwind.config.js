@@ -16,6 +16,15 @@ module.exports = {
       },
     },
     extend: {
+      keyframes: {
+        pulse: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '.5' },
+        },
+      },
+      animation: {
+        pulse: 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -60,7 +69,7 @@ module.exports = {
           regular: "hsl(var(--link))",
           hover: "hsl(var(--link-hover))"
         },
-
+        skeleton: "hsl(var(--skeleton)",
         ring: "hsl(var(--ring))",
       },
       borderRadius: {

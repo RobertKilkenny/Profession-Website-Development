@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardFooter,
 } from "@/components/ui/card";
-import "./skeleton.css";
+import "@/utils/loading-pages/skeleton.css";
 
 export default function SkeletonCard() {
   return (

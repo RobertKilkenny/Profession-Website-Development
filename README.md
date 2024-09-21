@@ -11,9 +11,6 @@ Website created using create-react-app to display projects I've made pursuing a 
 - A main App Object that changes the page based on the link
 - Able to switch between Page Objects using React Router to use the link.
 - Developed buttons with default and dynamic coloring with defaults for sizing. Also offers a specialized button (outline) and could have more later.
-
-## Planned Features
-
 - Change site icon to be customized for me
 - Develop a Home/ Landing page that helps guide users
 - Develop a Project List page
@@ -31,7 +28,10 @@ Website created using create-react-app to display projects I've made pursuing a 
 - Develop the Contact Me
   - Have contact information for professional contact
   - Link to external media (LinkedIn, Github, etc.)
-- Launch site with Firebase
+
+## Planned Features
+
+Completed planned for now. Still needs maintenance due to starting or ending projects.
 
 ## Non-Essential Backlog
 
@@ -46,6 +46,7 @@ Website created using create-react-app to display projects I've made pursuing a 
 - This project uses [Lucide React Icons](https://lucide.dev/guide/packages/lucide-react) for many of the basic icons.
 - For many of the basic website objects, I used [Shadcn UI elements](https://ui.shadcn.com/) and used [Net Ninjas Course on ShadCN](https://www.youtube.com/playlist?list=PL4cUxeGkcC9h1NXLUuiAQ7c4UtdEInqma) to get started.
 - When starting this project, I used Brian Design's YouTube video [React Website Tutorial - Beginner React JS Project Fully Responsive](https://www.youtube.com/watch?v=I2UBjN5ER4s&t=2456s) to help learn the basics for this project.
+- The bones for my CI/CD for my website was made while using Programming with Umair's video: [CI/CD Pipeline in React.js Project with Github Workflows using Eslint Prettier Pre-commit and Husky](https://www.youtube.com/watch?v=T1sV7D418dY)
 - Some projects shown were not developed by myself. See each project for the full credits and details!
 
 ## Special Thank To

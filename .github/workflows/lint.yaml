@@ -1,0 +1,30 @@
+name: Lint Branch
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+  lint:
+    runs-on: ubuntu-latest
+    needs:
+    - setup
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install modules
+        run: npm install
+      - name: Run ESLint
+        run: npm run lint

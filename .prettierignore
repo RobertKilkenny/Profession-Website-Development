@@ -1,0 +1,9 @@
+# Ignore artifacts
+build/
+dist/
+docs/
+./husky
+
+# Exceptions
+package-lock.json
+commitlint.config.js

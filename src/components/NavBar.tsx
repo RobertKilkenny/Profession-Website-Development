@@ -22,7 +22,7 @@ function Navbar() {
       <div className="navbar-container">
         <div className="navbar-left-container">
           <Link to="/" className="navbar-image">
-            <Home height={40} className="text-foreground"/>
+            <Home height={40} className="text-foreground" />
           </Link>
           <menu className="navbar-site-list divide-x-2">
             <li className="nav-item">
@@ -49,7 +49,9 @@ function Navbar() {
         <div className="navbar-right-container">
           <menu
             className={
-              click ? "nav-menu-active bg-foreground" : "nav-menu-inactive divide-x-2"
+              click
+                ? "nav-menu-active bg-foreground"
+                : "nav-menu-inactive divide-x-2"
             }
           >
             <li className="nav-item">
