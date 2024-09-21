@@ -14,7 +14,7 @@ import { Toaster } from "@/components/ui/toaster";
 
 const App: React.FC = () => {
   return (
-    <div className="site-holder">
+    <div className="site-holder">             
       <ThemeProvider defaultTheme="Dark" storageKey="vite-ui-theme">
         <Router>
           <Navbar />
