@@ -2,10 +2,9 @@ name: CI
 
 on:
   workflow_run:
-    workflows: 
-      - "Check Master for Build"
-    types:
-      - success
+    workflows: ["Check Master for Build"]
+    branches: ["master"]
+    types: [success]
   workflow_dispatch:
 
 jobs:
