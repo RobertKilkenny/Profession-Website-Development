@@ -22,13 +22,16 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install modules
         run: npm install
+      
       - name: Run ESLint
         id: lint
-        run: npm run lint || echo "Linting failed"
+        run: npm run lint
         continue-on-error: true
+
       - name: Attempt to fix lint errors
         if: steps.lint.outcome == 'failure'
-        run: npm run lint-fix  
+        run: npm run lint-fix && echo "Used lint fix, testing if it fixed everything!"  
+
       - name: Run ESLint again
         if: steps.lint.outcome == 'failure'
         run: npm run lint
