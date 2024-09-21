@@ -23,7 +23,7 @@ const App: React.FC = () => {
               <Route path="/" Component={Home} />
               <Route path="/about" Component={About} />
               <Route path="/contact-me" Component={ContactMe} />
-              <Route path='/WheelSpin/*' Component={RouteToRandomWheel}/>
+              <Route path="/WheelSpin/*" Component={RouteToRandomWheel} />
               <Route path="/projects" element={<ProjectList />} />
               <Route path="/project/:id" Component={ProjectPage} />
               <Route path="/test-styling" Component={TestingStyling} />
