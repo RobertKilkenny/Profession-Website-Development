@@ -45,4 +45,4 @@ jobs:
           git config --local user.name "GitHub Action"
           git add .
           git commit -m "Linting fixes" --no-verify
-          git push
+          git push origin HEAD:<{{github.head_ref}}>
