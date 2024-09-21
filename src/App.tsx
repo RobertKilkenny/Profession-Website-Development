@@ -21,7 +21,7 @@ const App: React.FC = () => {
           <div className="page-holder">
             <Routes>
               <Route path="/" Component={Home} />
-              <Route path="/about" Component={About} />                                 
+              <Route path="/about" Component={About} />
               <Route path="/contact-me" Component={ContactMe} />
               <Route path="/WheelSpin/*" Component={RouteToRandomWheel} />
               <Route path="/projects" element={<ProjectList />} />
