@@ -40,8 +40,8 @@ I obviously have made a website before and the scope of the project is rather sm
 		- Having too many elements to choose from
 	
 	- Allow for custom routing through my professional site for a shorter link
-		- Check it out at: https://kilkenny.dev/#/WheelSpin/
-		- Default Option so you can see it spin https://kilkenny.dev/#/WheelSpin/?elements=eenie,meenie,miney,moe
+		- Check it out at: [https://kilkenny.dev/#/WheelSpin/](https://kilkenny.dev/#/WheelSpin/)
+		- Default Option so you can see it spin [https://kilkenny.dev/#/WheelSpin/](https://kilkenny.dev/#/WheelSpin/?elements=eenie,meenie,miney,moe)
 
 
 # Final Notes
