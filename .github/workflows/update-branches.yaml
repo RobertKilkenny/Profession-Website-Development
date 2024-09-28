@@ -12,7 +12,7 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # Ensure full history is fetched
 
       - name: Set up Git
         run: |
@@ -22,12 +22,18 @@ jobs:
       - name: Get all branches except master
         id: get_branches
         run: |
-          BRANCHES=$(git for-each-ref --format='%(refname:short)' refs/heads/ | grep -v 'master')
+          BRANCHES=$(git branch -r | grep -v '\->' | grep -v 'master$' | sed 's/origin\///')
+          if [ -z "$BRANCHES" ]; then
+            echo "No branches to update."
+            exit 0
+          fi
           echo "::set-output name=branches::$BRANCHES"
 
       - name: Merge master into all branches
+        if: steps.get_branches.outputs.branches != ''
         run: |
           for branch in ${{ steps.get_branches.outputs.branches }}; do
             git checkout $branch
-            git merge master && git push origin HEAD:${{github.head_ref}} || true
+            git merge master || true  # Continue even if merge conflicts arise
+            git push origin $branch
           done
