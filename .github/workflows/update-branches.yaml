@@ -19,10 +19,11 @@ jobs:
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
 
-      - name: Get all branches except master
+      - name: Get all branches except master and web build branch
         id: get_branches
         run: |
           BRANCHES=$(git branch -r | grep -v '\->' | grep -v 'master$' | grep -v 'gh-pages$' | sed 's/origin\///')
+          BRANCHES=$(echo "$BRANCHES" | tr '\n' ' ')  # Remove newlines and format output
           if [ -z "$BRANCHES" ]; then
             echo "No branches to update."
             exit 0
