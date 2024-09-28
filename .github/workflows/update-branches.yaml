@@ -35,6 +35,5 @@ jobs:
         run: |
           for branch in ${{ steps.get_branches.outputs.branches }}; do
             git checkout $branch
-            git merge master || true  # Continue even if merge conflicts arise
-            git push origin $branch
+            git merge master && git push origin $branch && echo "- Merged master into $branch" || true && echo "- Could not merge master into $branch"
           done
