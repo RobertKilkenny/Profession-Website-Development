@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Ensure full history is fetched
 
@@ -22,7 +22,7 @@ jobs:
       - name: Get all branches except master
         id: get_branches
         run: |
-          BRANCHES=$(git branch -r | grep -v '\->' | grep -v 'master$' | sed 's/origin\///')
+          BRANCHES=$(git branch -r | grep -v '\->' | grep -v 'master$' | grep -v 'gh-pages$' | sed 's/origin\///')
           if [ -z "$BRANCHES" ]; then
             echo "No branches to update."
             exit 0
