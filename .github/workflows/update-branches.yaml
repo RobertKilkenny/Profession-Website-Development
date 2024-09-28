@@ -33,7 +33,17 @@ jobs:
       - name: Merge master into all branches
         if: steps.get_branches.outputs.branches != ''
         run: |
+          LOG=""
           for branch in ${{ steps.get_branches.outputs.branches }}; do
             git checkout $branch
-            git merge master && git push origin $branch && echo "- Merged master into $branch" || true && echo "- Could not merge master into $branch"
+            if git merge master; then
+              git push origin $branch
+              LOG="$LOG\n- Successfully merged master into $branch"
+            else
+              LOG="$LOG\n- Failed to merge master into $branch"
+            fi
           done
+          echo "$LOG" > merge_log.txt
+
+      - name: Print merge results
+        run: cat merge_log.txt && rm merge_log.txt
