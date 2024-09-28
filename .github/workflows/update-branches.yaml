@@ -1,0 +1,33 @@
+name: Merge changes to other branches
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Git
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+
+      - name: Get all branches except master
+        id: get_branches
+        run: |
+          BRANCHES=$(git for-each-ref --format='%(refname:short)' refs/heads/ | grep -v 'master')
+          echo "::set-output name=branches::$BRANCHES"
+
+      - name: Merge master into all branches
+        run: |
+          for branch in ${{ steps.get_branches.outputs.branches }}; do
+            git checkout $branch
+            git merge master && git push origin HEAD:${{github.head_ref}} || true
+          done
