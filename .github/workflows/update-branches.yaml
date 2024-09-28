@@ -27,7 +27,7 @@ jobs:
             echo "No branches to update."
             exit 0
           fi
-          echo "{name}={value}" >> $GITHUB_OUTPUT
+          echo "branches=$BRANCHES" >> $GITHUB_OUTPUT
 
       - name: Merge master into all branches
         if: steps.get_branches.outputs.branches != ''
