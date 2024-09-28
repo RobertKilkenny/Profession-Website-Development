@@ -43,7 +43,7 @@ jobs:
               LOG="$LOG\n- Failed to merge master into $branch"
             fi
           done
-          echo "$LOG" > merge_log.txt
+          printf "$LOG" > merge_log.txt
 
       - name: Print merge results
         run: cat merge_log.txt && rm merge_log.txt
