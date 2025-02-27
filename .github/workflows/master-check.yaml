@@ -8,9 +8,7 @@ on:
       - '**/*.ts'
       - '**/*.tsx'
       - '**/*.css'
-      - 'public/data/classes.json'
-      - 'public/data/projects.json'
-      - 'public/data/social.json'
+      - 'public/**'
   workflow_dispatch:
 
 jobs:
