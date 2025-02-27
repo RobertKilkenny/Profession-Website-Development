@@ -41,7 +41,7 @@
     },
     {
     "id": 2,
-    "name": "WhatToPlay",
+    "name": "What To Play",
     "start_time": "02/23/2025",
     "github_link": "https://github.com/RobertKilkenny/WhatToPlay",
     "description": "An web app for listing all the games a group of friends share and want to play!",
