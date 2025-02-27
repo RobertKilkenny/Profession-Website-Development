@@ -31,7 +31,7 @@ Website created using create-react-app to display projects I've made pursuing a 
 
 ## Planned Features
 
-Completed planned for now. Still needs maintenance due to starting or ending projects.
+- Fix Markdown Reader for Projects slug page so that numbered lists can work
 
 ## Non-Essential Backlog
 
