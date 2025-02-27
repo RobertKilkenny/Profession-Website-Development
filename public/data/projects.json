@@ -40,7 +40,20 @@
     "ongoing": true
     },
     {
-      "id": 2,
+    "id": 2,
+    "name": "WhatToPlay",
+    "start_time": "02/23/2025",
+    "github_link": "https://github.com/RobertKilkenny/WhatToPlay",
+    "description": "An web app for listing all the games a group of friends share and want to play!",
+    "folder_name": "What-To-Play",
+    "cover_image": "",
+    "cycling_images": [],
+    "extension": "course-tracker",
+    "tags": [],
+    "ongoing": true
+    },
+    {
+      "id": 3,
       "name": "Ocean Waves Simulation",
       "start_time": "10/2023",
       "end_time": "12/2023",
@@ -55,7 +68,7 @@
       "ongoing": false
     },
     {
-      "id": 3,
+      "id": 4,
       "name": "Games made from Game Jams",
       "start_time": "2019",
       "description": "A compilation of the games I have made with a team within the short window of a game jam.",
@@ -79,7 +92,7 @@
       "ongoing": true
     },
     {
-      "id": 4,
+      "id": 5,
       "name": "Creating My Own Minesweeper",
       "start_time": "10/2021",
       "end_time": "11/2021",
@@ -107,7 +120,7 @@
       "ongoing": false
     },
     {
-      "id": 5,
+      "id": 6,
       "name": "Random Wheel",
       "start_time": "09/18/2024",
       "end_time": "09/20/2024",
@@ -120,21 +133,21 @@
       "tags": ["React", "Weekend Project", "Side Project"],
       "ongoing": false
     },
-  {
-  "id": 6,
-  "name": "Quote Finder",
-  "start_time": "04/24/2023",
-  "end_time": "05/22/2023",
-  "github_link": "https://github.com/dannirash/Quote-Finder",
-  "description": "Create an application using Java and C++ to implement two different data structures.",
-  "folder_name": "quote-finder",
-  "cover_image": "",
-  "cycling_images": [["main-menu.png", "This is the front page of the application, which allowed the user to choose between the two different datastructures we implemented."],
-["map-search.png", "This capture is how using the map structure implementation looked, where we selected 'love' for the category we wanted to search for."],
-["map-result.png", "This is the result of the search from the last image. As you can see, there are arrows on either side that allows the user to see other quotes in that category and a randomizer for a newn search!"]],
-  "extension": "quote-finder",
-  "tags": ["C++", "Java", "Processing", "Data Structures"],
-  "ongoing": false
-  }
+    {
+    "id": 7,
+    "name": "Quote Finder",
+    "start_time": "04/24/2023",
+    "end_time": "05/22/2023",
+    "github_link": "https://github.com/dannirash/Quote-Finder",
+    "description": "Create an application using Java and C++ to implement two different data structures.",
+    "folder_name": "quote-finder",
+    "cover_image": "",
+    "cycling_images": [["main-menu.png", "This is the front page of the application, which allowed the user to choose between the two different datastructures we implemented."],
+  ["map-search.png", "This capture is how using the map structure implementation looked, where we selected 'love' for the category we wanted to search for."],
+  ["map-result.png", "This is the result of the search from the last image. As you can see, there are arrows on either side that allows the user to see other quotes in that category and a randomizer for a newn search!"]],
+    "extension": "quote-finder",
+    "tags": ["C++", "Java", "Processing", "Data Structures"],
+    "ongoing": false
+    }
   ]
 }
