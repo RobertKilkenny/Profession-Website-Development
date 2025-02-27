@@ -1,5 +1,4 @@
-# What to Play
-_A website to help answer the follow up question: Well, what games can we play_
+# A website to help answer the follow up question: "Well, what games can we play?"
 
 ## Description
 This idea came about because I have several games that I like to play with friends but depending on the friend, I need to go through my whole game catelog just so I can figure out what game we will play. The main idea is that there is an account systems that allows users to input the games they currently have so that when they make a link-up, they have a dedicated page that gives them a list of all the games they **could** play together.
